@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'korform_accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,6 +70,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'korform.wsgi.application'
+
+AUTH_USER_MODEL = 'korform_accounts.User'
 
 
 # Database
