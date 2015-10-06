@@ -14,7 +14,9 @@ iojs:
     - require:
       - pkgrepo: nodesource
 
-bower:
+{% for name in ['bower', 'less', 'yuglify'] %}
+{{ name }}:
   npm.installed:
     - require:
       - pkg: iojs
+{% endfor %}

@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djangobower',
+    'pipeline',
     'korform_accounts',
 )
 
@@ -56,14 +57,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'djangobower.finders.BowerFinder',
+    'pipeline.finders.PipelineFinder',
 )
 
-BOWER_COMPONENTS_ROOT = BASE_DIR
-
-BOWER_INSTALLED_APPS = (
-    'jquery',
-    'bootstrap#~3.0',
-)
+STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
 
 ROOT_URLCONF = 'korform.urls'
 
@@ -88,6 +85,45 @@ TEMPLATES = [
 WSGI_APPLICATION = 'korform.wsgi.application'
 
 AUTH_USER_MODEL = 'korform_accounts.User'
+
+
+# Assets
+# https://django-bower.readthedocs.org/en/latest/
+# https://django-pipeline.readthedocs.org/en/latest/
+
+BOWER_COMPONENTS_ROOT = BASE_DIR
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'bootstrap#~3.0',
+)
+
+PIPELINE_COMPILERS = (
+    'pipeline.compilers.less.LessCompiler',
+)
+
+PIPELINE_CSS = {
+    'app': {
+        'source_filenames': (
+            'bootstrap/dist/css/bootstrap.css',
+            'css/app.less',
+        ),
+        'output_filename': 'css/style.css',
+    },
+}
+
+PIPELINE_JS = {
+    'app': {
+        'source_filenames': (
+            'js/app.js',
+        ),
+        'output_filename': 'js/script.js',
+    },
+}
+
+PIPELINE_LESS_ARGUMENTS = '--include-path={bower}:{bower}/bootstrap/less'.format(
+  bower=os.path.join(BASE_DIR, 'bower_components')
+)
 
 
 # Database
@@ -149,3 +185,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'www', 'static')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'bower_components'),
+)
