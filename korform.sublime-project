@@ -1,0 +1,9 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+            "folder_exclude_patterns": [".vagrant", "korform/bin", "korform/include", "korform/lib", "korform/local"]
+		}
+	]
+}

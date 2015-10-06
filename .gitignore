@@ -1,0 +1,11 @@
+# Local data
+*.sublime-workspace
+.vagrant
+pip-selfcheck.json
+/bin
+/lib
+/include
+/local
+
+# Caches
+*.pyc
