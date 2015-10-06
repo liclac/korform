@@ -92,6 +92,29 @@ DATABASES = {
 }
 
 
+
+# Email
+# https://docs.djangoproject.com/en/1.8/topics/email/
+
+# EMAIL_HOST = 'smtp.example.com'
+# EMAIL_PORT = 465
+# EMAIL_USE_SSL = True
+# EMAIL_USE_TLS = False
+# EMAIL_HOST_USER = 'myusername'
+# EMAIL_HOST_PASSWORD = 'mypassword'
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emails')
+
+
+
+# Account registration
+# https://django-registration-redux.readthedocs.org/en/latest/
+ACCOUNT_ACTIVATION_DAYS = 7
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
