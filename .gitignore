@@ -1,4 +1,4 @@
-# Local data
+# Local system data
 *.sublime-workspace
 .vagrant
 pip-selfcheck.json
@@ -7,5 +7,7 @@ pip-selfcheck.json
 /include
 /local
 
-# Caches
+# Caches / Components
 *.pyc
+bower_components
+
