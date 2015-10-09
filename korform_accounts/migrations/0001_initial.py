@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 import django.db.models.deletion
-import korform_accounts.models
 import django.contrib.auth.models
 import django.utils.timezone
 import django.core.validators
@@ -50,7 +49,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='user',
             name='profile',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, default=korform_accounts.models.get_new_profile, to='korform_accounts.Profile'),
+            field=models.ForeignKey(related_name='users', on_delete=django.db.models.deletion.PROTECT, to='korform_accounts.Profile', null=True),
         ),
         migrations.AddField(
             model_name='user',
