@@ -12,7 +12,7 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {% get_flatpages as flat_pages %}
+        {% get_flatpages for request.user as flat_pages %}
         {% for page in flat_pages %}
           <li><a href="{% url 'index' %}{{ page.url }}">{{ page.title }}</a></li>
         {% endfor %}
