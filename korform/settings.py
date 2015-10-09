@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,6 +82,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
             ],
         },
     },
@@ -151,6 +153,12 @@ DATABASES = {
 
 
 
+# Grappelli (admin UI)
+# http://django-grappelli.readthedocs.org/en/latest/
+GRAPPELLI_ADMIN_TITLE = u"Admin"
+
+
+
 # Email
 # https://docs.djangoproject.com/en/1.8/topics/email/
 
@@ -169,6 +177,7 @@ if DEBUG:
 
 # Account registration
 # https://django-registration-redux.readthedocs.org/en/latest/
+
 ACCOUNT_ACTIVATION_DAYS = 7
 
 
