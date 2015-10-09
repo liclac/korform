@@ -2,9 +2,19 @@
 {% block title %}Home{% endblock %}
 {% block content %}
   <h2>It works!</h2>
-  <p>
-    If you can read this, then the server is working properly.<br />
-    It also means there's no Flat Page with the URL "/".<br />
-    To customize this page, simply create one in <a href="{% url 'admin:index' %}">the admin panel</a>.
-  </p>
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        If you can read this, then the server is working properly.<br />
+        It also means there's no Flat Page with the URL "/".
+      </p>
+      <p>
+        To customize this page, simply create such a page in <a href="{% url 'admin:index' %}">the admin panel</a>.
+      </p>
+      <p>
+        If you don't have a staff account yet, you can create one from the console:
+      </p>
+      <pre>./manage.py createsuperuser</pre>
+    </div>
+  </div>
 {% endblock %}
