@@ -115,6 +115,8 @@ PIPELINE_CSS = {
 PIPELINE_JS = {
     'app': {
         'source_filenames': (
+            'jquery/dist/jquery.js',
+            'bootstrap/dist/js/bootstrap.js',
             'js/app.js',
         ),
         'output_filename': 'js/script.js',
