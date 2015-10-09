@@ -9,6 +9,8 @@
     {% stylesheet 'app' %}
   </head>
   <body>
+    {% include "_navbar.html" %}
+    
     <div class="container">
       {% block content %}There's nothing here!{% endblock %}
     </div>
