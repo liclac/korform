@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-  Lorem ipsum dolor sit amet
+  <h2>It works!</h2>
+  <p>
+    If you can read this, then the server is working properly.<br />
+    It also means there's no Flat Page with the URL "/".<br />
+    To customize this page, simply create one in <a href="{% url 'admin:index' %}">the admin panel</a>.
+  </p>
 {% endblock %}

@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.flatpages',
     'djangobower',
     'pipeline',
     'korform_accounts',
@@ -57,6 +58,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sites.middleware.CurrentSiteMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 STATICFILES_FINDERS = (
@@ -156,6 +158,7 @@ DATABASES = {
 
 # Grappelli (admin UI)
 # http://django-grappelli.readthedocs.org/en/latest/
+
 GRAPPELLI_ADMIN_TITLE = u"Admin"
 
 
