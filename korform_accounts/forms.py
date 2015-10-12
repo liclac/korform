@@ -9,7 +9,7 @@ class RegistrationForm(RegistrationFormUniqueEmail):
     last_name = forms.CharField(max_length=30, required=True)
     
     def __init__(self, *args, **kwargs):
-        super(RegistrationFormUniqueEmail, self).__init__(*args, **kwargs)
+        super(RegistrationForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_class = 'form-horizontal'
         self.helper.label_class = 'col-md-3'
