@@ -16,12 +16,15 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from .views import index
 from korform_accounts.views import *
+from korform_accounts.forms import *
 
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^accounts/register/$', RegistrationView.as_view(), name='registration_register'),
+    url(r'^accounts/login/$', auth_views.login, {'template_name': 'registration/login.html', 'authentication_form': MyAuthenticationForm}, name='auth_login'),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls), name='admin'),
