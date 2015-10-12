@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav">
         {% get_flatpages for request.user as flat_pages %}
         {% for page in flat_pages %}
-          <li><a href="{% url 'index' %}{{ page.url }}">{{ page.title }}</a></li>
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
         {% endfor %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Matriklar <span class="caret"></span></a>
