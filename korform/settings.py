@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.flatpages',
     'registration',
+    'crispy_forms',
     'djangobower',
     'pipeline',
     'markdown_deux',
@@ -190,6 +191,8 @@ LOGIN_REDIRECT_URL = 'index'
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
+INCLUDE_REGISTER_URL = False
+
 
 
 # Debug toolbar
@@ -204,6 +207,15 @@ DEBUG_TOOLBAR_CONFIG = {
 
 def show_toolbar_callback(request):
     return not request.is_ajax() and DEBUG
+
+
+
+# Crispy Forms
+# http://django-crispy-forms.readthedocs.org/en/latest/
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+CRISPY_FAIL_SILENTLY = not DEBUG
 
 
 

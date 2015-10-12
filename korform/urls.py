@@ -17,9 +17,11 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from .views import index
+from korform_accounts.views import *
 
 urlpatterns = [
     url(r'^$', index, name='index'),
+    url(r'^accounts/register/$', RegistrationView.as_view(), name='registration_register'),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls), name='admin'),
