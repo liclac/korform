@@ -20,6 +20,7 @@ from .views import index
 
 urlpatterns = [
     url(r'^$', index, name='index'),
+    url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls), name='admin'),
 ]

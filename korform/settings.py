@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.flatpages',
+    'registration',
     'djangobower',
     'pipeline',
     'markdown_deux',
@@ -184,6 +185,8 @@ if DEBUG:
 
 # Account registration
 # https://django-registration-redux.readthedocs.org/en/latest/
+
+LOGIN_REDIRECT_URL = 'index'
 
 ACCOUNT_ACTIVATION_DAYS = 7
 
