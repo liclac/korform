@@ -1,5 +1,6 @@
 {% extends "base.html" %}
+{% load markdown_deux_tags %}
 {% block title %}{{ flatpage.title }}{% endblock %}
 {% block content %}
-{{ flatpage.content }}
+{{ flatpage.content|markdown:"trusted" }}
 {% endblock %}

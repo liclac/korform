@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'djangobower',
     'pipeline',
+    'markdown_deux',
     'korform_accounts',
     'debug_toolbar',
 )
@@ -200,6 +201,26 @@ DEBUG_TOOLBAR_CONFIG = {
 
 def show_toolbar_callback(request):
     return not request.is_ajax() and DEBUG
+
+
+
+# Markdown
+# https://github.com/trentm/django-markdown-deux
+
+MARKDOWN_DEUX_STYLES = {
+    "default": {
+        "extras": {
+            "code-friendly": True,
+        },
+        "safe_mode": True,
+    },
+    "trusted": {
+        "extras": {
+            "code-friendly": True,
+        },
+        "safe_mode": False,
+    }
+}
 
 
 
