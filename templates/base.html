@@ -12,7 +12,9 @@
     {% include "_navbar.html" %}
     
     <div class="container">
+      {% block _content %}
       {% block content %}There's nothing here!{% endblock %}
+      {% endblock %}
     </div>
     
     {% javascript 'app' %}

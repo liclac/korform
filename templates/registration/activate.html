@@ -1,5 +1,8 @@
-{% extends "base.html" %}
+{% extends "base_dialog.html" %}
 {% load i18n %}
+
+{% block title %}{% trans "Account activation failed." %}{% endblock %}
+{% block title2 %}{% trans "Account activation failed." %}{% endblock %}
 
 {% block content %}
 <p>{% trans "Account activation failed." %}</p>
