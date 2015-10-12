@@ -46,9 +46,11 @@ INSTALLED_APPS = (
     'djangobower',
     'pipeline',
     'korform_accounts',
+    'debug_toolbar',
 )
 
 MIDDLEWARE_CLASSES = (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -183,6 +185,21 @@ if DEBUG:
 # https://django-registration-redux.readthedocs.org/en/latest/
 
 ACCOUNT_ACTIVATION_DAYS = 7
+
+
+
+# Debug toolbar
+# http://django-debug-toolbar.readthedocs.org/en/latest/
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
+DEBUG_TOOLBAR_CONFIG = {
+    'JQUERY_URL': None,
+    'SHOW_COLLAPSED': True,
+    'SHOW_TOOLBAR_CALLBACK': 'korform.settings.show_toolbar_callback',
+}
+
+def show_toolbar_callback(request):
+    return not request.is_ajax() and DEBUG
 
 
 
