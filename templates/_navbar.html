@@ -28,6 +28,9 @@
         <li><a href="#">Anhöriga</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        {% if not request.user.is_authenticated %}
+        <li><a href="#">Logga in</a></li>
+        {% else %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Konto <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -38,6 +41,7 @@
             <li><a href="#">Logga ut</a></li>
           </ul>
         </li>
+        {% endif %}
       </ul>
     </div>
   </div>
