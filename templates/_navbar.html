@@ -33,7 +33,7 @@
           <ul class="dropdown-menu">
             <li class="disabled"><a>test@example.com</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Admin</a></li>
+            {% if request.user.is_staff %}<li><a href="{% url 'admin:index' %}">Admin</a></li>{% endif %}
             <li><a href="#">Inställningar</a></li>
             <li><a href="#">Logga ut</a></li>
           </ul>
