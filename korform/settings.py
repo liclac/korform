@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'pipeline',
     'markdown_deux',
     'korform_accounts',
+    'korform_sites',
     'debug_toolbar',
 )
 

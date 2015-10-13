@@ -24,8 +24,8 @@
             <li><a href="#">Grupp 3</a></li>
           </ul>
         </li>
-        <li><a href="#">Korister</a></li>
-        <li><a href="#">Anhöriga</a></li>
+        <li><a href="#">{{ request.site.config.term_members|capfirst }}</a></li>
+        <li><a href="#">{{ request.site.config.term_contacts|capfirst }}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {% if not request.user.is_authenticated %}
