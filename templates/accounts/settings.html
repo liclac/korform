@@ -68,7 +68,11 @@
         </p>
       </div>
       <ul class="list-group">
-        <a class="list-group-item">John Smith</a>
+        {% for user in request.user.get_shared_users %}
+          <a class="list-group-item">{{ user.get_full_name }}</a>
+        {% empty %}
+          <a class="list-group-item disabled">{% trans "No connected users." %}</a>
+        {% endfor %}
       </ul>
     </div>
   </div>
