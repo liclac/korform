@@ -23,6 +23,7 @@ from korform_accounts.forms import *
 
 urlpatterns = [
     url(r'^$', index, name='index'),
+    url(r'^accounts/settings/$', SettingsView.as_view(), name='account_settings'),
     url(r'^accounts/register/$', RegistrationView.as_view(), name='registration_register'),
     url(r'^accounts/login/$', auth_views.login, {'template_name': 'registration/login.html', 'authentication_form': MyAuthenticationForm}, name='auth_login'),
     url(r'^accounts/', include('registration.backends.default.urls')),

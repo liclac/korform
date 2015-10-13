@@ -1,4 +1,4 @@
-{% load flatpages %}
+{% load i18n flatpages %}
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
@@ -37,7 +37,7 @@
             <li class="disabled"><a>{{ request.user.get_full_name }}</a></li>
             <li role="separator" class="divider"></li>
             {% if request.user.is_staff %}<li><a href="{% url 'admin:index' %}">Admin</a></li>{% endif %}
-            <li><a href="#">Inställningar</a></li>
+            <li><a href="{% url 'account_settings' %}">{% trans "Settings" %}</a></li>
             <li><a href="{% url 'auth_logout' %}">Logga ut</a></li>
           </ul>
         </li>
