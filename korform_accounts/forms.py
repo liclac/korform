@@ -24,6 +24,9 @@ class RegistrationForm(RegistrationFormUniqueEmail):
     first_name = forms.CharField(max_length=30, required=True)
     last_name = forms.CharField(max_length=30, required=True)
     
+    class Meta(RegistrationFormUniqueEmail.Meta):
+        fields = ('username', 'email', 'first_name', 'last_name')
+    
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
