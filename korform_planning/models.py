@@ -19,6 +19,7 @@ class Term(models.Model):
     site = models.ForeignKey(Site, related_name='terms')
     name = models.CharField(max_length=100)
     groups = models.ManyToManyField(Group, related_name='terms')
+    form = models.ForeignKey('Form', related_name='term', null=True, blank=True)
     
     def __unicode__(self):
         return self.name
@@ -40,3 +41,34 @@ class Event(models.Model):
     def __unicode__(self):
         group_codes = self.groups.values_list('code', flat=True)
         return u"{0} ({1})".format(self.name, u', '.join(group_codes))
+
+class Form(models.Model):
+    name = models.CharField(max_length=100)
+    message = models.TextField(blank=True)
+    
+    def __unicode__(self):
+        return self.name
+
+class FormField(models.Model):
+    class Meta:
+        ordering = ['position']
+    
+    FIELD_CHOICES = (
+        ('django.forms.CharField', u"Text field"),
+        ('django.forms.BooleanField', u"Checkbox"),
+    )
+    
+    form = models.ForeignKey(Form, related_name='fields')
+    position = models.PositiveIntegerField(null=True)
+    key = models.CharField(max_length=20)
+    
+    label = models.CharField(max_length=100)
+    field = models.CharField(max_length=100, choices=FIELD_CHOICES)
+    placeholder = models.CharField(max_length=100)
+    help_text = models.TextField(blank=True)
+    required = models.BooleanField(default=True)
+    
+    public = models.BooleanField(default=True)
+    
+    def __unicode__(self):
+        return self.label
