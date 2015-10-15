@@ -17,3 +17,4 @@ class BirthYearListFilter(admin.SimpleListFilter):
 class MemberAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'birthday')
     list_filter = ('group', BirthYearListFilter)
+    search_fields = ('first_name', 'last_name')

@@ -19,6 +19,20 @@ class UserAdmin(BaseUserAdmin):
         }))
         return tuple(l)
 
+
+
+def profile_users(profile):
+    items = profile.users.values_list('first_name', 'last_name')
+    names = [u"{0} {1}".format(i[0], i[1]) for i in items]
+    return u", ".join(names)
+profile_users.short_description = u"Users"
+
+def profile_members(profile):
+    items = profile.members.values_list('first_name', 'last_name')
+    names = [u"{0} {1}".format(i[0], i[1]) for i in items]
+    return u", ".join(names)
+profile_members.short_description = u"Members"
+
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    pass
+    list_display = (profile_users, profile_members)
