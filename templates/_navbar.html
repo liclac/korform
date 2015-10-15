@@ -16,6 +16,7 @@
         {% for page in flat_pages %}
           <li><a href="{{ page.url }}">{{ page.title }}</a></li>
         {% endfor %}
+        {% if request.user.is_authenticated %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Matriklar <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -37,6 +38,7 @@
           </ul>
         </li>
         <li><a href="#">{{ request.site.config.term_contacts|capfirst }}</a></li>
+        {% endif %}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {% if not request.user.is_authenticated %}
