@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'korform_accounts',
     'korform_sites',
     'korform_planning',
+    'korform_roster',
     'debug_toolbar',
 )
 
