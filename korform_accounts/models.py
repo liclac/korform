@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 class Profile(models.Model):
     def __unicode__(self):
       usernames = [u.get_full_name() for u in self.users.all()]
+      if len(usernames) == 0:
+        return u"Orphaned Profile"
       return u"Profile for {0}".format(u', '.join(usernames))
 
 class User(AbstractUser):
