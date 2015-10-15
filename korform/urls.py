@@ -20,9 +20,11 @@ from django.contrib.auth import views as auth_views
 from .views import index
 from korform_accounts.views import *
 from korform_accounts.forms import *
+from korform_roster.views import MemberView
 
 urlpatterns = [
     url(r'^$', index, name='index'),
+    url(r'^members/(?P<pk>[0-9]+)/$', MemberView.as_view(), name='member'),
     url(r'^accounts/settings/$', SettingsView.as_view(), name='account_settings'),
     url(r'^accounts/register/$', RegistrationView.as_view(), name='registration_register'),
     url(r'^accounts/login/$', auth_views.login, {'template_name': 'registration/login.html', 'authentication_form': MyAuthenticationForm}, name='auth_login'),

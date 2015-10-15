@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 
 class Member(models.Model):
@@ -9,6 +10,9 @@ class Member(models.Model):
     
     def get_full_name(self):
         return u"{0} {1}".format(self.first_name, self.last_name)
+    
+    def get_absolute_url(self):
+        return reverse('member', kwargs={ 'pk': self.pk })
     
     def __unicode__(self):
         return self.get_full_name()
