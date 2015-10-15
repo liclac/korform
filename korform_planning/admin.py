@@ -10,6 +10,7 @@ class GroupAdmin(admin.ModelAdmin):
     list_display = ('name', 'code', 'site')
     list_filter = ('site__name',)
     search_fields = ('name', 'code')
+    prepopulated_fields = { 'slug': ('code',) }
 
 
 

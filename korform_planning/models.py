@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.contrib.sites.models import Site
 
@@ -5,6 +6,10 @@ class Group(models.Model):
     site = models.ForeignKey(Site, related_name='groups')
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=20)
+    slug = models.SlugField(max_length=20)
+    
+    def get_absolute_url(self):
+        return reverse('group', kwargs={'slug': self.slug})
     
     def __unicode__(self):
         return self.code

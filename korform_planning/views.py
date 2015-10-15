@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.views.generic import DetailView
+from .models import Group
 
-# Create your views here.
+class GroupView(DetailView):
+    model = Group
+    context_object_name = 'group'
