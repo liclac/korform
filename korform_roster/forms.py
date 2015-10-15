@@ -24,6 +24,8 @@ class MemberForm(forms.ModelForm):
             }
             f = cls(**kwargs)
             self.fields[field.key] = f
+            if field.key in self.instance.extra:
+                self.initial[field.key] = self.instance.extra[field.key]
             self.extra_keys.append(field.key)
         
         self.helper = FormHelper()
@@ -44,4 +46,8 @@ class MemberForm(forms.ModelForm):
     
     def save(self, commit=True):
         super(MemberForm, self).save(commit=False)
+        for key in self.extra_keys:
+            self.instance.extra[key] = self.cleaned_data[key]
+        if commit:
+            self.instance.save()
         return self.instance
