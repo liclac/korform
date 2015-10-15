@@ -26,4 +26,9 @@ def create_user_profile(instance, created, raw, **kwargs):
         instance.profile = Profile.objects.create()
         instance.save()
 
+def delete_orphaned_profile(instance, **kwargs):
+    if instance.profile.users.count() == 0:
+        instance.profile.delete()
+
 models.signals.post_save.connect(create_user_profile, sender=User, dispatch_uid='create_user_profile')
+models.signals.post_delete.connect(delete_orphaned_profile, sender=User, dispatch_uid='delete_orphaned_profile')
