@@ -1,5 +1,6 @@
 import datetime
 from django.contrib import admin
+from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 from grappelli.forms import GrappelliSortableHiddenMixin
 from .models import Group, Term, Event
@@ -74,6 +75,21 @@ def term_groups(term):
     return u", ".join(term.groups.values_list('code', flat=True))
 term_groups.short_description = u"Groups"
 
+class TermSiteFilter(admin.SimpleListFilter):
+    title = _(u"Site")
+    parameter_name = 'site'
+    
+    def lookups(self, request, model_admin):
+        return [
+            (s.id, s) for s in Site.objects.all()
+        ]
+    
+    def queryset(self, request, queryset):
+        month = self.value()
+        if month:
+            return queryset.filter(start__month=self.value())
+        return queryset
+
 class EventInline(GrappelliSortableHiddenMixin, admin.StackedInline):
     model = Event
     sortable_field_name = 'position'
@@ -82,4 +98,5 @@ class EventInline(GrappelliSortableHiddenMixin, admin.StackedInline):
 class TermAdmin(admin.ModelAdmin):
     inlines = [EventInline]
     list_display = ('name', term_groups, 'site')
+    list_filter = (TermSiteFilter,)
     search_fields = ('name',)
