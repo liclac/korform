@@ -1,9 +1,18 @@
 from django.db import models
 from django.contrib.sites.models import Site
 
+class Group(models.Model):
+    site = models.ForeignKey(Site, related_name='groups')
+    name = models.CharField(max_length=100)
+    code = models.CharField(max_length=20)
+    
+    def __unicode__(self):
+        return self.code
+
 class Term(models.Model):
     site = models.ForeignKey(Site, related_name='terms')
     name = models.CharField(max_length=100)
+    groups = models.ManyToManyField(Group, related_name='terms')
     
     def __unicode__(self):
         return self.name
@@ -13,6 +22,7 @@ class Event(models.Model):
         ordering = ['position']
     
     term = models.ForeignKey(Term, related_name='events')
+    groups = models.ManyToManyField(Group, related_name='events')
     name = models.CharField(max_length=100)
     start = models.DateTimeField(null=True, blank=True)
     end = models.DateTimeField(null=True, blank=True)
@@ -22,4 +32,5 @@ class Event(models.Model):
     position = models.PositiveIntegerField(null=True)
     
     def __unicode__(self):
-        return self.name
+        group_codes = self.groups.values_list('code', flat=True)
+        return u"{0} ({1})".format(self.name, u', '.join(group_codes))
