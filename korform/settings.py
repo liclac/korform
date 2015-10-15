@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'markdown_deux',
     'korform_accounts',
     'korform_sites',
+    'korform_planning',
     'debug_toolbar',
 )
 
