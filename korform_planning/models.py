@@ -7,6 +7,7 @@ class Group(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=20)
     slug = models.SlugField(max_length=20)
+    description = models.TextField(blank=True)
     
     def get_absolute_url(self):
         return reverse('group', kwargs={'slug': self.slug})
