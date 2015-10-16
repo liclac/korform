@@ -3,10 +3,14 @@ from django.db import models
 from django.contrib.sites.models import Site
 
 class Group(models.Model):
+    class Meta:
+        ordering = ['sort']
+    
     site = models.ForeignKey(Site, related_name='groups')
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=20)
     slug = models.SlugField(max_length=20)
+    sort = models.CharField(max_length=10)
     description = models.TextField(blank=True)
     
     def get_absolute_url(self):
