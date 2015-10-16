@@ -1,0 +1,29 @@
+{% extends "base_dialog.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Select your group" %}{% endblock %}
+{% block title2 %}{% trans "Select your group" %}{% endblock %}
+
+{% block wrapper_class %}col-md-6 col-md-offset-3{% endblock %}
+
+{% block content %}
+<p>
+  {% blocktrans %}
+  Make sure you pick the correct group!<br />
+  If you pick the wrong one, you have to contact an administrator to have it changed.
+  {% endblocktrans %}
+</p>
+<p>
+  {% blocktrans %}
+  New? Not sure which group you're in? It's probably in your acceptance letter.
+  {% endblocktrans %}
+</p>
+
+<hr />
+
+<ul class="nav nav-pills nav-stacked">
+  {% for group in groups %}
+  <li><a href="{% url 'member_add2' group.slug %}">{{ group.name }} ({{ group.code }})</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

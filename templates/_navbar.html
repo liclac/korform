@@ -34,7 +34,7 @@
             <li class="disabled"><a>{% trans "None yet!" %}</a></li>
             {% endfor %}
             <li class="divider"></li>
-            <li><a href="#">{% trans "Add..." %}</a></li>
+            <li><a href="{% url 'member_add' %}">{% trans "Add..." %}</a></li>
           </ul>
         </li>
         <li><a href="#">{{ request.site.config.term_contacts|capfirst }}</a></li>

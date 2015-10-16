@@ -21,11 +21,13 @@ from .views import index
 from korform_accounts.views import *
 from korform_accounts.forms import *
 from korform_planning.views import GroupView
-from korform_roster.views import MemberView, MemberUpdateView
+from korform_roster.views import MemberView, MemberPickGroupView, MemberCreateView, MemberUpdateView
 
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^groups/(?P<slug>[-\w]+)/$', GroupView.as_view(), name='group'),
+    url(r'^members/add/$', MemberPickGroupView.as_view(), name='member_add'),
+    url(r'^members/add/(?P<group>[-\w]+)/$', MemberCreateView.as_view(), name='member_add2'),
     url(r'^members/(?P<pk>[0-9]+)/$', MemberView.as_view(), name='member'),
     url(r'^members/(?P<pk>[0-9]+)/edit/$', MemberUpdateView.as_view(), name='member_edit'),
     url(r'^accounts/settings/$', SettingsView.as_view(), name='account_settings'),
