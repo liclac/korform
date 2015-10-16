@@ -1,10 +1,11 @@
 from django import forms
 from django.utils.translation import ugettext as _
 from django.utils.module_loading import import_string
+from django.forms.models import modelformset_factory
 from crispy_forms.helper import FormHelper, Layout
 from crispy_forms.layout import *
 from crispy_forms.bootstrap import *
-from .models import Member
+from .models import Member, RSVP
 
 class MemberForm(forms.ModelForm):
     class Meta:
@@ -51,3 +52,10 @@ class MemberForm(forms.ModelForm):
         if commit:
             self.instance.save()
         return self.instance
+
+class RSVPForm(forms.ModelForm):
+    class Meta:
+        model = RSVP
+        fields = ('answer', 'comment')
+
+RSVPFormset = modelformset_factory(RSVP, form=RSVPForm)

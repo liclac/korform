@@ -1,4 +1,5 @@
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _
 from django.db import models
 from jsonfield import JSONField
 
@@ -18,3 +19,15 @@ class Member(models.Model):
     
     def __unicode__(self):
         return self.get_full_name()
+
+class RSVP(models.Model):
+    CHOICES = (
+        (0, _(u"No")),
+        (1, _(u"Yes")),
+        (2, _(u"Maybe")),
+    )
+    
+    member = models.ForeignKey(Member, related_name='rsvps')
+    event = models.ForeignKey('korform_planning.Event', related_name='rsvps')
+    answer = models.IntegerField(choices=CHOICES)
+    comment = models.TextField(blank=True)
