@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'korform_planning',
     'korform_roster',
     'debug_toolbar',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (
