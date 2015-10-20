@@ -58,7 +58,7 @@ class RSVPForm(forms.ModelForm):
         model = RSVP
         fields = ('answer', 'comment')
         widgets = {
-            'comment': forms.Textarea(attrs={'rows': 3, 'placeholder': _(u"Required for \"No\" and \"Maybe\".")})
+            'comment': forms.Textarea(attrs={'rows': 2, 'placeholder': _(u"Required for \"No\" and \"Maybe\".")})
         }
     
     answer = forms.TypedChoiceField(widget=forms.RadioSelect, choices=RSVP.CHOICES, coerce=int, required=True)
@@ -77,3 +77,11 @@ class RSVPFormSet(forms.BaseModelFormSet):
 
 class RSVPFormSetHelper(FormHelper):
     template = 'korform_roster/forms/rsvp_formset.html'
+    
+    def __init__(self, *args, **kwargs):
+        super(RSVPFormSetHelper, self).__init__(*args, **kwargs)
+        self.layout = Layout(
+            InlineRadios('answer'),
+            'comment'
+        )
+        self.add_input(Submit('save', _(u"Save")))
