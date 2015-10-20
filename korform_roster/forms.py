@@ -57,5 +57,23 @@ class RSVPForm(forms.ModelForm):
     class Meta:
         model = RSVP
         fields = ('answer', 'comment')
+        widgets = {
+            'comment': forms.Textarea(attrs={'rows': 3, 'placeholder': _(u"Required for \"No\" and \"Maybe\".")})
+        }
+    
+    answer = forms.TypedChoiceField(widget=forms.RadioSelect, choices=RSVP.CHOICES, coerce=int, required=True)
 
-RSVPFormset = modelformset_factory(RSVP, form=RSVPForm)
+class RSVPFormSet(forms.BaseModelFormSet):
+    def __init__(self, events, *args, **kwargs):
+        self.events = events
+        self.min_num = len(events)
+        self.max_num = len(events)
+        super(RSVPFormSet, self).__init__(*args, **kwargs)
+    
+    def _construct_form(self, i, **kwargs):
+        form = super(RSVPFormSet, self)._construct_form(i, **kwargs)
+        form.instance.event = self.events[i]
+        return form
+
+class RSVPFormSetHelper(FormHelper):
+    template = 'korform_roster/forms/rsvp_formset.html'

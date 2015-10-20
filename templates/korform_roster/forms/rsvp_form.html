@@ -1,0 +1,21 @@
+{% load crispy_forms_utils %}
+
+{% specialspaceless %}
+  <div class="panel panel-default">
+    <div class="panel-body">
+      {% if include_media %}{{ form.media }}{% endif %}
+      {% if form_show_errors %}
+          {% include "bootstrap3/errors.html" %}
+      {% endif %}
+      
+      <h3>{% if not form.instance.event %}No event on {{ form.instance|stringformat:'r' }}{% else %}{{ form.instance.event.name }}{% endif %}</h3>
+      
+      {% for radio in form.answer %}
+        <label class="radio-inline">
+          {{ radio.tag }}
+          {{ radio.choice_label }}
+        </label>
+      {% endfor %}
+    </div>
+  </div>
+{% endspecialspaceless %}

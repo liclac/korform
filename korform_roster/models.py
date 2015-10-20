@@ -22,8 +22,8 @@ class Member(models.Model):
 
 class RSVP(models.Model):
     CHOICES = (
-        (0, _(u"No")),
         (1, _(u"Yes")),
+        (0, _(u"No")),
         (2, _(u"Maybe")),
     )
     
