@@ -26,10 +26,10 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.site.config.term_members|capfirst }} <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.site.config.term_members|capfirst }} {% if member_badge_count %}<span class='badge'>{{ member_badge_count }}</span>{% endif %} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             {% for member in request.user.profile.members.all %}
-            <li><a href="{{ member.get_absolute_url }}">{{ member.get_full_name }}</a></li>
+            <li><a href="{{ member.get_absolute_url }}">{{ member.get_full_name }} {% if member.get_badge_count %}<span class="badge">{{ member.get_badge_count }}</span>{% endif %}</a></li>
             {% empty %}
             <li class="disabled"><a>{% trans "None yet!" %}</a></li>
             {% endfor %}

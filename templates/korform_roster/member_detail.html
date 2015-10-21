@@ -1,8 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block title %}{{ member.get_full_name }}{% endblock %}
 
 {% block content %}
+{% if member.get_events_missing_rsvp.count %}
+<div class="alert alert-danger"><strong>{% trans "Missing RSVPs!" %}</strong> {% trans "We don't know if you'll be there for some of your events." %} <a href="{% url 'member_rsvp' member.pk %}">{% trans "Click here to correct this." %}</a></div>
+{% endif %}
 <div class="page-header">
   <h1>
     {{ member.get_full_name }}
