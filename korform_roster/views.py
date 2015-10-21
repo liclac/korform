@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from extra_views import ModelFormSetView
-from korform_planning.models import Group, Event
 from .models import Member, RSVP
 from .forms import MemberForm, RSVPForm, RSVPFormSet, RSVPFormSetHelper
 
@@ -58,7 +57,7 @@ class MemberRSVPView(ModelFormSetView):
         return get_object_or_404(Member, pk=self.kwargs['pk'])
     
     def get_events(self):
-        return Event.objects.exclude(rsvps__member_id=self.get_member().id)
+        return self.get_member().get_events_missing_rsvp()
     
     def get_factory_kwargs(self):
         kwargs = super(MemberRSVPView, self).get_factory_kwargs()
