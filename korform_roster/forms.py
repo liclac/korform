@@ -64,7 +64,8 @@ class RSVPForm(forms.ModelForm):
     answer = forms.TypedChoiceField(widget=forms.RadioSelect, choices=RSVP.CHOICES, coerce=int, required=True)
 
 class RSVPFormSet(forms.BaseModelFormSet):
-    def __init__(self, events, *args, **kwargs):
+    def __init__(self, member, events, *args, **kwargs):
+        self.member = member
         self.events = events
         self.min_num = len(events)
         self.max_num = len(events)
@@ -72,6 +73,7 @@ class RSVPFormSet(forms.BaseModelFormSet):
     
     def _construct_form(self, i, **kwargs):
         form = super(RSVPFormSet, self)._construct_form(i, **kwargs)
+        form.instance.member = self.member
         form.instance.event = self.events[i]
         return form
 

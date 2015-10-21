@@ -70,6 +70,7 @@ class MemberRSVPView(ModelFormSetView):
     
     def get_formset_kwargs(self):
         kwargs = super(MemberRSVPView, self).get_formset_kwargs()
+        kwargs['member'] = self.get_member()
         kwargs['events'] = self.get_events()
         return kwargs
     
