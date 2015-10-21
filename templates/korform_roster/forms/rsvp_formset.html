@@ -1,6 +1,5 @@
-{% load crispy_forms_tags %}
-{% load crispy_forms_utils %}
-{% load crispy_forms_field %}
+{% load crispy_forms_tags crispy_forms_utils crispy_forms_field %}
+{% load i18n markdown_deux_tags %}
 
 {% specialspaceless %}
 
@@ -14,14 +13,32 @@
     {{ formset.management_form|crispy }}
 </div>
 
+<div class="row">
 {% for form in formset %}
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <h3>{{ form.instance.event.name }}</h3>
-      {% include "bootstrap3/display_form.html" %}
+  <div class="col-md-6">
+    <div class="panel panel-default rsvp-panel">
+      <div class="panel-heading clearfix" data-toggle="collapse" data-target="#rsvp-collapse-{{ forloop.counter }}">
+        <div class="pull-left">
+          <h3 class="panel-title">{{ form.instance.event.name }}</h3>
+          <p class="panel-subtitle">{{ form.instance.event.get_subtitle }}</p>
+        </div>
+        <p class="pull-right"><span class="caret"></span></p>
+      </div>
+      <div class="panel-body collapse in" id="rsvp-collapse-{{ forloop.counter }}">
+        {% if form.instance.event.info %}
+        <div class="info">
+          {{ form.instance.event.info|markdown }}
+        </div>
+        <hr />
+        {% endif %}
+        <div class="form">
+          {% include "bootstrap3/display_form.html" %}
+        </div>
+      </div>
     </div>
   </div>
 {% endfor %}
+</div>
 
 {% include "bootstrap3/inputs.html" %}
 

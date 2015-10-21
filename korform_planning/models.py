@@ -1,6 +1,7 @@
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.contrib.sites.models import Site
+from .util import format_datetime, format_datetime_diff
 
 class Group(models.Model):
     class Meta:
@@ -41,6 +42,17 @@ class Event(models.Model):
     info = models.TextField(blank=True)
     no_answer = models.BooleanField(default=False)
     position = models.PositiveIntegerField(null=True)
+    
+    def get_subtitle(self):
+        parts = []
+        if self.start:
+            if self.end:
+                parts.append(format_datetime_diff(self.start, self.end))
+            else:
+                parts.append(format_datetime(self.start))
+        if self.subtitle:
+            parts.append(self.subtitle)
+        return u", ".join(parts)
     
     def __unicode__(self):
         group_codes = self.groups.values_list('code', flat=True)
