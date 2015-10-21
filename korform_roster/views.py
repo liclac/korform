@@ -77,8 +77,12 @@ class MemberRSVPView(ModelFormSetView):
     def get_context_data(self, **kwargs):
         context = super(MemberRSVPView, self).get_context_data(**kwargs)
         context['member'] = self.get_member()
+        context['events'] = self.get_events()
         context['helper'] = RSVPFormSetHelper()
         return context
     
     def get_queryset(self):
         return RSVP.objects.none()
+    
+    def get_success_url(self):
+        return self.get_member().get_absolute_url()

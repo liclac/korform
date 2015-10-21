@@ -4,5 +4,14 @@
 {% block title %}{% trans "RSVPs for" %} {{ member.get_full_name }}{% endblock %}
 
 {% block content %}
-{% crispy formset helper %}
+{% if events %}
+  {% crispy formset helper %}
+{% else %}
+  <p class="text-muted">
+    {% blocktrans %}
+    You have answered every invitation.<br />
+    If you want to change one, you will need to contact an administrator.
+    {% endblocktrans %}
+  </p>
+{% endif %}
 {% endblock %}
