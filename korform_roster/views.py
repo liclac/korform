@@ -58,7 +58,7 @@ class MemberRSVPView(ModelFormSetView):
         return get_object_or_404(Member, pk=self.kwargs['pk'])
     
     def get_events(self):
-        return Event.objects.all()
+        return Event.objects.exclude(rsvps__member_id=self.get_member().id)
     
     def get_factory_kwargs(self):
         kwargs = super(MemberRSVPView, self).get_factory_kwargs()
@@ -79,3 +79,6 @@ class MemberRSVPView(ModelFormSetView):
         context['member'] = self.get_member()
         context['helper'] = RSVPFormSetHelper()
         return context
+    
+    def get_queryset(self):
+        return RSVP.objects.none()
