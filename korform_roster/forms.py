@@ -35,8 +35,8 @@ class MemberForm(forms.ModelForm):
         
         self.helper = FormHelper()
         self.helper.form_class = 'form-horizontal'
-        self.helper.label_class = 'col-md-3'
-        self.helper.field_class = 'col-md-9'
+        self.helper.label_class = 'col-md-2'
+        self.helper.field_class = 'col-md-10'
         
         layout_fields = [
             Field('first_name', autofocus=True),
