@@ -1,4 +1,4 @@
-{% load i18n flatpages %}
+{% load i18n flatpages korform_roster_tags %}
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
@@ -29,7 +29,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.site.config.term_members|capfirst }} {% if member_badge_count %}<span class='badge'>{{ member_badge_count }}</span>{% endif %} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             {% for member in request.user.profile.members.all %}
-            <li><a href="{{ member.get_absolute_url }}">{{ member.get_full_name }} {% if member.get_badge_count %}<span class="badge">{{ member.get_badge_count }}</span>{% endif %}</a></li>
+            <li><a href="{{ member.get_absolute_url }}">{{ member.get_full_name }} {% if member|has_badge:request %}<span class="badge">{{ member|badge_count:request }}</span>{% endif %}</a></li>
             {% empty %}
             <li class="disabled"><a>{% trans "None yet!" %}</a></li>
             {% endfor %}
