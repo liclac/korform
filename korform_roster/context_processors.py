@@ -1,4 +1,8 @@
 def badge_counts(request):
+    # Logged out users cannot have badge counts
+    if not request.user.is_authenticated():
+        return {}
+    
     members_badge = 0
     members = request.user.profile.members.filter(site=request.site)
     for member in members:
