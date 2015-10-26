@@ -70,9 +70,16 @@ class FormField(models.Model):
         ordering = ['position']
     
     FIELD_CHOICES = (
-        ('django.forms.CharField', u"Text field"),
-        ('django.forms.BooleanField', u"Checkbox"),
+        ('textfield', u"Text field"),
+        ('textarea', u"Textarea"),
+        ('checkbox', u"Checkbox"),
     )
+    
+    FIELDS = {
+        'textfield': ('django.forms.CharField', 'django.forms.widgets.TextInput', {}),
+        'textarea': ('django.forms.CharField', 'django.forms.widgets.Textarea', {'rows': 3}),
+        'checkbox': ('django.forms.BooleanField', 'django.forms.widgets.CheckboxInput', {}),
+    }
     
     form = models.ForeignKey(Form, related_name='fields')
     position = models.PositiveIntegerField(null=True)
