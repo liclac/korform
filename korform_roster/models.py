@@ -5,7 +5,19 @@ from django.contrib.sites.models import Site
 from jsonfield import JSONField
 from korform_planning.models import Event
 
-class Member(models.Model):
+class ExtraDataMixin(object):
+    def get_extra_keys(self):
+        form = self.get_custom_form()
+        if form:
+            return [field.key for field in form.fields.all()]
+        return []
+    
+    def get_fields_missing_value(self, keys=[]):
+        if not keys:
+            keys = self.get_extra_keys()
+        return [ key for key in keys if key not in (self.extra or {}) ]
+
+class Member(ExtraDataMixin, models.Model):
     site = models.ForeignKey(Site, related_name='members')
     profile = models.ForeignKey('korform_accounts.Profile', related_name='members')
     group = models.ForeignKey('korform_planning.Group', related_name='members')
@@ -17,13 +29,12 @@ class Member(models.Model):
     def get_full_name(self):
         return u"{0} {1}".format(self.first_name, self.last_name)
     
+    def get_custom_form(self):
+        term = self.site.config.current_term
+        return term.form if term else None
+    
     def get_events_missing_rsvp(self):
         return Event.objects.exclude(rsvps__member_id=self.id)
-    
-    def get_fields_missing_value(self, keys=[]):
-        if not keys:
-            keys = self.get_extra_keys()
-        return [ key for key in keys if key not in (self.extra or {}) ]
     
     def get_badge_count(self, request):
         count = 0
@@ -43,17 +54,10 @@ class Member(models.Model):
     def get_absolute_url(self):
         return reverse('member', kwargs={ 'pk': self.pk })
     
-    def get_extra_keys(self):
-        site = Site.objects.get_current()
-        form = site.config.current_term.form
-        if form:
-            return [field.key for field in form.fields.all()]
-        return []
-    
     def __unicode__(self):
         return self.get_full_name()
 
-class Contact(models.Model):
+class Contact(ExtraDataMixin, models.Model):
     site = models.ForeignKey(Site, related_name='contacts')
     profile = models.ForeignKey('korform_accounts.Profile', related_name='contacts')
     first_name = models.CharField(max_length=100)
@@ -62,6 +66,9 @@ class Contact(models.Model):
     
     def get_full_name(self):
         return u"{0} {1}".format(self.first_name, self.last_name)
+    
+    def get_custom_form(self):
+        return self.site.config.contact_form
     
     def get_absolute_url(self):
         return reverse('contact', kwargs={ 'pk': self.pk })
