@@ -1,6 +1,5 @@
 from django import forms
 from django.utils.translation import ugettext as _
-from django.utils.module_loading import import_string
 from django.forms.models import modelformset_factory
 from crispy_forms.helper import FormHelper, Layout
 from crispy_forms.layout import *
@@ -21,19 +20,7 @@ class MemberForm(forms.ModelForm):
         
         self.extra_keys = []
         for field in form.fields.all():
-            f_cls_name, w_cls_name, attrs = FormField.FIELDS[field.field]
-            f_cls = import_string(f_cls_name)
-            w_cls = import_string(w_cls_name)
-            f_kwargs = {
-                'label': field.label,
-                'help_text': field.help_text,
-                'required': field.required,
-            }
-            attrs.update({
-                'placeholder': field.placeholder,
-            })
-            f = f_cls(widget=w_cls(attrs=attrs), **f_kwargs)
-            self.fields[field.key] = f
+            self.fields[field.key] = field.create_field()
             if field.key in self.instance.extra:
                 self.initial[field.key] = self.instance.extra[field.key]
             self.extra_keys.append(field.key)

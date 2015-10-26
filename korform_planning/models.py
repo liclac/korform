@@ -1,4 +1,5 @@
 from django.core.urlresolvers import reverse
+from django.utils.module_loading import import_string
 from django.db import models
 from django.contrib.sites.models import Site
 from .util import format_datetime, format_datetime_diff
@@ -92,6 +93,20 @@ class FormField(models.Model):
     required = models.BooleanField(default=True)
     
     public = models.BooleanField(default=True)
+    
+    def create_field(self):
+        f_cls_name, w_cls_name, attrs = FormField.FIELDS[self.field]
+        f_cls = import_string(f_cls_name)
+        w_cls = import_string(w_cls_name)
+        f_kwargs = {
+            'label': self.label,
+            'help_text': self.help_text,
+            'required': self.required,
+        }
+        attrs.update({
+            'placeholder': self.placeholder,
+        })
+        return f_cls(widget=w_cls(attrs=attrs), **f_kwargs)
     
     def __unicode__(self):
         return self.label
