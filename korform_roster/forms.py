@@ -8,9 +8,9 @@ from korform_planning.models import FormField
 from .models import Member, Contact, RSVP
 
 class CustomizableMixin(object):
-    extra_keys = []
-    
     def add_custom_fields(self, form):
+        self.extra_keys = []
+        
         if not form:
             return
         
