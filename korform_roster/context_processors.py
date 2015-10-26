@@ -1,9 +1,10 @@
 def badge_counts(request):
-    member_badge_count = 0
-    for member in request.user.profile.members.all():
+    members_badge = 0
+    members = request.user.profile.members.all()
+    for member in members:
         if member.get_badge_count(request):
-            member_badge_count += 1
+            members_badge += 1
     
     return {
-        'member_badge_count': member_badge_count,
+        'members_badge': members_badge,
     }
