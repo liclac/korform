@@ -12,6 +12,9 @@ class MemberForm(forms.ModelForm):
     class Meta:
         model = Member
         fields = ('first_name', 'last_name', 'birthday')
+        widgets = {
+            'birthday': forms.DateInput(attrs={'placeholder': _(u"YYYY-MM-dd")})
+        }
     
     def __init__(self, form, *args, **kwargs):
         super(MemberForm, self).__init__(*args, **kwargs)
