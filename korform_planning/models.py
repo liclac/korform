@@ -80,7 +80,7 @@ class FormField(models.Model):
     
     label = models.CharField(max_length=100)
     field = models.CharField(max_length=100, choices=FIELD_CHOICES)
-    placeholder = models.CharField(max_length=100)
+    placeholder = models.CharField(max_length=100, blank=True)
     help_text = models.TextField(blank=True)
     required = models.BooleanField(default=True)
     
