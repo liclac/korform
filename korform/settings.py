@@ -183,10 +183,6 @@ GRAPPELLI_ADMIN_TITLE = u"Admin"
 # EMAIL_HOST_USER = 'myusername'
 # EMAIL_HOST_PASSWORD = 'mypassword'
 
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-    EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emails')
-
 
 
 # Account registration
@@ -275,3 +271,8 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+# Debug settings
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emails')
