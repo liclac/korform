@@ -18,14 +18,31 @@ class Member(models.Model):
     def get_events_missing_rsvp(self):
         return Event.objects.exclude(rsvps__member_id=self.id)
     
+    def get_fields_missing_value(self, keys=[]):
+        if not keys:
+            keys = self.get_extra_keys()
+        return [ key for key in keys if key not in self.extra ]
+    
     def get_badge_count(self, request):
         count = 0
+        
         if request.resolver_match.url_name != 'member_rsvp':
             count += self.get_events_missing_rsvp().count()
+        
+        keys = self.get_extra_keys()
+        if request.resolver_match.url_name != 'member_edit':
+            count += len(self.get_fields_missing_value(keys))
+        
         return count
     
     def get_absolute_url(self):
         return reverse('member', kwargs={ 'pk': self.pk })
+    
+    def get_extra_keys(self):
+        form = self.group.site.config.current_term.form
+        if form:
+            return [field.key for field in form.fields.all()]
+        return []
     
     def __unicode__(self):
         return self.get_full_name()
