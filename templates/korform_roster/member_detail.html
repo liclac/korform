@@ -16,4 +16,18 @@
     <small><a href="{{ member.group.get_absolute_url }}">{{ member.group.code }}</a></small>
   </h1>
 </div>
+<div class="row">
+  <div class="col-md-6">
+    <dl class="dl-horizontal">
+      <dt>{% trans "Name" %}</dt>
+      <dd>{{ member.get_full_name }}</dd>
+      {% for extra in member.get_extra_data %}
+        {% if extra.public %}
+          <dt>{{ extra.label }}</dt>
+          <dd>{{ extra.value }}</dd>
+        {% endif %}
+      {% endfor %}
+    </dl>
+  </div>
+</div>
 {% endblock %}

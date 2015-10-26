@@ -7,4 +7,18 @@
 <div class="page-header">
   <h1>{{ contact.get_full_name }}</h1>
 </div>
+<div class="row">
+  <div class="col-md-6">
+    <dl class="dl-horizontal">
+      <dt>{% trans "Name" %}</dt>
+      <dd>{{ contact.get_full_name }}</dd>
+      {% for extra in contact.get_extra_data %}
+        {% if extra.public %}
+          <dt>{{ extra.label }}</dt>
+          <dd>{{ extra.value }}</dd>
+        {% endif %}
+      {% endfor %}
+    </dl>
+  </div>
+</div>
 {% endblock %}

@@ -6,6 +6,20 @@ from jsonfield import JSONField
 from korform_planning.models import Event
 
 class ExtraDataMixin(object):
+    def get_extra_data(self):
+        form = self.get_custom_form()
+        data = []
+        if form:
+            for field in form.fields.all():
+                data.append({
+                    'key': field.key,
+                    'label': field.label,
+                    'help_text': field.help_text,
+                    'public': field.public,
+                    'value': self.extra.get(field.key, None)
+                })
+        return data
+    
     def get_extra_keys(self):
         form = self.get_custom_form()
         if form:
