@@ -1,6 +1,7 @@
+from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
-from django.db import models
+from django.contrib.sites.models import Site
 from jsonfield import JSONField
 from korform_planning.models import Event
 
@@ -42,7 +43,8 @@ class Member(models.Model):
         return reverse('member', kwargs={ 'pk': self.pk })
     
     def get_extra_keys(self):
-        form = self.group.site.config.current_term.form
+        site = Site.objects.get_current()
+        form = site.config.current_term.form
         if form:
             return [field.key for field in form.fields.all()]
         return []
