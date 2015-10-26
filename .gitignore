@@ -6,6 +6,7 @@ pip-selfcheck.json
 /lib
 /include
 /local
+local_settings.py
 
 # Caches / Components
 *.pyc

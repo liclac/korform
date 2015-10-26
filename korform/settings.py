@@ -269,3 +269,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'bower_components'),
 )
+
+# Allow a local_settings.py file to override settings
+try:
+    from local_settings import *
+except ImportError:
+    pass
