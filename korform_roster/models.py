@@ -18,8 +18,11 @@ class Member(models.Model):
     def get_events_missing_rsvp(self):
         return Event.objects.exclude(rsvps__member_id=self.id)
     
-    def get_badge_count(self):
-        return self.get_events_missing_rsvp().count()
+    def get_badge_count(self, request):
+        count = 0
+        if request.resolver_match.url_name != 'member_rsvp':
+            count += self.get_events_missing_rsvp().count()
+        return count
     
     def get_absolute_url(self):
         return reverse('member', kwargs={ 'pk': self.pk })
