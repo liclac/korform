@@ -18,12 +18,13 @@ class RSVPInline(admin.StackedInline):
 
 @admin.register(Member)
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'birthday')
-    list_filter = ('group', BirthYearListFilter)
+    list_display = ('first_name', 'last_name', 'birthday', 'site')
+    list_filter = ('group', BirthYearListFilter, 'site__name')
     search_fields = ('first_name', 'last_name')
     inlines = [RSVPInline]
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name')
+    list_display = ('first_name', 'last_name', 'site')
+    list_filter = ('site__name',)
     search_fields = ('first_name', 'last_name')

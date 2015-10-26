@@ -52,6 +52,7 @@ class MemberCreateView(CustomFormMixin, CreateView):
         return context
     
     def form_valid(self, form):
+        form.instance.site = self.request.site
         form.instance.group = self.get_group()
         form.instance.profile = self.request.user.profile
         return super(MemberCreateView, self).form_valid(form)
@@ -116,6 +117,7 @@ class ContactCreateView(CustomFormMixin, CreateView):
     form_spec_path = 'request.site.config.contact_form'
     
     def form_valid(self, form):
+        form.instance.site = self.request.site
         form.instance.profile = self.request.user.profile
         return super(ContactCreateView, self).form_valid(form)
 

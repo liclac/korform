@@ -6,6 +6,7 @@ from jsonfield import JSONField
 from korform_planning.models import Event
 
 class Member(models.Model):
+    site = models.ForeignKey(Site, related_name='members')
     profile = models.ForeignKey('korform_accounts.Profile', related_name='members')
     group = models.ForeignKey('korform_planning.Group', related_name='members')
     first_name = models.CharField(max_length=100)

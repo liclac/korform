@@ -28,7 +28,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.site.config.term_members|capfirst }} {% if members_badge %}<span class='badge'>{{ members_badge|safe }}</span>{% endif %} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            {% for member in request.user.profile.members.all %}
+            {% for member in request.user.profile.members|for_site:request.site %}
             <li><a href="{{ member.get_absolute_url }}">{{ member.get_full_name }} {% if member|has_badge:request %}<span class="badge">{{ member|badge_count:request }}</span>{% endif %}</a></li>
             {% empty %}
             <li class="disabled"><a>{% trans "None yet!" %}</a></li>
@@ -40,7 +40,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.site.config.term_contacts|capfirst }} {% if contacts_badge %}<span class='badge'>{{ contacts_badge|safe }}</span>{% endif %} <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            {% for contact in request.user.profile.contacts.all %}
+            {% for contact in request.user.profile.contacts|for_site:request.site %}
             <li><a href="{{ contact.get_absolute_url }}">{{ contact.get_full_name }}</a></li>
             {% empty %}
             <li class="disabled"><a>{% trans "None yet!" %}</a></li>
