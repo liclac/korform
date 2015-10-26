@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from .models import Member, RSVP
+from .models import Member, Contact, RSVP
 
 class BirthYearListFilter(admin.SimpleListFilter):
     title = _(u"Birthyear")
@@ -22,3 +22,8 @@ class MemberAdmin(admin.ModelAdmin):
     list_filter = ('group', BirthYearListFilter)
     search_fields = ('first_name', 'last_name')
     inlines = [RSVPInline]
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name')
+    search_fields = ('first_name', 'last_name')
