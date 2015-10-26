@@ -12,7 +12,7 @@ class Member(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     birthday = models.DateField()
-    extra = JSONField(default={})
+    extra = JSONField(default={}, blank=True)
     
     def get_full_name(self):
         return u"{0} {1}".format(self.first_name, self.last_name)
@@ -23,7 +23,7 @@ class Member(models.Model):
     def get_fields_missing_value(self, keys=[]):
         if not keys:
             keys = self.get_extra_keys()
-        return [ key for key in keys if key not in self.extra ]
+        return [ key for key in keys if key not in (self.extra or {}) ]
     
     def get_badge_count(self, request):
         count = 0
@@ -54,10 +54,11 @@ class Member(models.Model):
         return self.get_full_name()
 
 class Contact(models.Model):
+    site = models.ForeignKey(Site, related_name='contacts')
     profile = models.ForeignKey('korform_accounts.Profile', related_name='contacts')
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    extra = JSONField(default={})
+    extra = JSONField(default={}, blank=True)
     
     def get_full_name(self):
         return u"{0} {1}".format(self.first_name, self.last_name)
