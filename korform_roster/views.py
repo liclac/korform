@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView
 from django.views.generic.edit import CreateView, UpdateView
@@ -42,6 +43,9 @@ class MemberCreateView(CustomFormMixin, CreateView):
         form.instance.group = self.get_group()
         form.instance.profile = self.request.user.profile
         return super(MemberCreateView, self).form_valid(form)
+    
+    def get_success_url(self):
+        return reverse('member_rsvp', kwargs={'pk': self.object.pk})
 
 class MemberUpdateView(CustomFormMixin, UpdateView):
     model = Member
