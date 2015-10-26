@@ -11,3 +11,4 @@ class SiteConfig(models.Model):
     term_contacts = models.CharField(max_length=20, blank=False, default=u"contacts")
     
     current_term = models.ForeignKey('korform_planning.Term', related_name='current_for', null=True, blank=True)
+    contact_form = models.ForeignKey('korform_planning.Form', related_name='contact_form_for', null=True, blank=True)

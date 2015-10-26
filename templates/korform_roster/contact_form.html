@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n crispy_forms_tags markdown_deux_tags %}
+
+{% block title %}{% if object.pk %}{% trans "Edit" %} {{ contact.get_full_name }}{% else %}{% trans "New Contact" %}{% endif %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>{% if object.pk %}{% trans "Edit" %} {{ contact.get_full_name }}{% else %}{% trans "New Contact" %}{% endif %}</h1>
+</div>
+{% if request.site.config.contact_form.message %}
+  {{ request.site.config.contact_form.message|markdown:'trusted' }}
+  <hr />
+{% endif %}
+{% crispy form %}
+{% endblock %}

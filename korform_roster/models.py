@@ -30,6 +30,21 @@ class Member(models.Model):
     def __unicode__(self):
         return self.get_full_name()
 
+class Contact(models.Model):
+    profile = models.ForeignKey('korform_accounts.Profile', related_name='contacts')
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    extra = JSONField(default={})
+    
+    def get_full_name(self):
+        return u"{0} {1}".format(self.first_name, self.last_name)
+    
+    def get_absolute_url(self):
+        return reverse('contact', kwargs={ 'pk': self.pk })
+    
+    def __unicode__(self):
+        return self.get_full_name()
+
 class RSVP(models.Model):
     CHOICES = (
         (1, _(u"Yes")),

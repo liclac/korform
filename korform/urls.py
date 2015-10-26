@@ -21,7 +21,7 @@ from .views import index
 from korform_accounts.views import *
 from korform_accounts.forms import *
 from korform_planning.views import GroupView
-from korform_roster.views import MemberView, MemberPickGroupView, MemberCreateView, MemberUpdateView, MemberRSVPView
+from korform_roster.views import MemberView, MemberPickGroupView, MemberCreateView, MemberUpdateView, MemberRSVPView, ContactView, ContactUpdateView, ContactCreateView
 
 urlpatterns = [
     url(r'^$', index, name='index'),
@@ -31,6 +31,9 @@ urlpatterns = [
     url(r'^members/(?P<pk>[0-9]+)/$', MemberView.as_view(), name='member'),
     url(r'^members/(?P<pk>[0-9]+)/rsvp/$', MemberRSVPView.as_view(), name='member_rsvp'),
     url(r'^members/(?P<pk>[0-9]+)/edit/$', MemberUpdateView.as_view(), name='member_edit'),
+    url(r'^contacts/add/$', ContactCreateView.as_view(), name='contact_add'),
+    url(r'^contacts/(?P<pk>[0-9]+)/$', ContactView.as_view(), name='contact'),
+    url(r'^contacts/(?P<pk>[0-9]+)/edit/$', ContactUpdateView.as_view(), name='contact_edit'),
     url(r'^accounts/settings/$', SettingsView.as_view(), name='account_settings'),
     url(r'^accounts/register/$', RegistrationView.as_view(), name='registration_register'),
     url(r'^accounts/login/$', auth_views.login, {'template_name': 'registration/login.html', 'authentication_form': MyAuthenticationForm}, name='auth_login'),

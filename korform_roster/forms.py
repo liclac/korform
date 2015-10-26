@@ -5,9 +5,22 @@ from crispy_forms.helper import FormHelper, Layout
 from crispy_forms.layout import *
 from crispy_forms.bootstrap import *
 from korform_planning.models import FormField
-from .models import Member, RSVP
+from .models import Member, Contact, RSVP
 
-class MemberForm(forms.ModelForm):
+class CustomizableMixin(object):
+    extra_keys = []
+    
+    def add_custom_fields(self, form):
+        if not form:
+            return
+        
+        for field in form.fields.all():
+            self.fields[field.key] = field.create_field()
+            if field.key in self.instance.extra:
+                self.initial[field.key] = self.instance.extra[field.key]
+            self.extra_keys.append(field.key)
+
+class MemberForm(CustomizableMixin, forms.ModelForm):
     class Meta:
         model = Member
         fields = ('first_name', 'last_name', 'birthday')
@@ -17,13 +30,7 @@ class MemberForm(forms.ModelForm):
     
     def __init__(self, form, *args, **kwargs):
         super(MemberForm, self).__init__(*args, **kwargs)
-        
-        self.extra_keys = []
-        for field in form.fields.all():
-            self.fields[field.key] = field.create_field()
-            if field.key in self.instance.extra:
-                self.initial[field.key] = self.instance.extra[field.key]
-            self.extra_keys.append(field.key)
+        self.add_custom_fields(form)
         
         self.helper = FormHelper()
         self.helper.form_class = 'form-horizontal'
@@ -48,6 +55,30 @@ class MemberForm(forms.ModelForm):
         if commit:
             self.instance.save()
         return self.instance
+
+class ContactForm(CustomizableMixin, forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('first_name', 'last_name')
+    
+    def __init__(self, form, *args, **kwargs):
+        super(ContactForm, self).__init__(*args, **kwargs)
+        self.add_custom_fields(form)
+        
+        self.helper = FormHelper()
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-md-2'
+        self.helper.field_class = 'col-md-10'
+        
+        layout_fields = [
+            Field('first_name', autofocus=True),
+            'last_name',
+        ] + self.extra_keys + [
+            FormActions(
+                Submit('save', _(u"Save"), css_class='btn-default'),
+            ),
+        ]
+        self.helper.layout = Layout(*layout_fields)
 
 class RSVPForm(forms.ModelForm):
     class Meta:

@@ -4,14 +4,24 @@ from django.views.generic import TemplateView, DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from extra_views import ModelFormSetView
 from korform_planning.models import Group
-from .models import Member, RSVP
-from .forms import MemberForm, RSVPForm, RSVPFormSet, RSVPFormSetHelper
+from .models import Member, Contact, RSVP
+from .forms import MemberForm, ContactForm, RSVPForm, RSVPFormSet, RSVPFormSetHelper
 
 class CustomFormMixin(object):
+    form_spec_path = ''
+    
+    def get_form_spec(self):
+        assert len(self.form_spec_path) > 0
+        
+        val = self
+        for part in self.form_spec_path.split('.'):
+            val = getattr(val, part)
+        return val
+    
     def get_form(self, form_class=None):
-        f = self.request.site.config.current_term.form
-        kwargs = self.get_form_kwargs()
-        return MemberForm(f, **kwargs)
+        if not form_class:
+            form_class = self.get_form_class()
+        return form_class(self.get_form_spec(), **self.get_form_kwargs())
 
 
 
@@ -30,6 +40,8 @@ class MemberPickGroupView(TemplateView):
 class MemberCreateView(CustomFormMixin, CreateView):
     model = Member
     context_object_name = 'member'
+    form_class = MemberForm
+    form_spec_path = 'request.site.config.current_term.form'
     
     def get_group(self):
         return get_object_or_404(Group, slug=self.kwargs['group'])
@@ -50,6 +62,8 @@ class MemberCreateView(CustomFormMixin, CreateView):
 class MemberUpdateView(CustomFormMixin, UpdateView):
     model = Member
     context_object_name = 'member'
+    form_class = MemberForm
+    form_spec_path = 'request.site.config.current_term.form'
 
 class MemberRSVPView(ModelFormSetView):
     template_name = 'korform_roster/member_rsvp.html'
@@ -90,3 +104,23 @@ class MemberRSVPView(ModelFormSetView):
     
     def get_success_url(self):
         return self.get_member().get_absolute_url()
+
+class ContactView(DetailView):
+    model = Contact
+    context_object_name = 'contact'
+
+class ContactCreateView(CustomFormMixin, CreateView):
+    model = Contact
+    context_object_name = 'contact'
+    form_class = ContactForm
+    form_spec_path = 'request.site.config.contact_form'
+    
+    def form_valid(self, form):
+        form.instance.profile = self.request.user.profile
+        return super(ContactCreateView, self).form_valid(form)
+
+class ContactUpdateView(CustomFormMixin, UpdateView):
+    model = Contact
+    context_object_name = 'contact'
+    form_class = ContactForm
+    form_spec_path = 'request.site.config.contact_form'
