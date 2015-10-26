@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from extra_views import ModelFormSetView
+from korform_planning.models import Group
 from .models import Member, RSVP
 from .forms import MemberForm, RSVPForm, RSVPFormSet, RSVPFormSetHelper
 
