@@ -23,7 +23,11 @@ class MemberForm(forms.ModelForm):
                 'help_text': field.help_text,
                 'required': field.required,
             }
+            attrs = {
+                'placeholder': field.placeholder,
+            }
             f = cls(**kwargs)
+            f.widget.attrs.update(attrs)
             self.fields[field.key] = f
             if field.key in self.instance.extra:
                 self.initial[field.key] = self.instance.extra[field.key]
