@@ -25,12 +25,15 @@ class Member(models.Model):
     
     def get_badge_count(self, request):
         count = 0
+        url_name = request.resolver_match.url_name
+        url_pk = request.resolver_match.kwargs.get('pk', 0)
+        pk_match = unicode(self.pk) == url_pk
         
-        if request.resolver_match.url_name != 'member_rsvp':
+        if url_name != 'member_rsvp' or not pk_match:
             count += self.get_events_missing_rsvp().count()
         
         keys = self.get_extra_keys()
-        if request.resolver_match.url_name != 'member_edit':
+        if url_name != 'member_edit' or not pk_match:
             count += len(self.get_fields_missing_value(keys))
         
         return count
