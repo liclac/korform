@@ -181,6 +181,13 @@ CACHES = {
     }
 }
 
+# Default to hiredis if available, otherwise the pure-python parser
+try:
+    import hiredis
+    CACHES["default"]["OPTIONS"]["PARSER_CLASS"] = "redis.connection.HiredisParser"
+except ImportError:
+    pass
+
 # Sessions
 # https://docs.djangoproject.com/en/1.8/topics/http/sessions/
 
