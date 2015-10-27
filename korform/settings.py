@@ -168,6 +168,27 @@ DATABASES = {
 }
 
 
+# Cache
+# https://docs.djangoproject.com/en/1.8/topics/cache/
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+# Sessions
+# https://docs.djangoproject.com/en/1.8/topics/http/sessions/
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
+SESSION_CACHE_ALIAS = "default"
+
+
 
 # Grappelli (admin UI)
 # http://django-grappelli.readthedocs.org/en/latest/
