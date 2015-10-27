@@ -26,9 +26,8 @@ class ExtraDataMixin(object):
             return [field.key for field in form.fields.all()]
         return []
     
-    def get_fields_missing_value(self, keys=[]):
-        if not keys:
-            keys = self.get_extra_keys()
+    def get_fields_missing_value(self):
+        keys = self.get_extra_keys()
         return [ key for key in keys if key not in (self.extra or {}) ]
 
 class Member(ExtraDataMixin, models.Model):
@@ -57,11 +56,10 @@ class Member(ExtraDataMixin, models.Model):
         pk_match = unicode(self.pk) == url_pk
         
         if url_name != 'member_rsvp' or not pk_match:
-            count += self.get_events_missing_rsvp().count()
+            count += len(self.get_events_missing_rsvp())
         
-        keys = self.get_extra_keys()
         if url_name != 'member_edit' or not pk_match:
-            count += len(self.get_fields_missing_value(keys))
+            count += len(self.get_fields_missing_value())
         
         return count
     
