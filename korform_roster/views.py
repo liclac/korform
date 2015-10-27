@@ -77,7 +77,7 @@ class MemberRSVPView(ModelFormSetView):
         return get_object_or_404(Member, pk=self.kwargs['pk'])
     
     def get_events(self):
-        return self.get_member().get_events_missing_rsvp()
+        return self.get_member().events_missing_rsvp
     
     def get_factory_kwargs(self):
         kwargs = super(MemberRSVPView, self).get_factory_kwargs()

@@ -1,13 +1,30 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
+from django.utils.functional import cached_property
 from django.contrib.sites.models import Site
 from jsonfield import JSONField
 from korform_planning.models import Event
 
 class ExtraDataMixin(object):
+    @cached_property
+    def extra_data(self):
+        return self.get_extra_data()
+    
+    @cached_property
+    def extra_keys(self):
+        return self.get_extra_keys()
+    
+    @cached_property
+    def fields_missing_value(self):
+        return self.get_fields_missing_value()
+    
+    @cached_property
+    def custom_form(self):
+        return self.get_custom_form()
+    
     def get_extra_data(self):
-        form = self.get_custom_form()
+        form = self.custom_form
         data = []
         if form:
             for field in form.fields.all():
@@ -21,14 +38,13 @@ class ExtraDataMixin(object):
         return data
     
     def get_extra_keys(self):
-        form = self.get_custom_form()
+        form = self.custom_form
         if form:
             return [field.key for field in form.fields.all()]
         return []
     
     def get_fields_missing_value(self):
-        keys = self.get_extra_keys()
-        return [ key for key in keys if key not in (self.extra or {}) ]
+        return [ key for key in self.extra_keys if key not in (self.extra or {}) ]
 
 class Member(ExtraDataMixin, models.Model):
     site = models.ForeignKey(Site, related_name='members')
@@ -38,6 +54,10 @@ class Member(ExtraDataMixin, models.Model):
     last_name = models.CharField(max_length=100)
     birthday = models.DateField()
     extra = JSONField(default={}, blank=True)
+    
+    @cached_property
+    def events_missing_rsvp(self):
+        return self.get_events_missing_rsvp()
     
     def get_full_name(self):
         return u"{0} {1}".format(self.first_name, self.last_name)
@@ -56,10 +76,10 @@ class Member(ExtraDataMixin, models.Model):
         pk_match = unicode(self.pk) == url_pk
         
         if url_name != 'member_rsvp' or not pk_match:
-            count += len(self.get_events_missing_rsvp())
+            count += len(self.events_missing_rsvp)
         
         if url_name != 'member_edit' or not pk_match:
-            count += len(self.get_fields_missing_value())
+            count += len(self.fields_missing_value)
         
         return count
     

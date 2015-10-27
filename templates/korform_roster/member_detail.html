@@ -4,10 +4,10 @@
 {% block title %}{{ member.get_full_name }}{% endblock %}
 
 {% block content %}
-{% if member.get_events_missing_rsvp.count %}
+{% if member.events_missing_rsvp %}
 <div class="alert alert-danger"><strong>{% trans "Missing RSVPs!" %}</strong> {% trans "We don't know if you'll be there for some of your events." %} <a href="{% url 'member_rsvp' member.pk %}">{% trans "Click here to correct this." %}</a></div>
 {% endif %}
-{% if member.get_fields_missing_value %}
+{% if member.fields_missing_value %}
 <div class="alert alert-warning"><strong>{% trans "New fields added!" %}</strong> {% trans "Please have a look at them, edit and save to confirm that you have." %} <a href="{% url 'member_edit' member.pk %}">{% trans "Click here to edit your info." %}</a></div>
 {% endif %}
 <div class="page-header">
@@ -21,7 +21,7 @@
     <dl class="dl-horizontal">
       <dt>{% trans "Name" %}</dt>
       <dd>{{ member.get_full_name }}</dd>
-      {% for extra in member.get_extra_data %}
+      {% for extra in member.extra_data %}
         {% if extra.public %}
           <dt>{{ extra.label }}</dt>
           <dd>{{ extra.value }}</dd>

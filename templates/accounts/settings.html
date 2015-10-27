@@ -68,7 +68,7 @@
         </p>
       </div>
       <ul class="list-group">
-        {% for user in request.user.get_shared_users %}
+        {% for user in request.user.shared_users %}
           <a class="list-group-item">{{ user.get_full_name }}</a>
         {% empty %}
           <a class="list-group-item disabled">{% trans "No connected users." %}</a>
