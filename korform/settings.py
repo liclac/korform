@@ -248,7 +248,7 @@ def show_toolbar_callback(request):
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-CRISPY_FAIL_SILENTLY = not DEBUG
+CRISPY_FAIL_SILENTLY = True
 
 
 
@@ -308,3 +308,5 @@ except ImportError:
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
     EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emails')
+    
+    CRISPY_FAIL_SILENTLY = False
