@@ -200,12 +200,12 @@ GRAPPELLI_ADMIN_TITLE = u"Admin"
 # Email
 # https://docs.djangoproject.com/en/1.8/topics/email/
 
-# EMAIL_HOST = 'smtp.example.com'
-# EMAIL_PORT = 465
-# EMAIL_USE_SSL = True
-# EMAIL_USE_TLS = False
-# EMAIL_HOST_USER = 'myusername'
-# EMAIL_HOST_PASSWORD = 'mypassword'
+DEFAULT_FROM_EMAIL = "noreply@example.com"
+EMAIL_HOST = "localhost"
+EMAIL_PORT = 25
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = False
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 
 
