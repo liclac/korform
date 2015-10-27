@@ -306,7 +306,9 @@ except ImportError:
 
 # Debug settings
 if DEBUG:
+    # Send emails to the 'emails' folder
     EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
     EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emails')
     
+    # Loudly complain about form errors
     CRISPY_FAIL_SILENTLY = False
