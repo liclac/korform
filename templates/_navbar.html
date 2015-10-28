@@ -18,7 +18,7 @@
         {% endfor %}
         {% if request.user.is_authenticated %}
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Matriklar <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans "Sheets" %} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             {% for group in all_groups %}
             <li><a href="{{ group.get_absolute_url }}">{{ group.name }} ({{ group.code }})</a></li>
