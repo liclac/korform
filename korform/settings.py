@@ -95,6 +95,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.core.context_processors.request',
+                'korform_sites.context_processors.site_data',
                 'korform_roster.context_processors.user_data',
             ],
         },
