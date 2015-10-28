@@ -70,8 +70,8 @@ class Member(ExtraDataMixin, models.Model):
     
     def get_badge_count(self, request):
         count = 0
-        url_name = request.resolver_match.url_name
-        url_pk = request.resolver_match.kwargs.get('pk', 0)
+        url_name = request.resolver_match.url_name if request.resolver_match else None
+        url_pk = request.resolver_match.kwargs.get('pk', 0) if request.resolver_match else None
         pk_match = unicode(self.pk) == url_pk
         
         if url_name != 'member_rsvp' or not pk_match:
