@@ -23,25 +23,24 @@ class ExtraDataMixin(object):
     def custom_form(self):
         return self.get_custom_form()
     
+    @cached_property
+    def custom_form_fields(self):
+        return self.custom_form.fields.all() if self.custom_form else []
+    
     def get_extra_data(self):
-        form = self.custom_form
         data = []
-        if form:
-            for field in form.fields.all():
-                data.append({
-                    'key': field.key,
-                    'label': field.label,
-                    'help_text': field.help_text,
-                    'public': field.public,
-                    'value': self.extra.get(field.key, None)
-                })
+        for field in self.custom_form_fields:
+            data.append({
+                'key': field.key,
+                'label': field.label,
+                'help_text': field.help_text,
+                'public': field.public,
+                'value': self.extra.get(field.key, None)
+            })
         return data
     
     def get_extra_keys(self):
-        form = self.custom_form
-        if form:
-            return [field.key for field in form.fields.all()]
-        return []
+        return [field.key for field in self.custom_form_fields]
     
     def get_fields_missing_value(self):
         return [ key for key in self.extra_keys if key not in (self.extra or {}) ]
