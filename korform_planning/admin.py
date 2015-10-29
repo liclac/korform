@@ -68,6 +68,8 @@ class EventAdmin(admin.ModelAdmin):
         'groups',
     )
     
+    readonly_fields = ('position',)
+    
     search_fields = ('name', 'subtitle', 'info', 'groups__code')
 
 
