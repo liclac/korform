@@ -10,7 +10,7 @@ class Profile(models.Model):
       return u"Profile for {0}".format(u', '.join(usernames))
 
 class User(AbstractUser):
-    profile = models.ForeignKey(Profile, related_name='users', on_delete=models.PROTECT, null=True)
+    profile = models.ForeignKey(Profile, related_name='users', on_delete=models.PROTECT, null=True, help_text=u"Multiple users may be associated with a single profile. These users will have access to the same data, but with different logins.")
     
     @cached_property
     def shared_users(self):

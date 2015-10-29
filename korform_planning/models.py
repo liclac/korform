@@ -10,11 +10,11 @@ class Group(models.Model):
         ordering = ['sort']
     
     site = models.ForeignKey(Site, related_name='groups')
-    name = models.CharField(max_length=100)
-    code = models.CharField(max_length=20)
-    slug = models.SlugField(max_length=20)
-    sort = models.CharField(max_length=10)
-    description = models.TextField(blank=True)
+    name = models.CharField(max_length=100, help_text=u"The full name of the group.")
+    code = models.CharField(max_length=20, help_text=u"A shorthand \"code name\" for the group.")
+    slug = models.SlugField(max_length=20, help_text=u"Normalized identifier used in URLs.")
+    sort = models.CharField(max_length=10, help_text=u"Groups are sorted (alphabetically) by this in menus. Not shown to users.")
+    description = models.TextField(blank=True, help_text=u"If given, will be displayed on the group's page. Allows Markdown.")
     
     def get_absolute_url(self):
         return reverse('group', kwargs={'slug': self.slug})
@@ -23,11 +23,11 @@ class Group(models.Model):
         return self.code
 
 class Term(models.Model):
-    site = models.ForeignKey(Site, related_name='terms')
-    name = models.CharField(max_length=100)
+    site = models.ForeignKey(Site, related_name='terms', help_text=u"Remember to also mark a term as the \"current\" one, in the site's configuration.")
+    name = models.CharField(max_length=100, help_text=u"Not visible to users.")
     groups = models.ManyToManyField(Group, related_name='terms')
-    form = models.ForeignKey('Form', related_name='term', null=True, blank=True)
-    sheet = models.ForeignKey('Sheet', related_name='sheet', null=True, blank=True)
+    form = models.ForeignKey('Form', related_name='term', null=True, blank=True, help_text=u"A Form allows you to add custom input fields to members. Three fields are hardcoded: <em>first name</em>, <em>last name</em> and <em>birthday</em>.<br />If none is given, only these three are displayed.")
+    sheet = models.ForeignKey('Sheet', related_name='sheet', null=True, blank=True, help_text=u"A Sheet allows you to customize the presentation of group sheets.<br />If none is given, sheet presentation is inferred from the Form.")
     
     def __unicode__(self):
         return self.name
@@ -39,11 +39,11 @@ class Event(models.Model):
     term = models.ForeignKey(Term, related_name='events')
     groups = models.ManyToManyField(Group, related_name='events')
     name = models.CharField(max_length=100)
-    start = models.DateTimeField(null=True, blank=True)
-    end = models.DateTimeField(null=True, blank=True)
-    subtitle = models.CharField(max_length=100, blank=True)
-    info = models.TextField(blank=True)
-    no_answer = models.BooleanField(default=False)
+    start = models.DateTimeField(null=True, blank=True, help_text=u"To specify only the date, leave the time to 00:00.")
+    end = models.DateTimeField(null=True, blank=True, help_text=u"To specify only the date, leave the time to 00:00.")
+    subtitle = models.CharField(max_length=100, blank=True, help_text=u"Displayed along with the duration. Can be used to describe durations not expressable with a simple start/end.")
+    info = models.TextField(blank=True, help_text=u"Displayed under the subtitle. Allows Markdown.")
+    no_answer = models.BooleanField(default=False, help_text=u"This event should merely be noted on members' calendars, but no RSVP is requested. [NOT YET FUNCTIONAL]")
     position = models.PositiveIntegerField(null=True)
     
     def get_subtitle(self):
@@ -62,8 +62,8 @@ class Event(models.Model):
         return u"{0} ({1})".format(self.name, u', '.join(group_codes))
 
 class Form(models.Model):
-    name = models.CharField(max_length=100)
-    message = models.TextField(blank=True)
+    name = models.CharField(max_length=100, help_text=u"Not shown to users.")
+    message = models.TextField(blank=True, help_text=u"Displayed at the top of the form. Allows Markdown.")
     
     def __unicode__(self):
         return self.name
@@ -86,15 +86,15 @@ class FormField(models.Model):
     
     form = models.ForeignKey(Form, related_name='fields')
     position = models.PositiveIntegerField(null=True)
-    key = models.CharField(max_length=20)
+    key = models.CharField(max_length=20, help_text=u"Unique key used to store the data. Choose carefully; if you change it, old data will be disassociated from the field, but still remain with the old key!")
     
     label = models.CharField(max_length=100)
     field = models.CharField(max_length=100, choices=FIELD_CHOICES)
     placeholder = models.CharField(max_length=100, blank=True)
     help_text = models.TextField(blank=True)
-    required = models.BooleanField(default=True)
+    required = models.BooleanField(default=True, help_text=u"For checkbox fields, this requires it to be checked.")
     
-    public = models.BooleanField(default=True)
+    public = models.BooleanField(default=True, help_text=u"Public fields are displayed on public detail pages, and included in sheets by default.")
     
     def create_field(self):
         f_cls_name, w_cls_name, attrs = FormField.FIELDS[self.field]
@@ -114,7 +114,7 @@ class FormField(models.Model):
         return self.label
 
 class Sheet(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, help_text=u"Not visible to users.")
     
     @classmethod
     def get_default_columns(cls):
