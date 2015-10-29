@@ -1,4 +1,5 @@
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _
 from django.utils.module_loading import import_string
 from django.db import models
 from django.contrib.sites.models import Site
@@ -114,6 +115,17 @@ class FormField(models.Model):
 
 class Sheet(models.Model):
     name = models.CharField(max_length=100)
+    
+    @classmethod
+    def columns_from_form(cls, form):
+        defaults = [
+            SheetColumn(position=0, label=_(u"Name"), key=u"first_name;last_name", format_string=u"{0} {1}"),
+            SheetColumn(position=1, label=_(u"Birthday"), key=u"birthday"),
+        ]
+        return defaults + [
+            SheetColumn(position=len(defaults) + i, label=field.label, key=field.key)
+            for i, field in enumerate(form.fields.filter(public=True))
+        ]
     
     def __unicode__(self):
         return self.name

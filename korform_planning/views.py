@@ -1,5 +1,5 @@
 from django.views.generic import DetailView
-from .models import Group
+from .models import Group, Sheet
 
 class GroupView(DetailView):
     model = Group
@@ -8,11 +8,9 @@ class GroupView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(GroupView, self).get_context_data(**kwargs)
         
-        sheet = self.get_sheet()
-        columns = sheet.columns.all()
+        columns = self.get_columns()
         members = self.object.members.all()
         
-        context['sheet'] = sheet
         context['columns'] = columns
         context['members'] = members
         context['rows'] = [
@@ -29,5 +27,6 @@ class GroupView(DetailView):
         
         return context
     
-    def get_sheet(self):
-        return self.request.site.config.current_term.sheet
+    def get_columns(self):
+        term = self.request.site.config.current_term
+        return term.sheet.columns.all() if term.sheet_id else Sheet.columns_from_form(term.form)
