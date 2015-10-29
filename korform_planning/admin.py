@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 from grappelli.forms import GrappelliSortableHiddenMixin
-from .models import Group, Term, Event, Form, FormField
+from .models import Group, Term, Event, Form, FormField, Sheet, SheetColumn
 
 @admin.register(Group)
 class GroupAdmin(admin.ModelAdmin):
@@ -111,3 +111,13 @@ class FormFieldInline(GrappelliSortableHiddenMixin, admin.StackedInline):
 @admin.register(Form)
 class FormAdmin(admin.ModelAdmin):
     inlines = [FormFieldInline]
+
+
+
+class SheetColumnInline(GrappelliSortableHiddenMixin, admin.StackedInline):
+    model = SheetColumn
+    sortable_field_name = 'position'
+
+@admin.register(Sheet)
+class SheetAdmin(admin.ModelAdmin):
+    inlines = [SheetColumnInline]

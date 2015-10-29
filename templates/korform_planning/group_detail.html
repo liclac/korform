@@ -13,9 +13,24 @@
 <hr />
 {% endif %}
 
-<div class="list-group">
-  {% for member in group.members.all %}
-  <a class="list-group-item" href="{{ member.get_absolute_url }}">{{ member.get_full_name }}</a>
-  {% endfor %}
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      {% for column in columns %}
+      <th>{{ column.label }}</th>
+      {% endfor %}
+      <th width="1">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      {% for column in row.columns %}
+      <td>{{ column.value }}</td>
+      {% endfor %}
+      <td><a class="detail-arrow" href="{{ row.member.get_absolute_url }}">&rarr;</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
