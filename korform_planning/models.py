@@ -117,11 +117,15 @@ class Sheet(models.Model):
     name = models.CharField(max_length=100)
     
     @classmethod
-    def columns_from_form(cls, form):
-        defaults = [
+    def get_default_columns(cls):
+        return [
             SheetColumn(position=0, label=_(u"Name"), key=u"first_name;last_name", format_string=u"{0} {1}"),
             SheetColumn(position=1, label=_(u"Birthday"), key=u"birthday"),
         ]
+    
+    @classmethod
+    def columns_from_form(cls, form):
+        defaults = cls.get_default_columns()
         return defaults + [
             SheetColumn(position=len(defaults) + i, label=field.label, key=field.key)
             for i, field in enumerate(form.fields.filter(public=True))
