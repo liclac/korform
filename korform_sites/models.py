@@ -12,3 +12,8 @@ class SiteConfig(models.Model):
     
     current_term = models.ForeignKey('korform_planning.Term', related_name='current_for', null=True, blank=True)
     contact_form = models.ForeignKey('korform_planning.Form', related_name='contact_form_for', null=True, blank=True)
+
+def clear_site_cache(instance, created, raw, **kwargs):
+    Site.objects.clear_cache()
+
+models.signals.post_save.connect(clear_site_cache, sender=SiteConfig, dispatch_uid='siteconfig_clear_cache')

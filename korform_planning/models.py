@@ -156,3 +156,11 @@ class SheetColumn(models.Model):
     
     def __unicode__(self):
         return self.label or self.key or "Field #{0}".format(self.position)
+
+
+
+def clear_site_cache(instance, created, raw, **kwargs):
+    Site.objects.clear_cache()
+
+models.signals.post_save.connect(clear_site_cache, sender=Term, dispatch_uid='term_clear_cache')
+models.signals.post_save.connect(clear_site_cache, sender=Group, dispatch_uid='group_clear_cache')
