@@ -14,10 +14,10 @@ class TestGroupView(TestCase):
         self.profile = Profile.objects.create()
         
         self.group = Group.objects.create(site=self.site, name=u"Group", code=u'g', slug=u'g', sort=u'g')
-        self.group.members = [
-            Member(site=self.site, profile=self.profile,
-                first_name=u"John", last_name=u"Smith", birthday=datetime.date(2000, 12, 24)),
-        ]
+        self.member = Member.objects.create(group=self.group, site=self.site, profile=self.profile,
+            first_name=u"John", last_name=u"Smith", birthday=datetime.date(2000, 12, 24))
+        self.member2 = Member.objects.create(group=self.group, site=self.site, profile=self.profile,
+            first_name=u"John", last_name=u"Doe", birthday=datetime.date(2001, 10, 11))
         
         self.term = Term.objects.create(site=self.site, name=u"Test Term")
         self.term.groups=[self.group]
@@ -36,6 +36,7 @@ class TestGroupView(TestCase):
         
         self.client = Client()
     
-    def test_defaults(self):
+    def test_members(self):
         res = self.client.get(reverse('group', kwargs={'slug': 'g'}))
-        self.assertEqual(res.status_code, 200)
+        self.assertEqual(200, res.status_code)
+        self.assertEqual([self.member2.pk, self.member.pk], [m.pk for m in res.context['members']])
