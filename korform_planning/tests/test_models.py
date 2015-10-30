@@ -175,6 +175,11 @@ class TestSheetColumn(TestCase):
         self.column.default = u"-"
         self.assertEqual(u"-", self.column.render(self.member))
     
+    def test_render_out_of_bounds(self):
+        self.column.key = 'first_name'
+        self.column.format_string = u"{0} {1}."
+        self.assertEqual(u"John .", self.column.render(self.member))
+    
     def test_render_space(self):
         self.column.format_string = u" "
         self.assertEqual(u"", self.column.render(self.member))

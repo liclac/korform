@@ -3,7 +3,7 @@ from django.utils.translation import ugettext as _
 from django.utils.module_loading import import_string
 from django.db import models
 from django.contrib.sites.models import Site
-from .util import format_datetime, format_datetime_diff
+from .util import FieldFormatter, format_datetime, format_datetime_diff
 
 class Group(models.Model):
     class Meta:
@@ -156,7 +156,9 @@ class SheetColumn(models.Model):
         }
         kwargs.update(member.extra)
         args = [ kwargs.get(key.strip(), '') for key in self.key.split(',') ]
-        return self.format_string.format(*args, **kwargs).strip() or self.default
+        formatter = FieldFormatter()
+        value = formatter.vformat(self.format_string, args, kwargs)
+        return value.strip() or self.default
     
     def __unicode__(self):
         return self.label or self.key or "Field #{0}".format(self.position)

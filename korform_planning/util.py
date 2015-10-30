@@ -1,3 +1,14 @@
+import string
+
+class FieldFormatter(string.Formatter):
+    def get_value(self, key, args, kwargs):
+        value = None
+        try:
+            value = super(FieldFormatter, self).get_value(key, args, kwargs)
+        except IndexError, KeyError:
+            pass
+        return value if value is not None else u""
+
 date_format = "%b %d"
 time_format = "%H:%M"
 full_format = date_format + " " + time_format
