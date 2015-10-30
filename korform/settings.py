@@ -31,6 +31,12 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# Detect test environments
+import sys
+
+TESTING = 'test' in sys.argv
+
+
 # Application definition
 
 INSTALLED_APPS = (

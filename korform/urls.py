@@ -42,6 +42,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls), name='admin'),
 ]
 
-if settings.DEBUG:
+if settings.DEBUG or settings.TESTING:
     import debug_toolbar
     urlpatterns += [ url(r'^__debug__/', include(debug_toolbar.urls)) ]
