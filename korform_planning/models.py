@@ -155,7 +155,7 @@ class SheetColumn(models.Model):
             'group_code': member.group.code,
         }
         kwargs.update(member.extra)
-        args = [ kwargs[key.strip()] for key in self.key.split(',') ]
+        args = [ kwargs.get(key.strip(), '') for key in self.key.split(',') ]
         return self.format_string.format(*args, **kwargs)
     
     def __unicode__(self):
