@@ -156,7 +156,7 @@ class SheetColumn(models.Model):
         }
         kwargs.update(member.extra)
         args = [ kwargs.get(key.strip(), '') for key in self.key.split(',') ]
-        return self.format_string.format(*args, **kwargs)
+        return self.format_string.format(*args, **kwargs).strip() or self.default
     
     def __unicode__(self):
         return self.label or self.key or "Field #{0}".format(self.position)
