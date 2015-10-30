@@ -119,7 +119,7 @@ class Sheet(models.Model):
     @classmethod
     def get_default_columns(cls):
         return [
-            SheetColumn(position=0, label=_(u"Name"), key=u"first_name;last_name", format_string=u"{0} {1}"),
+            SheetColumn(position=0, label=_(u"Name"), key=u"first_name,last_name", format_string=u"{0} {1}"),
             SheetColumn(position=1, label=_(u"Birthday"), key=u"birthday"),
         ]
     
