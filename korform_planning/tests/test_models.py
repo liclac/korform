@@ -191,12 +191,10 @@ class TestSheetColumn(TestCase):
     
     def test_render_multiple_keys(self):
         self.column.key = 'first_name,last_name'
-        self.column.format_string = u"{0} {1}"
         self.assertEqual(u"John Smith", self.column.render(self.member))
     
     def test_render_multiple_keys_with_spaces(self):
         self.column.key = 'first_name, last_name'
-        self.column.format_string = u"{0} {1}"
         self.assertEqual(u"John Smith", self.column.render(self.member))
     
     def test_render_no_key(self):
