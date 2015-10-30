@@ -9,7 +9,7 @@ class GroupView(DetailView):
         context = super(GroupView, self).get_context_data(**kwargs)
         
         columns = self.get_columns()
-        members = self.object.members.all()
+        members = self.object.members.order_by('last_name', 'first_name').all()
         
         context['columns'] = columns
         context['members'] = members
