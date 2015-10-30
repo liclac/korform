@@ -4,7 +4,7 @@ from django.test import TestCase
 from django.contrib.sites.models import Site
 from korform_accounts.models import Profile
 from korform_roster.models import Member
-from .models import Group, Term, Event, Form, FormField, Sheet, SheetColumn
+from korform_planning.models import Group, Term, Event, Form, FormField, Sheet, SheetColumn
 
 class TestEvent(TestCase):
     def setUp(self):
