@@ -2,7 +2,9 @@ import datetime
 from django import forms
 from django.test import TestCase
 from django.contrib.sites.models import Site
-from .models import Term, Event, Form, FormField
+from korform_accounts.models import Profile
+from korform_roster.models import Member
+from .models import Group, Term, Event, Form, FormField, Sheet, SheetColumn
 
 class TestEvent(TestCase):
     def setUp(self):
@@ -86,3 +88,73 @@ class TestFormField(TestCase):
         f = self.field.create_field()
         self.assertIsInstance(f, forms.BooleanField)
         self.assertIsInstance(f.widget, forms.CheckboxInput)
+
+class TestSheetColumn(TestCase):
+    def setUp(self):
+        self.site = Site.objects.create(domain='google.com', name=u"Google")
+        self.profile = Profile.objects.create()
+        self.group = Group.objects.create(site=self.site, name=u"Group", code=u"g", slug=u"g", sort=u"g")
+        self.member = Member.objects.create(
+            site=self.site, profile=self.profile, group=self.group,
+            first_name=u"John", last_name=u"Smith", birthday=datetime.date(2000, 12, 24),
+            extra={ u'key': u'value' }
+        )
+        self.sheet = Sheet.objects.create(name=u"Test Sheet")
+        self.column = SheetColumn.objects.create(sheet=self.sheet, label=u"Label")
+    
+    def test_render_first_name(self):
+        self.column.key = 'first_name'
+        self.assertEqual(u"John", self.column.render(self.member))
+    
+    def test_render_last_name(self):
+        self.column.key = 'last_name'
+        self.assertEqual(u"Smith", self.column.render(self.member))
+    
+    def test_render_birthday(self):
+        self.column.key = 'birthday'
+        self.assertEqual(u"2000-12-24", self.column.render(self.member))
+    
+    def test_render_group_name(self):
+        self.column.key = 'group_name'
+        self.assertEqual(u"Group", self.column.render(self.member))
+    
+    def test_render_group_code(self):
+        self.column.key = 'group_code'
+        self.assertEqual(u"g", self.column.render(self.member))
+    
+    def test_render_extra_key(self):
+        self.column.key = 'key'
+        self.assertEqual(u"value", self.column.render(self.member))
+    
+    def test_render_invalid_key(self):
+        self.column.key = 'invalid_key'
+        self.assertEqual(u"", self.column.render(self.member))
+    
+    def test_render_invalid_key_default(self):
+        self.column.key = 'invalid_key'
+        self.column.default = u"-"
+        self.assertEqual(u"-", self.column.render(self.member))
+    
+    def test_render_space(self):
+        self.column.format_string = u" "
+        self.assertEqual(u"", self.column.render(self.member))
+    
+    def test_render_space_default(self):
+        self.column.format_string = u" "
+        self.column.default = u"-"
+        self.assertEqual(u"-", self.column.render(self.member))
+    
+    def test_render_multiple_keys(self):
+        self.column.key = 'first_name,last_name'
+        self.column.format_string = u"{0} {1}"
+        self.assertEqual(u"John Smith", self.column.render(self.member))
+    
+    def test_render_multiple_keys_with_spaces(self):
+        self.column.key = 'first_name, last_name'
+        self.column.format_string = u"{0} {1}"
+        self.assertEqual(u"John Smith", self.column.render(self.member))
+    
+    def test_render_no_key(self):
+        self.column.key = ''
+        self.column.format_string = u"{first_name} {last_name}"
+        self.assertEqual(u"John Smith", self.column.render(self.member))
