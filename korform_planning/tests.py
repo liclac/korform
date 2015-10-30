@@ -89,6 +89,46 @@ class TestFormField(TestCase):
         self.assertIsInstance(f, forms.BooleanField)
         self.assertIsInstance(f.widget, forms.CheckboxInput)
 
+class TestSheet(TestCase):
+    def setUp(self):
+        self.site = Site.objects.create(domain='google.com', name=u"Google")
+        self.profile = Profile.objects.create()
+        self.group = Group.objects.create(site=self.site, name=u"Group", code=u"g", slug=u"g", sort=u"g")
+        self.member = Member.objects.create(
+            site=self.site, profile=self.profile, group=self.group,
+            first_name=u"John", last_name=u"Smith", birthday=datetime.date(2000, 12, 24)
+        )
+        self.form = Form.objects.create(name=u"Test Form")
+    
+    def test_default_columns(self):
+        cols = Sheet.get_default_columns()
+        self.assertEqual(2, len(cols))
+        self.assertEqual(u"John Smith", cols[0].render(self.member))
+        self.assertEqual(u"2000-12-24", cols[1].render(self.member))
+    
+    def test_default_columns_included(self):
+        cols = Sheet.columns_from_form(self.form)
+        self.assertEqual(2, len(cols))
+        self.assertEqual(u"John Smith", cols[0].render(self.member))
+        self.assertEqual(u"2000-12-24", cols[1].render(self.member))
+    
+    def test_column_positions(self):
+        self.form.fields = [ FormField(label=u"Col 1"), FormField(label=u"Col 2") ]
+        cols = Sheet.columns_from_form(self.form)
+        self.assertEqual([0, 1, 2, 3], [col.position for col in cols])
+    
+    def test_column_attributes(self):
+        self.form.fields = [ FormField(label=u"Label", key='key') ]
+        cols = Sheet.columns_from_form(self.form)
+        self.assertEqual(u"Label", cols[2].label)
+        self.assertEqual('key', cols[2].key)
+    
+    def test_column_public_respected(self):
+        self.form.fields = [ FormField(label=u"Public"), FormField(label=u"Private", public=False) ]
+        cols = Sheet.columns_from_form(self.form)
+        self.assertEqual(3, len(cols))
+        self.assertEqual(u"Public", cols[2].label)
+
 class TestSheetColumn(TestCase):
     def setUp(self):
         self.site = Site.objects.create(domain='google.com', name=u"Google")
