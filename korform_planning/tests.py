@@ -1,7 +1,8 @@
 import datetime
+from django import forms
 from django.test import TestCase
 from django.contrib.sites.models import Site
-from .models import Term, Event
+from .models import Term, Event, Form, FormField
 
 class TestEvent(TestCase):
     def setUp(self):
@@ -43,4 +44,45 @@ class TestEvent(TestCase):
     def test_subtitle_with_start_and_subtitle(self):
         self.event.start = datetime.datetime(2000,12,24,13,37)
         self.event.subtitle = u"Subtitle"
-        self.assertEqual(u"Dec 24 13:37, Subtitle", self.event.get_subtitle())
+        self.assertEqual(self.event.get_subtitle(), u"Dec 24 13:37, Subtitle")
+
+class TestFormField(TestCase):
+    def setUp(self):
+        self.form = Form(name=u"Test Form")
+        self.field = FormField(
+            form=self.form, key='key', field='textfield',
+            label=u"Label", help_text=u"Help text", placeholder=u"Placeholder",
+        )
+    
+    def test_create_field(self):
+        f = self.field.create_field()
+        self.assertEqual(f.label, u"Label")
+        self.assertEqual(f.help_text, u"Help text")
+        self.assertEqual(f.widget.attrs['placeholder'], u"Placeholder")
+    
+    def test_create_field_respects_required(self):
+        self.field.required = True
+        f = self.field.create_field()
+        self.assertEqual(True, f.required)
+        
+        self.field.required = False
+        f = self.field.create_field()
+        self.assertEqual(False, f.required)
+    
+    def test_create_field_textfield(self):
+        self.field.field = 'textfield'
+        f = self.field.create_field()
+        self.assertIsInstance(f, forms.CharField)
+        self.assertIsInstance(f.widget, forms.TextInput)
+    
+    def test_create_field_textarea(self):
+        self.field.field = 'textarea'
+        f = self.field.create_field()
+        self.assertIsInstance(f, forms.CharField)
+        self.assertIsInstance(f.widget, forms.Textarea)
+    
+    def test_create_field_checkbox(self):
+        self.field.field = 'checkbox'
+        f = self.field.create_field()
+        self.assertIsInstance(f, forms.BooleanField)
+        self.assertIsInstance(f.widget, forms.CheckboxInput)
