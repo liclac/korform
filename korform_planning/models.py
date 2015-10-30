@@ -141,7 +141,7 @@ class SheetColumn(models.Model):
     sheet = models.ForeignKey(Sheet, related_name='columns')
     position = models.PositiveIntegerField(null=True)
     
-    label = models.CharField(max_length=100, blank=True)
+    label = models.CharField(max_length=100)
     key = models.CharField(max_length=255, blank=True, help_text=u"You can list multiple keys, separated by \",\". All custom keys are available, along with: <strong>first_name</strong>, <strong>last_name</strong>, <strong>birthday</strong>, <strong>group_name</strong>, <strong>group_code</strong>.")
     format_string = models.TextField(blank=True, help_text=u"A <a href=\"https://docs.python.org/2/library/string.html#string-formatting\">format()</a> string. If <em>key</em> is given, its value is passed as {0}, additional keys as {1}, {2}, etc. All fields available in <em>key</em> are available.<br />If not given, all listed keys will be printed, separated by spaces.")
     default = models.CharField(max_length=100, blank=True, help_text=u"Displayed instead of an empty cell.")
