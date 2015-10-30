@@ -29,8 +29,9 @@ class GroupView(DetailView):
     
     def get_columns(self):
         term = self.request.site.config.current_term
-        if term.sheet_id:
-            return term.sheet.columns.all()
-        elif term.form_id:
-            return Sheet.columns_from_form(term.form)
+        if term:
+            if term.sheet_id:
+                return term.sheet.columns.all()
+            elif term.form_id:
+                return Sheet.columns_from_form(term.form)
         return Sheet.get_default_columns()
