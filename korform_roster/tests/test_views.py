@@ -55,3 +55,17 @@ class TestMemberPickGroupView(MemberViewSetUpMixin, TestCase):
         res = self.client.get(reverse('member_add'))
         self.assertEqual(200, res.status_code)
         self.assertEqual([], res.context['groups'])
+
+class TestMemberCreateView(MemberViewSetUpMixin, TestCase):
+    def test_access(self):
+        res = self.client.get(reverse('member_add2', kwargs={'group': 'g'}))
+        self.assertEqual(200, res.status_code)
+        self.assertEqual(self.group.pk, res.context['group'].pk)
+    
+    def test_nonexistent(self):
+        res = self.client.get(reverse('member_add2', kwargs={'group': 'gg'}))
+        self.assertEqual(404, res.status_code)
+    
+    def test_inactive(self):
+        res = self.client.get(reverse('member_add2', kwargs={'group': 'g3'}))
+        self.assertEqual(404, res.status_code)
