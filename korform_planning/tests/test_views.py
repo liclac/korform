@@ -47,27 +47,29 @@ class TestGroupView(TestCase):
         
         self.client = Client()
     
-    def test_members(self):
+    def test_access(self):
         res = self.client.get(reverse('group', kwargs={'slug': 'g'}))
         self.assertEqual(200, res.status_code)
+        self.assertEqual(self.group.pk, res.context['group'].pk)
         self.assertEqual([self.member2.pk, self.member.pk], [m.pk for m in res.context['members']])
+    
+    def test_nonexistent(self):
+        res = self.client.get(reverse('group', kwargs={'slug': 'aaaa'}))
+        self.assertEqual(404, res.status_code)
+    
+    def test_inactive(self):
+        self.term.groups = []
+        self.term.save()
+        
+        res = self.client.get(reverse('group', kwargs={'slug': 'g'}))
+        self.assertEqual(404, res.status_code)
     
     def test_no_term(self):
         self.site.config.current_term = None
         self.site.config.save()
         
         res = self.client.get(reverse('group', kwargs={'slug': 'g'}))
-        self.assertEqual(200, res.status_code)
-        
-        self.assertEqual(2, len(res.context['columns']))
-        self.assertEqual(u"Name", res.context['columns'][0].label)
-        self.assertEqual(u"Birthday", res.context['columns'][1].label)
-        
-        self.assertEqual(u"John Doe", res.context['rows'][0]['columns'][0]['value'])
-        self.assertEqual(u"2001-10-11", res.context['rows'][0]['columns'][1]['value'])
-        
-        self.assertEqual(u"John Smith", res.context['rows'][1]['columns'][0]['value'])
-        self.assertEqual(u"2000-12-24", res.context['rows'][1]['columns'][1]['value'])
+        self.assertEqual(404, res.status_code)
     
     def test_term_no_form_or_sheet(self):
         res = self.client.get(reverse('group', kwargs={'slug': 'g'}))
