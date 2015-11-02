@@ -2,7 +2,7 @@ import datetime
 from django.test import TestCase
 from django.contrib.sites.models import Site
 from korform_accounts.models import Profile
-from korform_planning.models import Group
+from korform_planning.models import Group, Term, Form, FormField
 from .models import Member, RSVP
 
 class TestMember(TestCase):
@@ -10,13 +10,34 @@ class TestMember(TestCase):
         self.site = Site.objects.create(domain=u"google.com", name=u"Google")
         self.group = Group.objects.create(site=self.site, name=u"Group", code=u"g", slug=u"g", sort=u"g")
         
+        self.form = Form.objects.create(name=u"Test Form")
+        self.form.fields = [
+            FormField(position=0, key='key', label=u"Label", field='textfield', help_text=u"Help text"),
+        ]
+        self.term = Term.objects.create(site=self.site, name=u"Test Term", form=self.form)
+        self.term.groups = [self.group]
+        
+        self.site.config.current_term = self.term
+        self.site.config.save()
+        
         self.profile = Profile.objects.create()
-        self.john_smith = Member.objects.create(
+        self.member = Member.objects.create(
             site=self.site, profile=self.profile, group=self.group,
             first_name=u"John", last_name=u"Smith",
             birthday=datetime.datetime(2000,12,24),
+            extra={ 'key': u"Value" }
         )
     
     def test_full_name(self):
-        '''get_full_name() should work as expected.'''
-        self.assertEqual(self.john_smith.get_full_name(), u"John Smith")
+        self.assertEqual(self.member.get_full_name(), u"John Smith")
+    
+    def test_get_extra_data(self):
+        self.assertEqual(self.member.get_extra_data(), [
+            {
+                'key': u'key',
+                'label': u"Label",
+                'help_text': u"Help text",
+                'public': True,
+                'value': u"Value",
+            }
+        ])
