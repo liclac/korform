@@ -34,7 +34,8 @@ class MemberPickGroupView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super(MemberPickGroupView, self).get_context_data(**kwargs)
-        context['groups'] = self.request.site.config.current_term.groups.all()
+        term = self.request.site.config.current_term
+        context['groups'] = term.groups.all() if term else []
         return context
 
 class MemberCreateView(CustomFormMixin, CreateView):
