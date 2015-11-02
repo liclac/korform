@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView, DetailView
@@ -45,7 +46,11 @@ class MemberCreateView(CustomFormMixin, CreateView):
     form_spec_path = 'request.site.config.current_term.form'
     
     def get_group(self):
-        return get_object_or_404(Group, slug=self.kwargs['group'])
+        group = get_object_or_404(Group, slug=self.kwargs['group'])
+        term = self.request.site.config.current_term
+        if not term or not group.pk in term.groups.values_list('pk', flat=True):
+            raise Http404(u"Group is not enabled for this term")
+        return group
     
     def get_context_data(self, **kwargs):
         context = super(MemberCreateView, self).get_context_data(**kwargs)
