@@ -37,8 +37,9 @@ class MemberViewSetUpMixin(object):
 class TestMemberView(MemberViewSetUpMixin, TestCase):
     def test_unauthenticated(self):
         self.client.logout()
-        res = self.client.get(reverse('member', kwargs={'pk': self.member.pk}))
-        self.assertEqual(302, res.status_code)
+        path = reverse('member', kwargs={'pk': self.member.pk})
+        res = self.client.get(path)
+        self.assertRedirects(res, reverse('auth_login') + "?next=" + path)
     
     def test_access(self):
         res = self.client.get(reverse('member', kwargs={'pk': self.member.pk}))
@@ -52,8 +53,9 @@ class TestMemberView(MemberViewSetUpMixin, TestCase):
 class TestMemberPickGroupView(MemberViewSetUpMixin, TestCase):
     def test_unauthenticated(self):
         self.client.logout()
-        res = self.client.get(reverse('member_add'))
-        self.assertEqual(302, res.status_code)
+        path = reverse('member_add')
+        res = self.client.get(path)
+        self.assertRedirects(res, reverse('auth_login') + "?next=" + path)
     
     def test_access(self):
         res = self.client.get(reverse('member_add'))
@@ -71,8 +73,9 @@ class TestMemberPickGroupView(MemberViewSetUpMixin, TestCase):
 class TestMemberCreateView(MemberViewSetUpMixin, TestCase):
     def test_unauthenticated(self):
         self.client.logout()
-        res = self.client.get(reverse('member_add2', kwargs={'group': 'g'}))
-        self.assertEqual(302, res.status_code)
+        path = reverse('member_add2', kwargs={'group': 'g'})
+        res = self.client.get(path)
+        self.assertRedirects(res, reverse('auth_login') + "?next=" + path)
     
     def test_access(self):
         res = self.client.get(reverse('member_add2', kwargs={'group': 'g'}))

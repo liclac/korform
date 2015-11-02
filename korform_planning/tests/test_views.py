@@ -51,8 +51,9 @@ class TestGroupView(TestCase):
     
     def test_unauthenticated(self):
         self.client.logout()
-        res = self.client.get(reverse('group', kwargs={'slug': 'g'}))
-        self.assertEqual(302, res.status_code)
+        path = reverse('group', kwargs={'slug': 'g'})
+        res = self.client.get(path)
+        self.assertRedirects(res, reverse('auth_login') + "?next=" + path)
     
     def test_access(self):
         res = self.client.get(reverse('group', kwargs={'slug': 'g'}))
