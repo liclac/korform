@@ -17,6 +17,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 from .views import index
 from korform_accounts.views import *
 from korform_accounts.forms import *
@@ -25,16 +26,16 @@ from korform_roster.views import MemberView, MemberPickGroupView, MemberCreateVi
 
 urlpatterns = [
     url(r'^$', index, name='index'),
-    url(r'^groups/(?P<slug>[-\w]+)/$', GroupView.as_view(), name='group'),
-    url(r'^members/add/$', MemberPickGroupView.as_view(), name='member_add'),
-    url(r'^members/add/(?P<group>[-\w]+)/$', MemberCreateView.as_view(), name='member_add2'),
-    url(r'^members/(?P<pk>[0-9]+)/$', MemberView.as_view(), name='member'),
-    url(r'^members/(?P<pk>[0-9]+)/rsvp/$', MemberRSVPView.as_view(), name='member_rsvp'),
-    url(r'^members/(?P<pk>[0-9]+)/edit/$', MemberUpdateView.as_view(), name='member_edit'),
-    url(r'^contacts/add/$', ContactCreateView.as_view(), name='contact_add'),
-    url(r'^contacts/(?P<pk>[0-9]+)/$', ContactView.as_view(), name='contact'),
-    url(r'^contacts/(?P<pk>[0-9]+)/edit/$', ContactUpdateView.as_view(), name='contact_edit'),
-    url(r'^accounts/settings/$', SettingsView.as_view(), name='account_settings'),
+    url(r'^groups/(?P<slug>[-\w]+)/$', login_required(GroupView.as_view()), name='group'),
+    url(r'^members/add/$', login_required(MemberPickGroupView.as_view()), name='member_add'),
+    url(r'^members/add/(?P<group>[-\w]+)/$', login_required(MemberCreateView.as_view()), name='member_add2'),
+    url(r'^members/(?P<pk>[0-9]+)/$', login_required(MemberView.as_view()), name='member'),
+    url(r'^members/(?P<pk>[0-9]+)/rsvp/$', login_required(MemberRSVPView.as_view()), name='member_rsvp'),
+    url(r'^members/(?P<pk>[0-9]+)/edit/$', login_required(MemberUpdateView.as_view()), name='member_edit'),
+    url(r'^contacts/add/$', login_required(ContactCreateView.as_view()), name='contact_add'),
+    url(r'^contacts/(?P<pk>[0-9]+)/$', login_required(ContactView.as_view()), name='contact'),
+    url(r'^contacts/(?P<pk>[0-9]+)/edit/$', login_required(ContactUpdateView.as_view()), name='contact_edit'),
+    url(r'^accounts/settings/$', login_required(SettingsView.as_view()), name='account_settings'),
     url(r'^accounts/register/$', RegistrationView.as_view(), name='registration_register'),
     url(r'^accounts/login/$', auth_views.login, {'template_name': 'registration/login.html', 'authentication_form': MyAuthenticationForm}, name='auth_login'),
     url(r'^accounts/', include('registration.backends.default.urls')),

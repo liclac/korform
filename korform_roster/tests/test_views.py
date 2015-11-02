@@ -2,8 +2,8 @@ import datetime
 from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site
+from korform_accounts.models import User, Profile
 from korform_planning.models import Term, Group
-from korform_accounts.models import Profile
 from korform_roster.models import Member
 
 class MemberViewSetUpMixin(object):
@@ -30,9 +30,16 @@ class MemberViewSetUpMixin(object):
             first_name=u"Santa", last_name=u"Claus", birthday=datetime.date(1800, 12, 24),
         )
         
+        self.user = User.objects.create_user(username='username', password='password')
         self.client = Client()
+        self.client.login(username='username', password='password')
 
 class TestMemberView(MemberViewSetUpMixin, TestCase):
+    def test_unauthenticated(self):
+        self.client.logout()
+        res = self.client.get(reverse('member', kwargs={'pk': self.member.pk}))
+        self.assertEqual(302, res.status_code)
+    
     def test_access(self):
         res = self.client.get(reverse('member', kwargs={'pk': self.member.pk}))
         self.assertEqual(200, res.status_code)
@@ -43,6 +50,11 @@ class TestMemberView(MemberViewSetUpMixin, TestCase):
         self.assertEqual(404, res.status_code)
 
 class TestMemberPickGroupView(MemberViewSetUpMixin, TestCase):
+    def test_unauthenticated(self):
+        self.client.logout()
+        res = self.client.get(reverse('member_add'))
+        self.assertEqual(302, res.status_code)
+    
     def test_access(self):
         res = self.client.get(reverse('member_add'))
         self.assertEqual(200, res.status_code)
@@ -57,6 +69,11 @@ class TestMemberPickGroupView(MemberViewSetUpMixin, TestCase):
         self.assertEqual([], res.context['groups'])
 
 class TestMemberCreateView(MemberViewSetUpMixin, TestCase):
+    def test_unauthenticated(self):
+        self.client.logout()
+        res = self.client.get(reverse('member_add2', kwargs={'group': 'g'}))
+        self.assertEqual(302, res.status_code)
+    
     def test_access(self):
         res = self.client.get(reverse('member_add2', kwargs={'group': 'g'}))
         self.assertEqual(200, res.status_code)

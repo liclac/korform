@@ -2,7 +2,7 @@ import datetime
 from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site
-from korform_accounts.models import Profile
+from korform_accounts.models import Profile, User
 from korform_planning.models import Group, Term, Form, FormField, Sheet, SheetColumn
 from korform_roster.models import Member
 from korform_planning.views import GroupView
@@ -45,7 +45,14 @@ class TestGroupView(TestCase):
         self.site.config.current_term = self.term
         self.site.config.save()
         
+        self.user = User.objects.create_user(username='username', password='password')
         self.client = Client()
+        self.client.login(username='username', password='password')
+    
+    def test_unauthenticated(self):
+        self.client.logout()
+        res = self.client.get(reverse('group', kwargs={'slug': 'g'}))
+        self.assertEqual(302, res.status_code)
     
     def test_access(self):
         res = self.client.get(reverse('group', kwargs={'slug': 'g'}))
