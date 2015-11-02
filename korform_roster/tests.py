@@ -31,6 +31,9 @@ class TestMember(TestCase):
     def test_full_name(self):
         self.assertEqual(self.member.get_full_name(), u"John Smith")
     
+    def test_custom_form(self):
+        self.assertEqual(self.form, self.member.get_custom_form())
+    
     def test_extra_data(self):
         self.assertEqual(self.member.get_extra_data(), [
             {
