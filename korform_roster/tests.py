@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.contrib.sites.models import Site
 from korform_accounts.models import Profile
 from korform_planning.models import Group, Event, Term, Form, FormField
-from .models import Member, RSVP
+from .models import Member, Contact, RSVP
 
 class TestMember(TestCase):
     def setUp(self):
@@ -69,3 +69,27 @@ class TestMember(TestCase):
             RSVP(event=self.event1, answer=1),
         ]
         self.assertEqual(self.member.get_events_missing_rsvp().count(), 0)
+
+class TestContact(TestCase):
+    def setUp(self):
+        self.site = Site.objects.first()
+        
+        self.form = Form.objects.create(name=u"Test Form")
+        self.form.fields = [
+            FormField(position=0, key='key', label=u"Label", field='textfield', help_text=u"Help text"),
+        ]
+        self.site.config.contact_form = self.form
+        self.site.config.save()
+        
+        self.profile = Profile.objects.create()
+        self.contact = Contact.objects.create(
+            site=self.site, profile=self.profile,
+            first_name=u"First", last_name=u"Last",
+            extra={ 'key': u"Value", 'key2': u"Value 2" }
+        )
+    
+    def test_full_name(self):
+        self.assertEqual(self.contact.get_full_name(), u"First Last")
+    
+    def test_custom_form(self):
+        self.assertEqual(self.contact.get_custom_form(), self.form)
