@@ -18,6 +18,20 @@
 
 
 
+# Database configuration
+# Note: Databases other than PostgreSQL are NOT supported!
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'korform',
+#         'USER': 'korform',
+#         'PASSWORD': 'korform',
+#         'HOST': '127.0.0.1',
+#     }
+# }
+
+
 # Email credentials
 # By default, it will connect to localhost:25 with no auth
 
