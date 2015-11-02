@@ -1,9 +1,17 @@
+from django.http import Http404
 from django.views.generic import DetailView
 from .models import Group, Sheet
 
 class GroupView(DetailView):
     model = Group
     context_object_name = 'group'
+    
+    def get_object(self, queryset=None):
+        obj = super(GroupView, self).get_object(queryset)
+        term = self.request.site.config.current_term
+        if not term or not obj.pk in term.groups.values_list('pk', flat=True):
+            raise Http404(u"No group found matching the query")
+        return obj
     
     def get_context_data(self, **kwargs):
         context = super(GroupView, self).get_context_data(**kwargs)
