@@ -66,7 +66,7 @@ class Member(ExtraDataMixin, models.Model):
         return term.form if term else None
     
     def get_events_missing_rsvp(self):
-        return Event.objects.exclude(rsvps__member_id=self.id)
+        return self.group.events.exclude(rsvps__member_id=self.id)
     
     def get_badge_count(self, request):
         count = 0
