@@ -8,7 +8,7 @@ from korform_planning.models import Group, Term, Event, Form, FormField, Sheet, 
 
 class TestEvent(TestCase):
     def setUp(self):
-        self.site = Site.objects.create(domain=u"google.com", name=u"Google")
+        self.site = Site.objects.first()
         self.term = Term.objects.create(site=self.site, name=u"Test Term")
         self.event = Event.objects.create(term=self.term, name=u"Test Event")
     
@@ -91,7 +91,7 @@ class TestFormField(TestCase):
 
 class TestSheet(TestCase):
     def setUp(self):
-        self.site = Site.objects.create(domain='google.com', name=u"Google")
+        self.site = Site.objects.first()
         self.profile = Profile.objects.create()
         self.group = Group.objects.create(site=self.site, name=u"Group", code=u"g", slug=u"g", sort=u"g")
         self.member = Member.objects.create(
@@ -131,7 +131,7 @@ class TestSheet(TestCase):
 
 class TestSheetColumn(TestCase):
     def setUp(self):
-        self.site = Site.objects.create(domain='google.com', name=u"Google")
+        self.site = Site.objects.first()
         self.profile = Profile.objects.create()
         self.group = Group.objects.create(site=self.site, name=u"Group", code=u"g", slug=u"g", sort=u"g")
         self.member = Member.objects.create(

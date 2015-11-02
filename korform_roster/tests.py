@@ -7,7 +7,7 @@ from .models import Member, RSVP
 
 class TestMember(TestCase):
     def setUp(self):
-        self.site = Site.objects.create(domain=u"google.com", name=u"Google")
+        self.site = Site.objects.first()
         self.group = Group.objects.create(site=self.site, name=u"Group", code=u"g", slug=u"g", sort=u"g")
         
         self.form = Form.objects.create(name=u"Test Form")
