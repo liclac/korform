@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.contrib.sites.models import Site
 from korform_accounts.models import Profile
 from korform_planning.models import Group, Event, Term, Form, FormField
-from .models import Member, Contact, RSVP
+from korform_roster.models import Member, Contact, RSVP
 
 class TestMember(TestCase):
     def setUp(self):
