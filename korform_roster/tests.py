@@ -2,7 +2,7 @@ import datetime
 from django.test import TestCase
 from django.contrib.sites.models import Site
 from korform_accounts.models import Profile
-from korform_planning.models import Group, Term, Form, FormField
+from korform_planning.models import Group, Event, Term, Form, FormField
 from .models import Member, RSVP
 
 class TestMember(TestCase):
@@ -14,8 +14,14 @@ class TestMember(TestCase):
         self.form.fields = [
             FormField(position=0, key='key', label=u"Label", field='textfield', help_text=u"Help text"),
         ]
+        
         self.term = Term.objects.create(site=self.site, name=u"Test Term", form=self.form)
         self.term.groups = [self.group]
+        
+        self.event1 = Event.objects.create(position=0, term=self.term, name=u"Test Event")
+        self.event1.groups = [self.group]
+        self.event2 = Event.objects.create(position=1, term=self.term, name=u"Groupless Event")
+        self.event2.groups = []
         
         self.site.config.current_term = self.term
         self.site.config.save()
@@ -54,3 +60,12 @@ class TestMember(TestCase):
     def test_fields_missing_value_one(self):
         self.member.extra = {}
         self.assertEqual(self.member.get_fields_missing_value(), ['key'])
+    
+    def test_events_missing_rsvp_no_rsvps(self):
+        self.assertEqual(self.member.get_events_missing_rsvp().count(), 1)
+    
+    def test_events_missing_rsvp_one_rsvp(self):
+        self.member.rsvps = [
+            RSVP(event=self.event1, answer=1),
+        ]
+        self.assertEqual(self.member.get_events_missing_rsvp().count(), 0)
