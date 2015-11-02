@@ -25,13 +25,13 @@ class TestMember(TestCase):
             site=self.site, profile=self.profile, group=self.group,
             first_name=u"John", last_name=u"Smith",
             birthday=datetime.datetime(2000,12,24),
-            extra={ 'key': u"Value" }
+            extra={ 'key': u"Value", 'key2': u"Value 2" }
         )
     
     def test_full_name(self):
         self.assertEqual(self.member.get_full_name(), u"John Smith")
     
-    def test_get_extra_data(self):
+    def test_extra_data(self):
         self.assertEqual(self.member.get_extra_data(), [
             {
                 'key': u'key',
@@ -41,3 +41,13 @@ class TestMember(TestCase):
                 'value': u"Value",
             }
         ])
+    
+    def test_extra_keys(self):
+        self.assertEqual(self.member.get_extra_keys(), ['key'])
+    
+    def test_fields_missing_value_none(self):
+        self.assertEqual(self.member.get_fields_missing_value(), [])
+    
+    def test_fields_missing_value_one(self):
+        self.member.extra = {}
+        self.assertEqual(self.member.get_fields_missing_value(), ['key'])
