@@ -3,7 +3,7 @@ from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site
 from korform_accounts.models import User, Profile
-from korform_planning.models import Term, Group
+from korform_planning.models import Term, Group, Form, FormField
 from korform_roster.models import Member
 
 class MemberViewSetUpMixin(object):
@@ -19,6 +19,12 @@ class MemberViewSetUpMixin(object):
         
         self.site.config.current_term = self.term
         self.site.config.save()
+        
+        self.form = Form.objects.create(name=u"Test Form")
+        self.form.fields = [
+            FormField(position=0, key='required', label=u"Required", field='textfield', required=True),
+            FormField(position=1, key='optional', label=u"Optional", field='textfield', required=False),
+        ]
         
         self.profile = Profile.objects.create()
         self.member = Member.objects.create(
@@ -89,3 +95,67 @@ class TestMemberCreateView(MemberViewSetUpMixin, TestCase):
     def test_inactive(self):
         res = self.client.get(reverse('member_add2', kwargs={'group': 'g3'}))
         self.assertEqual(404, res.status_code)
+    
+    def test_create(self):
+        res = self.client.post(reverse('member_add2', kwargs={'group': 'g'}), {
+            'first_name': u"First",
+            'last_name': u"Last",
+            'birthday': u"2001-10-11",
+        }, follow=True)
+        self.assertEqual(res.status_code, 200)
+        self.assertTemplateUsed(res, 'korform_roster/member_rsvp.html')
+        self.assertEqual(res.context['member'].first_name, u"First")
+        self.assertEqual(res.context['member'].last_name, u"Last")
+        self.assertEqual(res.context['member'].birthday, datetime.date(2001, 10, 11))
+        self.assertEqual(res.context['member'].extra, {})
+    
+    def test_create_custom_fields(self):
+        self.term.form = self.form
+        self.term.save()
+        
+        res = self.client.post(reverse('member_add2', kwargs={'group': 'g'}), {
+            'first_name': u"First",
+            'last_name': u"Last",
+            'birthday': u"2001-10-11",
+            'required': u"Required",
+            'optional': u"Optional",
+        }, follow=True)
+        self.assertEqual(res.status_code, 200)
+        self.assertTemplateUsed(res, 'korform_roster/member_rsvp.html')
+        self.assertEqual(res.context['member'].extra, {
+            u'required': u"Required",
+            u'optional': u"Optional",
+        })
+    
+    def test_create_custom_fields_no_optional(self):
+        self.term.form = self.form
+        self.term.save()
+        
+        res = self.client.post(reverse('member_add2', kwargs={'group': 'g'}), {
+            'first_name': u"First",
+            'last_name': u"Last",
+            'birthday': u"2001-10-11",
+            'required': u"Required",
+        }, follow=True)
+        self.assertEqual(res.status_code, 200)
+        self.assertTemplateUsed(res, 'korform_roster/member_rsvp.html')
+        self.assertEqual(res.context['member'].extra, {
+            u'required': u"Required",
+            u'optional': u"",
+        })
+    
+    def test_create_missing_data(self):
+        res = self.client.post(reverse('member_add2', kwargs={'group': 'g'}), {})
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(res.context['form'].errors.keys(), ['first_name', 'last_name', 'birthday'])
+    
+    def test_create_missing_data_custom_fields(self):
+        self.term.form = self.form
+        self.term.save()
+        
+        res = self.client.post(reverse('member_add2', kwargs={'group': 'g'}), {
+            'first_name': u"First",
+            'last_name': u"Last",
+            'birthday': u"2001-10-11",
+        })
+        self.assertEqual(res.context['form'].errors.keys(), ['required'])
