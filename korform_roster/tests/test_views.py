@@ -3,8 +3,8 @@ from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site
 from korform_accounts.models import User, Profile
-from korform_planning.models import Term, Group, Form, FormField
-from korform_roster.models import Member
+from korform_planning.models import Term, Group, Event, Form, FormField
+from korform_roster.models import Member, RSVP
 
 class MemberViewSetUpMixin(object):
     def setUp(self):
@@ -159,3 +159,76 @@ class TestMemberCreateView(MemberViewSetUpMixin, TestCase):
             'birthday': u"2001-10-11",
         })
         self.assertEqual(res.context['form'].errors.keys(), ['required'])
+
+class TestMemberRSVPView(MemberViewSetUpMixin, TestCase):
+    def setUp(self):
+        super(TestMemberRSVPView, self).setUp()
+        
+        self.event1 = Event.objects.create(term=self.term, name=u"Event 1")
+        self.event1.groups = [self.group]
+        
+        self.event2 = Event.objects.create(term=self.term, name=u"Event 2")
+        self.event2.groups = [self.group]
+        
+        self.event3 = Event.objects.create(term=self.term, name=u"Event 3")
+        self.event3.groups = [self.group]
+        
+        self.event4 = Event.objects.create(term=self.term, name=u"Groupless Event")
+    
+    def test_unauthenticated(self):
+        self.client.logout()
+        path = reverse('member_rsvp', kwargs={'pk': self.member.pk})
+        res = self.client.get(path)
+        self.assertRedirects(res, reverse('auth_login') + "?next=" + path)
+    
+    def test_access(self):
+        res = self.client.get(reverse('member_rsvp', kwargs={'pk': self.member.pk}))
+        self.assertEqual(200, res.status_code)
+        self.assertEqual(self.member.pk, res.context['member'].pk)
+    
+    def test_events(self):
+        res = self.client.get(reverse('member_rsvp', kwargs={'pk': self.member.pk}))
+        self.assertEqual([e.pk for e in res.context['events']], [self.event1.pk, self.event2.pk, self.event3.pk])
+    
+    def test_submit(self):
+        res = self.client.post(reverse('member_rsvp', kwargs={'pk': self.member.pk}), {
+            'form-TOTAL_FORMS': 3, 'form-INITIAL_FORMS': 0,
+            'form-MIN_NUM_FORMS': 2, 'form-MAX_NUM_FORMS': 2,
+            'form-0-answer': 1, 'form-0-comment': u"",
+            'form-1-answer': 2, 'form-1-comment': u"Comment",
+            'form-2-answer': 0, 'form-2-comment': u"",
+        }, follow=True)
+        self.assertTemplateUsed(res, 'korform_roster/member_detail.html')
+        self.assertEqual(len(self.member.get_events_missing_rsvp()), 0)
+        
+        rsvp1 = RSVP.objects.get(member=self.member, event=self.event1)
+        self.assertEqual(rsvp1.answer, 1)
+        self.assertEqual(rsvp1.comment, u"")
+        
+        rsvp2 = RSVP.objects.get(member=self.member, event=self.event2)
+        self.assertEqual(rsvp2.answer, 2)
+        self.assertEqual(rsvp2.comment, u"Comment")
+        
+        rsvp3 = RSVP.objects.get(member=self.member, event=self.event3)
+        self.assertEqual(rsvp3.answer, 0)
+        self.assertEqual(rsvp3.comment, u"")
+    
+    def test_submit_missing_form(self):
+        res = self.client.post(reverse('member_rsvp', kwargs={'pk': self.member.pk}), {
+            'form-TOTAL_FORMS': 2, 'form-INITIAL_FORMS': 0,
+            'form-MIN_NUM_FORMS': 2, 'form-MAX_NUM_FORMS': 2,
+            'form-0-answer': 1, 'form-0-comment': u"",
+            'form-1-answer': 2, 'form-1-comment': u"Comment",
+        }, follow=True)
+        self.assertTemplateUsed(res, 'korform_roster/member_detail.html')
+        self.assertItemsEqual(self.member.get_events_missing_rsvp().values_list('pk', flat=True), [self.event3.pk])
+    
+    def test_submit_missing_field(self):
+        res = self.client.post(reverse('member_rsvp', kwargs={'pk': self.member.pk}), {
+            'form-TOTAL_FORMS': 3, 'form-INITIAL_FORMS': 0,
+            'form-MIN_NUM_FORMS': 2, 'form-MAX_NUM_FORMS': 2,
+            'form-0-answer': 1, 'form-0-comment': u"",
+            'form-1-answer': 2, 'form-1-comment': u"Comment",
+        })
+        self.assertTemplateUsed(res, 'korform_roster/member_rsvp.html')
+        self.assertItemsEqual(res.context['formset'].errors[2].keys(), ['answer'])
