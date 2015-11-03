@@ -319,3 +319,10 @@ if DEBUG:
     
     # Loudly complain about form errors
     CRISPY_FAIL_SILENTLY = False
+
+# Testing settings
+if TESTING:
+    # Use MD5 for password hashing - INSECURE, but fast
+    PASSWORD_HASHERS = (
+        'django.contrib.auth.hashers.MD5PasswordHasher',
+    )
