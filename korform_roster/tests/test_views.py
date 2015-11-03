@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site
 from korform_accounts.models import User, Profile
 from korform_planning.models import Term, Group, Event, Form, FormField
-from korform_roster.models import Member, RSVP
+from korform_roster.models import Member, Contact, RSVP
 
 class MemberViewSetUpMixin(object):
     def setUp(self):
@@ -39,6 +39,15 @@ class MemberViewSetUpMixin(object):
         self.user = User.objects.create_user(username='username', password='password')
         self.client = Client()
         self.client.login(username='username', password='password')
+
+class ContactViewSetUpMixin(MemberViewSetUpMixin):
+    def setUp(self):
+        super(ContactViewSetUpMixin, self).setUp()
+        
+        self.contact = Contact.objects.create(
+            site=self.site, profile=self.profile,
+            first_name=u"Bob", last_name=u"Ross"
+        )
 
 class TestMemberView(MemberViewSetUpMixin, TestCase):
     def test_unauthenticated(self):
@@ -232,3 +241,19 @@ class TestMemberRSVPView(MemberViewSetUpMixin, TestCase):
         })
         self.assertTemplateUsed(res, 'korform_roster/member_rsvp.html')
         self.assertItemsEqual(res.context['formset'].errors[2].keys(), ['answer'])
+
+class TestContactView(ContactViewSetUpMixin, TestCase):
+    def test_unauthenticated(self):
+        self.client.logout()
+        path = reverse('contact', kwargs={'pk': self.contact.pk})
+        res = self.client.get(path)
+        self.assertRedirects(res, reverse('auth_login') + "?next=" + path)
+    
+    def test_access(self):
+        res = self.client.get(reverse('contact', kwargs={'pk': self.contact.pk}))
+        self.assertEqual(200, res.status_code)
+        self.assertEqual(self.contact.pk, res.context['contact'].pk)
+    
+    def test_nonexistent(self):
+        res = self.client.get(reverse('contact', kwargs={'pk': 255}))
+        self.assertEqual(404, res.status_code)
