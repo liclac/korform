@@ -46,6 +46,15 @@ class ExtraDataMixin(object):
         return [ key for key in self.extra_keys if key not in (self.extra or {}) ]
 
 class Member(ExtraDataMixin, models.Model):
+    '''
+    A member of your organization.
+    
+    Members are associated with profiles and groups, and may have custom "Extra" data as specified
+    by a [Form](/admin/korform_planning/form).  
+    The form for members is set on a [term](/admin/korform_planning/term/), and may change at any
+    time.
+    '''
+    
     site = models.ForeignKey(Site, related_name='members')
     profile = models.ForeignKey('korform_accounts.Profile', related_name='members')
     group = models.ForeignKey('korform_planning.Group', related_name='members')
@@ -89,6 +98,14 @@ class Member(ExtraDataMixin, models.Model):
         return self.get_full_name()
 
 class Contact(ExtraDataMixin, models.Model):
+    '''
+    A contact for your organization members.
+    
+    These are assumed to be contactable if anything were to happen to any
+    [member](/admin/korform_roster/member/) sharing their profile.  
+    The form for contacts is also customizable, and is set on a [site](/admin/sites/site/).
+    '''
+    
     site = models.ForeignKey(Site, related_name='contacts')
     profile = models.ForeignKey('korform_accounts.Profile', related_name='contacts')
     first_name = models.CharField(max_length=100)

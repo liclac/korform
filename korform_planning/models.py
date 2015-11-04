@@ -6,6 +6,13 @@ from django.contrib.sites.models import Site
 from .util import FieldFormatter, format_datetime, format_datetime_diff
 
 class Group(models.Model):
+    '''
+    A group (in this context) is a group of members.
+    
+    These can be assigned events and members, but must be activated for a [term](/admin/korform_planning/term/)
+    in order for it to show up on the site. If no groups show up on the site, make sure the "current
+    term" setting is set properly for your [site](/admin/korform_sites/site/).'''
+    
     class Meta:
         ordering = ['sort']
     
@@ -23,6 +30,12 @@ class Group(models.Model):
         return self.code
 
 class Term(models.Model):
+    '''
+    A term is a time period, with associated events and data.
+    
+    Note that creating a term isn't enough - you also need to set it as the current term for a [site](/admin/korform_sites/site/) before it will show up. This allows you to prepare terms beforehand and switch them out at will.
+    '''
+    
     site = models.ForeignKey(Site, related_name='terms', help_text=u"Remember to also mark a term as the \"current\" one, in the site's configuration.")
     name = models.CharField(max_length=100, help_text=u"Not visible to users.")
     groups = models.ManyToManyField(Group, related_name='terms')
@@ -62,6 +75,12 @@ class Event(models.Model):
         return u"{0} ({1})".format(self.name, u', '.join(group_codes))
 
 class Form(models.Model):
+    '''
+    Forms allow you to add custom fields to member create/update pages.
+    
+    The "First name", "Last name" and "Birthday" fields are always included.
+    '''
+    
     name = models.CharField(max_length=100, help_text=u"Not shown to users.")
     message = models.TextField(blank=True, help_text=u"Displayed at the top of the form. Allows Markdown.")
     
@@ -114,6 +133,13 @@ class FormField(models.Model):
         return self.label
 
 class Sheet(models.Model):
+    '''Sheets are the opposite of Forms, and let you customize data presentation.
+    
+    You may not need a sheet - if one is not specified, one is generated on-the-fly from your
+    current Form, using the first name, last name, birthday and all custom fields marked as
+    "public".
+    '''
+    
     name = models.CharField(max_length=100, help_text=u"Not visible to users.")
     
     @classmethod
