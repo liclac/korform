@@ -37,7 +37,6 @@ class CustomIndexDashboard(Dashboard):
             models=(
                 'korform_planning.models.Term',
                 'korform_planning.models.Group',
-                'korform_planning.models.Event',
                 'korform_planning.models.Form',
                 'korform_planning.models.Sheet',
                 'korform_planning.models.*',
