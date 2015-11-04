@@ -55,12 +55,14 @@ INSTALLED_APPS = (
     'djangobower',
     'pipeline',
     'markdown_deux',
+    'korform',
     'korform_accounts',
     'korform_sites',
     'korform_planning',
     'korform_roster',
     'debug_toolbar',
     'django_extensions',
+    'overextends',
 )
 
 MIDDLEWARE_CLASSES = (

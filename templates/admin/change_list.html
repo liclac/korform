@@ -1,0 +1,22 @@
+{% overextends "admin/change_list.html" %}
+{% load korform_tags markdown_deux_tags %}
+
+{% block content %}
+{% if cl.model|model_help %}
+<style type="text/css">
+#model_help {
+  margin-bottom: 10px;
+}
+
+#model_help p {
+  margin-bottom: 0.5em;
+}
+</style>
+
+<div id="model_help">
+  {{ cl.model|model_help|markdown:"trusted" }}
+</div>
+{% endif %}
+
+{{ block.super }}
+{% endblock %}
