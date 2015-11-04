@@ -40,10 +40,11 @@ TESTING = 'test' in sys.argv
 # Application definition
 
 INSTALLED_APPS = (
+    'django.contrib.contenttypes',
+    'grappelli.dashboard',
     'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sites',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -209,6 +210,8 @@ SESSION_CACHE_ALIAS = "default"
 # http://django-grappelli.readthedocs.org/en/latest/
 
 GRAPPELLI_ADMIN_TITLE = u"Admin"
+
+GRAPPELLI_INDEX_DASHBOARD = "korform.dashboard.CustomIndexDashboard"
 
 
 
