@@ -16,11 +16,11 @@ def model_help(model):
             '''
     }
     
-    help_text = getattr(model, '__help__', None)
+    help_text = getattr(model, '__doc__', None)
     
     if not help_text:
         class_name = '.'.join([model.__class__.__module__, model.__class__.__name__])
         if class_name in extra_help:
-            help_text = dedent(extra_help[class_name]).strip()
+            help_text = extra_help[class_name]
     
-    return help_text
+    return dedent(help_text).strip()
