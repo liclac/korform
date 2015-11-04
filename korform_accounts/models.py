@@ -3,6 +3,14 @@ from django.utils.functional import cached_property
 from django.contrib.auth.models import AbstractUser
 
 class Profile(models.Model):
+    '''
+    A Profile exists to link users and their data together.
+    
+    [Users](/admin/korform_accounts/user/) can only have a single profile each, but a profile can
+    be used by multiple users. This allows secure sharing of accounts, between eg. two parents,
+    using separate logins to access the same data.
+    '''
+    
     def __unicode__(self):
       usernames = [u.get_full_name() for u in self.users.all()]
       if len(usernames) == 0:
@@ -10,6 +18,12 @@ class Profile(models.Model):
       return u"Profile for {0}".format(u', '.join(usernames))
 
 class User(AbstractUser):
+    '''
+    A User is a single user in the system.
+    
+    Note that submitted data is not tied to a user, but to a [profile](/admin/korform_accounts/profile/).
+    '''
+    
     profile = models.ForeignKey(Profile, related_name='users', on_delete=models.PROTECT, null=True, help_text=u"Multiple users may be associated with a single profile. These users will have access to the same data, but with different logins.")
     
     @cached_property
