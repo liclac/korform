@@ -81,6 +81,9 @@ class InviteKey(models.Model):
     def expires_in(self):
         return self.expires - timezone.now()
     
+    def __unicode__(self):
+        return self.key
+    
     @classmethod
     def generate_key(cls, groups=4, group_length=4):
         rand = random.SystemRandom()
