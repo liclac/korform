@@ -12,6 +12,12 @@
     {% include "_navbar.html" %}
     
     <div class="container">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+      
       {% block _content %}
       {% block content %}There's nothing here!{% endblock %}
       {% endblock %}
