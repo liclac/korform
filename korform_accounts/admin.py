@@ -1,23 +1,29 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from django.contrib.auth.forms import UserChangeForm as BaseUserChangeForm
+from django.contrib.auth.forms import UserChangeForm as BaseUserChangeForm, UserCreationForm as BaseUserCreationForm
 from .models import User, Profile
 
 class UserChangeForm(BaseUserChangeForm):
     class Meta(BaseUserChangeForm.Meta):
         model = User
 
+class UserCreationForm(BaseUserCreationForm):
+    class Meta(BaseUserCreationForm.Meta):
+        model = User
+
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
+    add_form = UserCreationForm
     
-    def get_fieldsets(self, *args, **kwargs):
-        data = super(BaseUserAdmin, self).get_fieldsets(*args, **kwargs)
-        l = list(data)
-        l.insert(2, (u"Profile", {
-            'fields': ('profile',),
-        }))
-        return tuple(l)
+    def get_fieldsets(self, request, obj=None):
+        data = super(UserAdmin, self).get_fieldsets(request, obj)
+        if obj:
+            data = list(data)
+            data.insert(2, (u"Profile", {
+                'fields': ('profile',),
+            }))
+        return data
 
 
 
