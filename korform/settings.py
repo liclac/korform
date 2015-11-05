@@ -60,9 +60,9 @@ INSTALLED_APPS = (
     'korform_sites',
     'korform_planning',
     'korform_roster',
-    'debug_toolbar',
     'django_extensions',
     'overextends',
+    'debug_toolbar',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -245,7 +245,6 @@ INCLUDE_REGISTER_URL = False
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 DEBUG_TOOLBAR_CONFIG = {
-    'JQUERY_URL': None,
     'SHOW_COLLAPSED': True,
     'SHOW_TOOLBAR_CALLBACK': 'korform.settings.show_toolbar_callback',
 }
