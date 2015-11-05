@@ -32,7 +32,7 @@ class User(AbstractUser):
     
     def get_full_name(self):
         return u"{0} {1}".format(self.first_name, self.last_name) if self.first_name else \
-            self.email
+            self.email or self.username
     
     def get_shared_users(self):
         return self.profile.users.exclude(id=self.id)
