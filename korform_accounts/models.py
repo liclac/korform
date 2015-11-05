@@ -1,6 +1,6 @@
 import datetime
 import random
-from django.db import models
+from django.db import models, IntegrityError
 from django.utils import timezone
 from django.utils.functional import cached_property
 from django.contrib.auth.models import AbstractUser
@@ -75,7 +75,7 @@ class InviteKey(models.Model):
     CHARACTERS = "123456789ABCDEF"
     
     user = models.ForeignKey(User, related_name='invite_keys')
-    key = models.CharField(max_length=20, blank=True, help_text=u"If this is blank, a new key will be generated.")
+    key = models.CharField(max_length=20, blank=True, unique=True, help_text=u"If this is blank, a new key will be generated.")
     expires = models.DateTimeField(default=default_invite_key_expiry, help_text=u"Default is 30 days from now.")
     
     def expires_in(self):
@@ -91,7 +91,12 @@ def generate_key_for_invite_key(instance, created, raw, **kwargs):
         return
     
     if not instance.key:
-        instance.key = instance.__class__.generate_key()
-        instance.save()
+        while True:
+            try:
+                instance.key = instance.__class__.generate_key()
+                instance.save()
+                break
+            except IntegrityError:
+                pass
 
 models.signals.post_save.connect(generate_key_for_invite_key, sender=InviteKey, dispatch_uid='generate_key_for_invite_key')
