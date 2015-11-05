@@ -38,40 +38,27 @@
       <div class="panel-body">
         <p>
           {% blocktrans %}
-          Multiple accounts can be attached to a single profile, allowing for instance two parents to share access to the same information, but with separate logins.
+          Multiple users can share access to the same information, by entering an invite key when they sign up.
           {% endblocktrans %}
         </p>
         <p>
           {% blocktrans %}
-          To give a minor their own account once they come of age, have them make an account and contact an administrator to have their information transferred to it.
+          If an existing account should share your information, please contact an administrator and they will reassign the user to your profile.
           {% endblocktrans %}
         </p>
         <hr />
-        <a class="btn btn-default btn-block">{% trans "Invite someone else" %}</a>
-        <a class="btn btn-danger btn-block disabled">{% trans "Disconnect your account" %}</a>
+        <a class="btn btn-default btn-block">{% trans "Create an invite key" %}</a>
       </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">{% trans "Connected users" %}</h3>
-      </div>
-      <div class="panel-body">
-        <p>
-          {% blocktrans %}
-          This is a list of accounts currently sharing your profile.
-          {% endblocktrans %}
-        </p>
-        <p>
-          {% blocktrans %}
-          You cannot disconnect other users from your profile - contact an administrator should this ever be necessary.
-          {% endblocktrans %}
-        </p>
+        <h3 class="panel-title">{% trans "Users sharing your profile" %}</h3>
       </div>
       <ul class="list-group">
         {% for user in request.user.shared_users %}
           <a class="list-group-item">{{ user.get_full_name }}</a>
         {% empty %}
-          <a class="list-group-item disabled">{% trans "No connected users." %}</a>
+          <a class="list-group-item disabled">{% trans "You are currently not sharing your profile with anyone." %}</a>
         {% endfor %}
       </ul>
     </div>
