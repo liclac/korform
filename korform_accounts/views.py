@@ -8,7 +8,7 @@ class RegistrationView(DefaultRegistrationView):
 
 class SettingsView(FormView):
     form_class = UserForm
-    template_name = 'accounts/settings.html'
+    template_name = 'korform_accounts/settings.html'
     success_url = reverse_lazy('account_settings')
     
     def get_form_kwargs(self):
