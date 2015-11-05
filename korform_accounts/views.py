@@ -1,22 +1,21 @@
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic.edit import FormView
 from registration.backends.default.views import RegistrationView as DefaultRegistrationView
-from .forms import RegistrationForm, SettingsForm
+from .forms import RegistrationForm, UserForm
 
 class RegistrationView(DefaultRegistrationView):
     form_class = RegistrationForm
 
 class SettingsView(FormView):
-    form_class = SettingsForm
+    form_class = UserForm
     template_name = 'accounts/settings.html'
     success_url = reverse_lazy('account_settings')
     
-    def get_initial(self):
-        initial = super(SettingsView, self).get_initial()
-        initial['first_name'] = self.request.user.first_name
-        initial['last_name'] = self.request.user.last_name
-        return initial
+    def get_form_kwargs(self):
+        kwargs = super(SettingsView, self).get_form_kwargs()
+        kwargs['instance'] = self.request.user
+        return kwargs
     
     def form_valid(self, form):
-        form.save(self.request.user)
+        form.save()
         return super(SettingsView, self).form_valid(form)

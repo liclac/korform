@@ -5,6 +5,7 @@ from registration.forms import RegistrationFormUniqueEmail
 from crispy_forms.helper import FormHelper, Layout
 from crispy_forms.layout import *
 from crispy_forms.bootstrap import *
+from .models import User
 
 class MyAuthenticationForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
@@ -46,25 +47,28 @@ class RegistrationForm(RegistrationFormUniqueEmail):
             ),
         )
 
-class SettingsForm(forms.Form):
-    first_name = forms.CharField(max_length=30, required=True)
-    last_name = forms.CharField(max_length=30, required=True)
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'first_name', 'last_name']
     
     def __init__(self, *args, **kwargs):
-        super(SettingsForm, self).__init__(*args, **kwargs)
+        super(UserForm, self).__init__(*args, **kwargs)
+        
+        for field in self.fields.values():
+            field.required = True
+            field.help_text = u""
+                
         self.helper = FormHelper()
         self.helper.form_class = 'form-horizontal'
         self.helper.label_class = 'col-md-3'
         self.helper.field_class = 'col-md-9'
         self.helper.layout = Layout(
+            'username',
             'first_name',
             'last_name',
+            'email',
             FormActions(
                 Submit('save', _(u"Save"), css_class='btn-default'),
             ),
         )
-    
-    def save(self, user):
-        user.first_name = self.cleaned_data['first_name']
-        user.last_name = self.cleaned_data['last_name']
-        user.save()
