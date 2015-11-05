@@ -1,0 +1,21 @@
+{% extends "base_dialog.html" %}
+{% load i18n %}
+
+{% block title %}Invite Key{% endblock %}
+{% block title2 %}Invite Key{% endblock %}
+
+{% block content %}
+
+<div class="invite-key">
+  <div class="key">
+    {% for group in key.groups %}<span class="group">{{ group }}</span>{% if not forloop.last %}<span class="dash">-</span>{% endif %}{% endfor %}
+  </div>
+  
+  <p class="expiry">
+    {% with expires_in=key.expires_in %}
+      {% trans "This key will be valid for another" %} <strong>{% if expires_in.days %}{{ expires_in.days }} {% trans "days" %}{% else %}{{ expires_in.hours }} {% trans "hours" %}{% endif %}</strong>.
+    {% endwith %}
+  </p>
+</div>
+
+{% endblock %}

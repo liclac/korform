@@ -1,0 +1,31 @@
+.invite-key {
+  text-align: center;
+  
+  .key {
+    font-size: 15pt;
+    line-height: 1em;
+    margin-bottom: 10px;
+    
+    .group {
+      display: inline-block;
+    }
+    
+    .dash {
+      display: inline-block;
+      color: #999;
+      padding: 0 8px;
+    }
+  }
+  
+  .expiry {
+    .text-muted();
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .invite-key .key { font-size: 20pt; }
+}
+
+@media (min-width: @screen-md-min) {
+  .invite-key .key { font-size: 25pt; }
+}

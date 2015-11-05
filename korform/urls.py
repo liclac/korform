@@ -38,6 +38,8 @@ urlpatterns = [
     url(r'^accounts/settings/$', login_required(SettingsView.as_view()), name='account_settings'),
     url(r'^accounts/register/$', RegistrationView.as_view(), name='registration_register'),
     url(r'^accounts/login/$', auth_views.login, {'template_name': 'registration/login.html', 'authentication_form': MyAuthenticationForm}, name='auth_login'),
+    url(r'^accounts/invite/create/$', login_required(CreateInviteKeyView.as_view()), name='create_invite'),
+    url(r'^accounts/invite/(?P<pk>[0-9]+)/$', login_required(InviteKeyView.as_view()), name='invite'),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls), name='admin'),

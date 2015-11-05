@@ -81,6 +81,9 @@ class InviteKey(models.Model):
     def expires_in(self):
         return self.expires - timezone.now()
     
+    def groups(self):
+        return self.key.split('-')
+    
     def __unicode__(self):
         return self.key
     
