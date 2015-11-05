@@ -38,7 +38,7 @@
       <div class="panel-body">
         <p>
           {% blocktrans %}
-          Multiple users can share access to the same information, by entering an invite key when they sign up.
+          Multiple users can share access to the same information, by entering an invite key when they sign up. A key can only be used once!
           {% endblocktrans %}
         </p>
         <p>
@@ -49,6 +49,19 @@
         <hr />
         <a class="btn btn-default btn-block">{% trans "Create an invite key" %}</a>
       </div>
+      {% if request.user.valid_invite_keys %}
+      <ul class="list-group">
+        {% for key in request.user.valid_invite_keys %}
+          {% with expires_in=key.expires_in %}
+            <li class="list-group-item">
+              <strong>{{ key.key }}</strong>&nbsp;
+              <small class="text-muted">{% trans "Expires in" %} {% if expires_in.days %}{{ expires_in.days }} {% trans "days" %}{% else %}{{ expires_in.hours }} {% trans "hours" %}{% endif %}</small>
+              <a class="delete-button" title="{% trans "Expire now" %}"><i class="glyphicon glyphicon-remove"></i></a>
+            </li>
+          {% endwith %}
+        {% endfor %}
+      </ul>
+      {% endif %}
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">

@@ -15,6 +15,7 @@ class CustomIndexDashboard(Dashboard):
             models=(
                 'korform_accounts.models.Profile',
                 'korform_accounts.models.User',
+                'korform_accounts.models.InviteKey',
                 'django.contrib.auth.models.Group',
                 'registration.models.RegistrationProfile',
             )

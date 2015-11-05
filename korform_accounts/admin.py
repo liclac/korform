@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import UserChangeForm as BaseUserChangeForm, UserCreationForm as BaseUserCreationForm
-from .models import User, Profile
+from .models import User, Profile, InviteKey
 
 class UserChangeForm(BaseUserChangeForm):
     class Meta(BaseUserChangeForm.Meta):
@@ -42,3 +42,9 @@ profile_members.short_description = u"Members"
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     list_display = (profile_users, profile_members)
+
+
+
+@admin.register(InviteKey)
+class InviteKeyAdmin(admin.ModelAdmin):
+    list_display = ('user', 'key', 'expires')
