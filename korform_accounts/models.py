@@ -14,6 +14,14 @@ class Profile(models.Model):
     using separate logins to access the same data.
     '''
     
+    
+    @cached_property
+    def valid_invite_keys(self):
+        return self.get_valid_invite_keys()
+    
+    def get_valid_invite_keys(self):
+        return self.invite_keys.filter(expires__gt=timezone.now())
+    
     def __unicode__(self):
       usernames = [u.get_full_name() for u in self.users.all()]
       if len(usernames) == 0:
@@ -33,19 +41,12 @@ class User(AbstractUser):
     def shared_users(self):
         return self.get_shared_users()
     
-    @cached_property
-    def valid_invite_keys(self):
-        return self.get_valid_invite_keys()
-    
     def get_full_name(self):
         return u"{0} {1}".format(self.first_name, self.last_name) if self.first_name else \
             self.email or self.username
     
     def get_shared_users(self):
         return self.profile.users.exclude(id=self.id)
-    
-    def get_valid_invite_keys(self):
-        return self.invite_keys.filter(expires__gt=timezone.now())
 
 def create_user_profile(instance, created, raw, **kwargs):
     if raw:
@@ -74,7 +75,7 @@ class InviteKey(models.Model):
     
     CHARACTERS = "123456789ABCDEF"
     
-    user = models.ForeignKey(User, related_name='invite_keys')
+    profile = models.ForeignKey(Profile, related_name='invite_keys')
     key = models.CharField(max_length=20, blank=True, unique=True, help_text=u"If this is blank, a new key will be generated.")
     expires = models.DateTimeField(default=default_invite_key_expiry, help_text=u"Default is 30 days from now.")
     

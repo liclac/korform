@@ -49,9 +49,9 @@
         <hr />
         <a class="btn btn-default btn-block">{% trans "Create an invite key" %}</a>
       </div>
-      {% if request.user.valid_invite_keys %}
+      {% if request.user.profile.valid_invite_keys %}
       <ul class="list-group">
-        {% for key in request.user.valid_invite_keys %}
+        {% for key in request.user.profile.valid_invite_keys %}
           {% with expires_in=key.expires_in %}
             <li class="list-group-item">
               <strong>{{ key.key }}</strong>&nbsp;

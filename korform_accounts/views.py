@@ -25,7 +25,7 @@ class SettingsView(FormView):
 
 class CreateInviteKeyView(View):
     def get(self, request):
-        key = InviteKey.objects.create(user=request.user)
+        key = InviteKey.objects.create(profile=request.user.profile)
         return redirect(reverse('invite', kwargs={'pk': key.pk}))
 
 class InviteKeyView(DetailView):
@@ -33,4 +33,4 @@ class InviteKeyView(DetailView):
     context_object_name = 'key'
     
     def get_queryset(self):
-        return super(InviteKeyView, self).get_queryset().filter(user=self.request.user)
+        return super(InviteKeyView, self).get_queryset().filter(profile=self.request.user.profile)

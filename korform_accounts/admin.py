@@ -47,4 +47,4 @@ class ProfileAdmin(admin.ModelAdmin):
 
 @admin.register(InviteKey)
 class InviteKeyAdmin(admin.ModelAdmin):
-    list_display = ('user', 'key', 'expires')
+    list_display = ('profile', 'key', 'expires')
