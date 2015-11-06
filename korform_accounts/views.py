@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.views.generic import View, DetailView
 from django.views.generic.edit import FormView
@@ -27,6 +27,12 @@ class CreateInviteKeyView(View):
     def get(self, request):
         key = InviteKey.objects.create(profile=request.user.profile)
         return redirect(reverse('invite', kwargs={'pk': key.pk}))
+
+class DeleteInviteKeyView(View):
+    def get(self, request, pk):
+        key = get_object_or_404(InviteKey, pk=pk)
+        key.delete()
+        return redirect(reverse('account_settings'))
 
 class InviteKeyView(DetailView):
     model = InviteKey
