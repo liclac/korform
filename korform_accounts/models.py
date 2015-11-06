@@ -14,7 +14,6 @@ class Profile(models.Model):
     using separate logins to access the same data.
     '''
     
-    
     @cached_property
     def valid_invite_keys(self):
         return self.get_valid_invite_keys()
