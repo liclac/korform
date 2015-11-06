@@ -5,7 +5,7 @@ from registration.forms import RegistrationFormUniqueEmail
 from crispy_forms.helper import FormHelper, Layout
 from crispy_forms.layout import *
 from crispy_forms.bootstrap import *
-from .models import User
+from .models import User, InviteKey
 
 class MyAuthenticationForm(AuthenticationForm):
     def __init__(self, *args, **kwargs):
@@ -25,6 +25,10 @@ class MyAuthenticationForm(AuthenticationForm):
 class RegistrationForm(RegistrationFormUniqueEmail):
     first_name = forms.CharField(max_length=30, required=True)
     last_name = forms.CharField(max_length=30, required=True)
+    invite_key = forms.CharField(max_length=20, required=False,
+        help_text=u"An existing user can invite you to share their data.",
+        widget=forms.TextInput(attrs={'placeholder': u"XXXX-XXXX-XXXX-XXXX"})
+    )
     
     class Meta(RegistrationFormUniqueEmail.Meta):
         fields = ('username', 'email', 'first_name', 'last_name')
@@ -42,10 +46,35 @@ class RegistrationForm(RegistrationFormUniqueEmail):
             'email',
             'password1',
             'password2',
+            'invite_key',
             FormActions(
                 Submit('register', u"Register", css_class='btn-default'),
             ),
         )
+    
+    def clean_invite_key(self):
+        invite_key = self.cleaned_data['invite_key']
+        
+        if invite_key:
+            try:
+                InviteKey.objects.get(key=invite_key)
+            except InviteKey.DoesNotExist:
+                raise forms.ValidationError(_(u"Invalid invite key."), code='invalid')
+        
+        return invite_key
+    
+    def save(self, commit=True):
+        user = super(RegistrationForm, self).save(commit=False)
+        
+        if self.cleaned_data['invite_key']:
+            key = InviteKey.objects.get(key=self.cleaned_data['invite_key'])
+            user.profile = key.profile
+            key.delete()
+        
+        if commit:
+            user.save()
+        
+        return user
 
 class UserForm(forms.ModelForm):
     class Meta:
