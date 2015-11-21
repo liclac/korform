@@ -17,7 +17,7 @@ You need [Vagrant](https://vagrantup.com/) and [VirtualBox](https://virtualbox.o
 1. Run `vagrant ssh` to get a shell inside the virtual machine.
 1. Run `cd /vagrant`, this places you in the shared folder for the sources.
 1. Run `virtualenv .` to create an isolated environment for Python packages.
-1. Run `. bin/activate` to activate it.
+1. Run `. bin/activate` to activate it.  
    You must do this again before running any `./manage.py` commands, if you close and reopen your shell.
 1. Run `pip install -r requirements.txt` to install needed packages.
 1. Run `./manage.py bower install` to install Bower packages.
