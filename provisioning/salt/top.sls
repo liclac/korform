@@ -1,6 +1,7 @@
 base:
   '*':
     - common
+    - gettext
     - tuning
     - python
     - node

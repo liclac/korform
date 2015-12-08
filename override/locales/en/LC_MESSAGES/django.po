@@ -1,0 +1,2352 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-08 14:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lib/python2.7/site-packages/crispy_forms/tests/test_form_helper.py:130
+#: lib/python2.7/site-packages/crispy_forms/tests/test_form_helper.py:140
+#: lib/python2.7/site-packages/django/forms/fields.py:64
+msgid "This field is required."
+msgstr ""
+
+#: lib/python2.7/site-packages/crispy_forms/tests/test_layout.py:368
+msgid "i18n text"
+msgstr ""
+
+#: lib/python2.7/site-packages/crispy_forms/tests/test_layout.py:370
+msgid "i18n legend"
+msgstr ""
+
+#: lib/python2.7/site-packages/crispy_forms/tests/test_layout_objects.py:129
+#: lib/python2.7/site-packages/django/core/validators.py:20
+msgid "Enter a valid value."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/contrib/sitemaps/apps.py:7
+msgid "Site Maps"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/contrib/staticfiles/apps.py:7
+msgid "Static Files"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/contrib/webdesign/apps.py:7
+msgid "Web Design"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:87
+#: lib/python2.7/site-packages/django/forms/fields.py:712
+msgid "Enter a valid URL."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:130
+msgid "Enter a valid integer."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:141
+msgid "Enter a valid email address."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:215
+msgid ""
+"Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:220
+#: lib/python2.7/site-packages/django/core/validators.py:239
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:225
+#: lib/python2.7/site-packages/django/core/validators.py:240
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:235
+#: lib/python2.7/site-packages/django/core/validators.py:238
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:263
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1144
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:272
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:298
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:305
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:314
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/core/validators.py:325
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/db/models/base.py:1130
+#: lib/python2.7/site-packages/django/forms/models.py:718
+msgid "and"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/base.py:1132
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:107
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:108
+msgid "This field cannot be null."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:109
+msgid "This field cannot be blank."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:110
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:114
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:132
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:922
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1832
+msgid "Integer"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:926
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1830
+#, python-format
+msgid "'%(value)s' value must be an integer."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1001
+#, python-format
+msgid "'%(value)s' value must be either True or False."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1003
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1078
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1139
+msgid "Comma-separated integers"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1188
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1190
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1340
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1193
+msgid "Date (without time)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1338
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1342
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1346
+msgid "Date (with time)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1498
+#, python-format
+msgid "'%(value)s' value must be a decimal number."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1500
+msgid "Decimal number"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1651
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1654
+msgid "Duration"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1705
+msgid "Email address"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1729
+msgid "File path"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1796
+#, python-format
+msgid "'%(value)s' value must be a float."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1798
+msgid "Floating point number"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1899
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1914
+msgid "IPv4 address"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1950
+msgid "IP address"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2029
+#, python-format
+msgid "'%(value)s' value must be either None, True or False."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2031
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2091
+msgid "Positive integer"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2103
+msgid "Positive small integer"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2116
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2145
+msgid "Small integer"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2152
+msgid "Text"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2175
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2177
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2180
+msgid "Time"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2308
+msgid "URL"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2331
+msgid "Raw binary data"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/__init__.py:2375
+#, python-format
+msgid "'%(value)s' is not a valid UUID."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/files.py:239
+msgid "File"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/files.py:389
+msgid "Image"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/related.py:1796
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/related.py:1798
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/related.py:2028
+msgid "One-to-one relationship"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/db/models/fields/related.py:2118
+msgid "Many-to-many relationship"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:237
+msgid "Enter a whole number."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:280
+#: lib/python2.7/site-packages/django/forms/fields.py:317
+msgid "Enter a number."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:319
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:323
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:327
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:438
+#: lib/python2.7/site-packages/django/forms/fields.py:1193
+msgid "Enter a valid date."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:462
+#: lib/python2.7/site-packages/django/forms/fields.py:1194
+msgid "Enter a valid time."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:484
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:525
+msgid "Enter a valid duration."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:591
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:592
+msgid "No file was submitted."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:593
+msgid "The submitted file is empty."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:595
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:598
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:660
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:827
+#: lib/python2.7/site-packages/django/forms/fields.py:921
+#: lib/python2.7/site-packages/django/forms/models.py:1234
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:922
+#: lib/python2.7/site-packages/django/forms/fields.py:1037
+#: lib/python2.7/site-packages/django/forms/models.py:1233
+msgid "Enter a list of values."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:1038
+msgid "Enter a complete value."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/fields.py:1264
+msgid "Enter a valid UUID."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: lib/python2.7/site-packages/django/forms/forms.py:129
+msgid ":"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/forms.py:214
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: lib/python2.7/site-packages/django/forms/forms.py:659
+msgid ":?.!"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/formsets.py:96
+msgid "ManagementForm data is missing or has been tampered with"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/formsets.py:333
+#, python-format
+msgid "Please submit %d or fewer forms."
+msgid_plural "Please submit %d or fewer forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/formsets.py:340
+#, python-format
+msgid "Please submit %d or more forms."
+msgid_plural "Please submit %d or more forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/forms/formsets.py:368
+#: lib/python2.7/site-packages/django/forms/formsets.py:370
+msgid "Order"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/formsets.py:372
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_confirmation.html:19
+#: lib/python2.7/site-packages/grappelli/templates/admin/submit_line.html:7
+#: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:26
+msgid "Delete"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:712
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:716
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:722
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:730
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:1053
+msgid "The inline foreign key did not match the parent instance primary key."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:1119
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/models.py:1236
+#, python-format
+msgid "\"%(pk)s\" is not a valid value for a primary key."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/utils.py:165
+#, python-format
+msgid ""
+"%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:345
+msgid "Currently"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:346
+#: lib/python2.7/site-packages/grappelli/dashboard/templates/grappelli/dashboard/modules/app_list.html:24
+#: lib/python2.7/site-packages/grappelli/dashboard/templates/grappelli/dashboard/modules/model_list.html:10
+#: lib/python2.7/site-packages/grappelli/templates/admin/app_index.html:31
+#: lib/python2.7/site-packages/grappelli/templates/admin/index.html:50
+#: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:10
+msgid "Change"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:347
+msgid "Clear"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:555
+msgid "Unknown"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:556
+msgid "Yes"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/forms/widgets.py:557
+msgid "No"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:865
+msgid "yes,no,maybe"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:894
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:906
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:908
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:910
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:912
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:914
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/template/defaultfilters.py:916
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:61
+msgid "p.m."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:62
+msgid "a.m."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:67
+msgid "PM"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:68
+msgid "AM"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:151
+msgid "midnight"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dateformat.py:153
+msgid "noon"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+#: lib/python2.7/site-packages/extra_views/dates.py:15
+msgid "Monday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+#: lib/python2.7/site-packages/extra_views/dates.py:16
+msgid "Tuesday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+#: lib/python2.7/site-packages/extra_views/dates.py:17
+msgid "Wednesday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+#: lib/python2.7/site-packages/extra_views/dates.py:18
+msgid "Thursday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:6
+#: lib/python2.7/site-packages/extra_views/dates.py:19
+msgid "Friday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:7
+#: lib/python2.7/site-packages/extra_views/dates.py:20
+msgid "Saturday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:7
+#: lib/python2.7/site-packages/extra_views/dates.py:21
+msgid "Sunday"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+msgid "Mon"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+msgid "Tue"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+msgid "Wed"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+msgid "Thu"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:10
+msgid "Fri"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:11
+msgid "Sat"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:11
+msgid "Sun"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "January"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "February"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "March"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "April"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "May"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:18
+msgid "June"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "July"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "August"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "September"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "October"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:19
+msgid "November"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:20
+msgid "December"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "jan"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "feb"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "mar"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "apr"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "may"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:23
+msgid "jun"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "jul"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "aug"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "sep"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "oct"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "nov"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:24
+msgid "dec"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:31
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:32
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:33
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:34
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:35
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:36
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:37
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:38
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:39
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:40
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:41
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:42
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:45
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:46
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:47
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:48
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:49
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:50
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:51
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:52
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:53
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:54
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:55
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/dates.py:56
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/ipv6.py:10
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/text.py:79
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s..."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/text.py:248
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: lib/python2.7/site-packages/django/utils/text.py:267
+#: lib/python2.7/site-packages/django/utils/timesince.py:58
+msgid ", "
+msgstr ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:14
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:15
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/django/utils/timesince.py:47
+msgid "0 minutes"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:107
+msgid "Forbidden"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:108
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:112
+msgid ""
+"You are seeing this message because this HTTPS site requires a 'Referer "
+"header' to be sent by your Web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:117
+msgid ""
+"If you have configured your browser to disable 'Referer' headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for 'same-"
+"origin' requests."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:122
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:127
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for 'same-origin' requests."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/csrf.py:132
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/debug.py:583
+msgid "Welcome to Django"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/debug.py:584
+msgid "It worked!"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/debug.py:585
+msgid "Congratulations on your first Django-powered page."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/debug.py:586
+msgid ""
+"Of course, you haven't actually done any work yet. Next, start your first "
+"app by running <code>python manage.py startapp [app_label]</code>."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/debug.py:588
+msgid ""
+"You're seeing this message because you have <code>DEBUG = True</code> in "
+"your Django settings file and you haven't configured any URLs. Get to work!"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:48
+msgid "No year specified"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:104
+msgid "No month specified"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:163
+msgid "No day specified"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:219
+msgid "No week specified"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:378
+#: lib/python2.7/site-packages/django/views/generic/dates.py:406
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:660
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/dates.py:694
+#, python-format
+msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/detail.py:55
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/list.py:76
+msgid "Page is not 'last', nor can it be converted to an int."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/list.py:81
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/generic/list.py:172
+#, python-format
+msgid "Empty list and '%(class_name)s.allow_empty' is False."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/static.py:58
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/static.py:60
+#, python-format
+msgid "\"%(path)s\" does not exist"
+msgstr ""
+
+#: lib/python2.7/site-packages/django/views/static.py:100
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:96
+msgid "Dashboard"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:140
+msgid "Quick links"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:143
+msgid "Return to site"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:144
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:11
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:57
+#: lib/python2.7/site-packages/grappelli/templates/admin/base.html:90
+#: templates/korform_accounts/settings.html:26
+#: templates/registration/password_change_form.html:4
+#: templates/registration/password_change_form.html:5
+#: templates/registration/password_change_form.html:11
+msgid "Change password"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:146
+#: lib/python2.7/site-packages/grappelli/templates/admin/base.html:93
+#: templates/_navbar.html:65
+msgid "Log out"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:152
+#: lib/python2.7/site-packages/grappelli/dashboard/modules.py:213
+msgid "Applications"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:158
+msgid "Administration"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:163
+#: lib/python2.7/site-packages/grappelli/dashboard/modules.py:290
+#: lib/python2.7/site-packages/grappelli/templates/admin/index.html:76
+msgid "Recent Actions"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:167
+msgid "Latest Django News"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:174
+msgid "Support"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:177
+msgid "Django documentation"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:182
+msgid "Django \"django-users\" mailing list"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:187
+msgid "Django irc channel"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/modules.py:187
+msgid "Links"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/modules.py:350
+msgid "RSS Feed"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/templates/admin/index.html:25
+#: lib/python2.7/site-packages/grappelli/templates/admin/500.html:9
+#: lib/python2.7/site-packages/grappelli/templates/admin/app_index.html:11
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:7
+#: lib/python2.7/site-packages/grappelli/templates/admin/base.html:123
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_form.html:147
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list.html:150
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list_filter_sidebar.html:151
+#: lib/python2.7/site-packages/grappelli/templates/admin/constance/change_list.html:43
+#: lib/python2.7/site-packages/grappelli/templates/admin/csv_export_selected_confirmation.html:9
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_confirmation.html:13
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:13
+#: lib/python2.7/site-packages/grappelli/templates/admin/index.html:18
+#: lib/python2.7/site-packages/grappelli/templates/admin/invalid_setup.html:9
+#: lib/python2.7/site-packages/grappelli/templates/admin/object_history.html:9
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:8
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/index.html:9
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/missing_docutils.html:8
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/model_detail.html:20
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/model_index.html:23
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/template_filter_index.html:25
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/template_tag_index.html:27
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/view_detail.html:7
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/view_index.html:23
+#: lib/python2.7/site-packages/grappelli/templates/grp_doc/basic_page_structure.html:132
+#: lib/python2.7/site-packages/grappelli/templates/grp_doc/context_navigation.html:55
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_done.html:6
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:6
+#: lib/python2.7/site-packages/grappelli/templates/reversion/recover_form.html:7
+#: lib/python2.7/site-packages/grappelli/templates/reversion/recover_list.html:6
+#: lib/python2.7/site-packages/grappelli/templates/reversion/revision_form.html:7
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:26
+msgid "Home"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/templates/grappelli/dashboard/modules/app_list.html:19
+#: lib/python2.7/site-packages/grappelli/dashboard/templates/grappelli/dashboard/modules/model_list.html:9
+#: lib/python2.7/site-packages/grappelli/templates/admin/app_index.html:30
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_form.html:153
+#: lib/python2.7/site-packages/grappelli/templates/admin/index.html:45
+#: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:18
+msgid "Add"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/dashboard/templates/grappelli/dashboard/modules/recent_actions.html:18
+msgid "None Available"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/404.html:7
+#: lib/python2.7/site-packages/grappelli/templates/admin/404.html:11
+msgid "Page not found"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/404.html:12
+msgid "We're sorry, but the requested page could not be found."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/500.html:10
+msgid "Server error"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/500.html:15
+msgid "Server error (500)"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/500.html:19
+msgid "Server Error <em>(500)</em>"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/500.html:20
+msgid ""
+"There's been an error. It's been reported to the site administrators via e-"
+"mail and should be fixed shortly. Thanks for your patience."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/actions.html:10
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/actions.html:10
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/actions.html:11
+msgid "Clear selection"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/app_index.html:13
+#, python-format
+msgid "<li>%(name)s</li>"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/app_index.html:38
+#: lib/python2.7/site-packages/grappelli/templates/admin/index.html:59
+msgid "You don´t have permission to edit anything."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:15
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_done.html:7
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:7
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:10
+msgid "Password change"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:24
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:27
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_form.html:184
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list.html:231
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list_filter_sidebar.html:230
+#: lib/python2.7/site-packages/grappelli/templates/admin/login.html:32
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:44
+msgid "Please correct the error below."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:27
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_form.html:184
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list.html:231
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list_filter_sidebar.html:230
+#: lib/python2.7/site-packages/grappelli/templates/admin/login.html:32
+msgid "Please correct the errors below."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:34
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:30
+msgid "New password"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:46
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:37
+msgid "Password (again)"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:50
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:29
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/base.html:100
+msgid "View site"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/base.html:105
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:9
+msgid "Documentation"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_form.html:137
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/stacked.html:8
+msgid "Open All Items"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_form.html:138
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/stacked.html:9
+msgid "Close All Items"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_form.html:165
+#: lib/python2.7/site-packages/grappelli/templates/admin/object_history.html:15
+#: lib/python2.7/site-packages/grappelli/templates/reversion/revision_form.html:11
+msgid "History"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_form.html:166
+msgid "View on site"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list.html:168
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list_filter_sidebar.html:169
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/change_list.html:15
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list.html:197
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list_filter_sidebar.html:184
+msgid "Filter"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list.html:258
+#: lib/python2.7/site-packages/grappelli/templates/admin/constance/change_list.html:119
+#: lib/python2.7/site-packages/grappelli/templates/admin/submit_line.html:10
+msgid "Save"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list_results.html:18
+msgid "Toggle sorting"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list_results.html:19
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/change_list_results.html:20
+msgid "Remove from sorting"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/constance/change_list.html:70
+#: templates/korform_roster/contact_detail.html:13
+#: templates/korform_roster/member_detail.html:22
+msgid "Name"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/constance/change_list.html:75
+msgid "Default"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/constance/change_list.html:80
+msgid "Value"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/constance/change_list.html:85
+msgid "Is modified"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/csv_export_selected_confirmation.html:12
+msgid "Export selection as CSV"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/csv_export_selected_confirmation.html:31
+msgid "Export following fields:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/csv_export_selected_confirmation.html:34
+msgid "Select all"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/csv_export_selected_confirmation.html:54
+msgid "Back"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/csv_export_selected_confirmation.html:55
+msgid "Export"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_confirmation.html:29
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_confirmation.html:37
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_confirmation.html:47
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_confirmation.html:55
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:58
+msgid "Cancel"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_confirmation.html:56
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:59
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:16
+msgid "Delete multiple objects"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:26
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:34
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:44
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/stacked.html:10
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/stacked.html:58
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/tabular.html:94
+msgid "Add Item"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/stacked.html:27
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/tabular.html:67
+msgid "View on Site"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/stacked.html:29
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/tabular.html:69
+msgid "Move Item"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/stacked.html:33
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/stacked.html:38
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/tabular.html:73
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/tabular.html:78
+msgid "Delete Item"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/stacked.html:56
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/tabular.html:92
+#, python-format
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/edit_inline/tabular.html:8
+msgid "Add Another"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/filter.html:4
+#: lib/python2.7/site-packages/grappelli/templates/admin/filter_listing.html:3
+#, python-format
+msgid "%(filter_title)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/includes/object_delete_summary.html:3
+msgid "Summary"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/index.html:64
+msgid "Custom Views"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/index.html:78
+msgid "My Actions"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/index.html:81
+msgid "None available"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/invalid_setup.html:16
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/login.html:26
+msgid "Login"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/login.html:62
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/login.html:69
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_complete.html:17
+#: templates/_navbar.html:56 templates/registration/login.html:4
+#: templates/registration/login.html:5
+#: templates/registration/password_reset_form.html:20
+#: templates/registration/registration_form.html:10
+msgid "Log in"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/object_history.html:26
+#: lib/python2.7/site-packages/grappelli/templates/reversion/object_history.html:13
+#: lib/python2.7/site-packages/grappelli/templates/reversion/recover_list.html:22
+msgid "Date/time"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/object_history.html:27
+#: lib/python2.7/site-packages/grappelli/templates/reversion/object_history.html:14
+msgid "User"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/object_history.html:28
+msgid "Action"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/object_history.html:34
+msgid "DATETIME_FORMAT"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/object_history.html:42
+#: lib/python2.7/site-packages/grappelli/templates/reversion/object_history.html:36
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/pagination.html:8
+#: lib/python2.7/site-packages/grappelli/views/related.py:180
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/pagination.html:13
+#: lib/python2.7/site-packages/grappelli/templates/admin/pagination.html:15
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/pagination.html:27
+msgid "Show all"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/related_widget_wrapper.html:24
+#: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:16
+#, python-format
+msgid "Add another %(model)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/submit_line.html:13
+msgid "Save as new"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/submit_line.html:16
+msgid "Save and add another"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin/submit_line.html:19
+msgid "Save and continue editing"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:10
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:16
+msgid "Bookmarklets"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:13
+msgid "Documentation bookmarklets"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:18
+msgid ""
+"\n"
+"            <p>To install bookmarklets, drag the link to your bookmarks\n"
+"    toolbar, or right-click the link and add it to your bookmarks. Now you "
+"can\n"
+"    select the bookmarklet from any page in the site.  Note that some of "
+"these\n"
+"    bookmarklets require you to be viewing the site from a computer "
+"designated\n"
+"    as \"internal\" (talk to your system administrator if you aren't sure "
+"if\n"
+"    your computer is \"internal\").</p>\n"
+"        "
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:27
+msgid "Documentation for this page"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:28
+msgid ""
+"Jumps you from any page to the documentation for the view that generates "
+"that page."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:31
+msgid "Show object ID"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:32
+msgid ""
+"Shows the content-type and unique ID for pages that represent a single "
+"object."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:35
+msgid "Edit this object (current window)"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:36
+msgid "Jumps to the admin page for pages that represent a single object."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:39
+msgid "Edit this object (new window)"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/bookmarklets.html:40
+msgid "As above, but opens the admin page in a new window."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/view_index.html:43
+msgid "Empty namespace"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/admin_doc/view_index.html:57
+msgid "Views by empty namespace"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/logged_out.html:16
+msgid "Log in again"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_done.html:11
+msgid "Password change successful"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_done.html:16
+msgid "Your password was changed."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:18
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:23
+msgid "Old password"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:46
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:35
+msgid "Change my password"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_complete.html:5
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_complete.html:12
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_complete.html:5
+msgid "Password reset complete"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_complete.html:16
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:5
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:14
+msgid "Enter new password"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:5
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:43
+msgid "Password reset unsuccessful"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:18
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:21
+msgid "New password:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:26
+msgid "Confirm password:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:47
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_done.html:5
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_done.html:12
+msgid "Password reset successful"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_done.html:16
+msgid ""
+"We've emailed you instructions for setting your password. You should be "
+"receiving them shortly."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_done.html:17
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:2
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:8
+#: templates/registration/password_reset_email.html:18
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:10
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:12
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:5
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:13
+#: templates/registration/password_reset_done.html:4
+#: templates/registration/password_reset_done.html:5
+msgid "Password reset"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:17
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll email "
+"instructions for setting a new one."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:20
+msgid "Email address:"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:28
+msgid "Reset my password"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:8
+#, python-format
+msgid "Change selected %(model)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:24
+#, python-format
+msgid "Delete selected %(model)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/reversion/change_list.html:6
+#: lib/python2.7/site-packages/grappelli/templates/reversion/recover_form.html:10
+#: lib/python2.7/site-packages/grappelli/templates/reversion/recover_list.html:9
+#, python-format
+msgid "Recover deleted %(name)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/reversion/object_history.html:7
+msgid ""
+"Choose a date from the list below to revert to a previous version of this "
+"object."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/reversion/object_history.html:15
+msgid "Comment"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/reversion/recover_form.html:18
+msgid "Press the save button below to recover this version of the object."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/reversion/recover_list.html:16
+msgid ""
+"Choose a date from the list below to recover a deleted version of an object."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/reversion/recover_list.html:36
+msgid "There are no deleted objects to recover."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/reversion/revision_form.html:12
+#, python-format
+msgid "Revert %(verbose_name)s"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/reversion/revision_form.html:27
+msgid "Press the save button below to revert to this version of the object."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/change_list.html:7
+msgid "Dump data"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/change_list.html:11
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:6
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:27
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:33
+msgid "Load data"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:48
+msgid "Data from your computer"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:67
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:113
+msgid "Load"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:70
+msgid "Load fixture and save on disk"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:92
+#, python-format
+msgid "Data from %(smuggler_fixture_dir)s directory"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:96
+msgid "File name"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:97
+msgid "Size"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/templatetags/grp_tags.py:65
+msgid "Django site admin"
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/tests/test_switch.py:103
+#: lib/python2.7/site-packages/grappelli/tests/test_switch.py:162
+#: lib/python2.7/site-packages/grappelli/views/switch.py:37
+#: lib/python2.7/site-packages/grappelli/views/switch.py:48
+msgid "Permission denied."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/tests/test_switch.py:146
+#: lib/python2.7/site-packages/grappelli/views/switch.py:40
+#: lib/python2.7/site-packages/grappelli/views/switch.py:51
+#, python-format
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr ""
+
+#: lib/python2.7/site-packages/grappelli/views/related.py:98
+#: lib/python2.7/site-packages/grappelli/views/related.py:128
+msgid "?"
+msgstr ""
+
+#: lib/python2.7/site-packages/jsonfield/fields.py:31
+#: lib/python2.7/site-packages/jsonfield/fields.py:43
+#: lib/python2.7/site-packages/jsonfield/fields.py:81
+msgid "Enter valid JSON"
+msgstr ""
+
+#: templates/_navbar.html:21
+msgid "Sheets"
+msgstr ""
+
+#: templates/_navbar.html:34 templates/_navbar.html.py:46
+msgid "None yet!"
+msgstr ""
+
+#: templates/_navbar.html:37 templates/_navbar.html.py:49
+msgid "Add..."
+msgstr ""
+
+#: templates/_navbar.html:63
+msgid "Admin"
+msgstr ""
+
+#: templates/_navbar.html:64 templates/korform_accounts/settings.html:4
+msgid "Settings"
+msgstr ""
+
+#: templates/korform_accounts/invitekey_detail.html:16
+msgid "This key will be valid for another"
+msgstr ""
+
+#: templates/korform_accounts/invitekey_detail.html:16
+#: templates/korform_accounts/settings.html:58
+msgid "days"
+msgstr ""
+
+#: templates/korform_accounts/invitekey_detail.html:16
+#: templates/korform_accounts/settings.html:58
+msgid "hours"
+msgstr ""
+
+#: templates/korform_accounts/settings.html:11
+msgid "Account information"
+msgstr ""
+
+#: templates/korform_accounts/settings.html:17
+msgid ""
+"\n"
+"          Note: This only affects what is displayed in the account menu.<br /"
+">\n"
+"          It is completely separate from your contact information!\n"
+"          "
+msgstr ""
+
+#: templates/korform_accounts/settings.html:29
+msgid "Click here to change your password."
+msgstr ""
+
+#: templates/korform_accounts/settings.html:36
+msgid "Shared profiles"
+msgstr ""
+
+#: templates/korform_accounts/settings.html:40
+msgid ""
+"\n"
+"          Multiple users can share access to the same information, by "
+"entering an invite key when they sign up. A key can only be used once!\n"
+"          "
+msgstr ""
+
+#: templates/korform_accounts/settings.html:45
+msgid ""
+"\n"
+"          If an existing account should share your information, please "
+"contact an administrator and they will reassign the user to your profile.\n"
+"          "
+msgstr ""
+
+#: templates/korform_accounts/settings.html:50
+msgid "Create an invite key"
+msgstr ""
+
+#: templates/korform_accounts/settings.html:58
+msgid "Expires in"
+msgstr ""
+
+#: templates/korform_accounts/settings.html:59
+msgid "Expire now"
+msgstr ""
+
+#: templates/korform_accounts/settings.html:68
+msgid "Users sharing your profile"
+msgstr ""
+
+#: templates/korform_accounts/settings.html:74
+msgid "You are currently not sharing your profile with anyone."
+msgstr ""
+
+#: templates/korform_roster/contact_form.html:4
+#: templates/korform_roster/contact_form.html:8
+#: templates/korform_roster/member_form.html:4
+#: templates/korform_roster/member_form.html:8
+msgid "Edit"
+msgstr ""
+
+#: templates/korform_roster/contact_form.html:4
+#: templates/korform_roster/contact_form.html:8
+msgid "New Contact"
+msgstr ""
+
+#: templates/korform_roster/member_detail.html:8
+msgid "Missing RSVPs!"
+msgstr ""
+
+#: templates/korform_roster/member_detail.html:8
+msgid "We don't know if you'll be there for some of your events."
+msgstr ""
+
+#: templates/korform_roster/member_detail.html:8
+msgid "Click here to correct this."
+msgstr ""
+
+#: templates/korform_roster/member_detail.html:11
+msgid "New fields added!"
+msgstr ""
+
+#: templates/korform_roster/member_detail.html:11
+msgid "Please have a look at them, edit and save to confirm that you have."
+msgstr ""
+
+#: templates/korform_roster/member_detail.html:11
+msgid "Click here to edit your info."
+msgstr ""
+
+#: templates/korform_roster/member_form.html:4
+#: templates/korform_roster/member_form.html:8
+msgid "New Member"
+msgstr ""
+
+#: templates/korform_roster/member_group.html:4
+#: templates/korform_roster/member_group.html:5
+msgid "Select your group"
+msgstr ""
+
+#: templates/korform_roster/member_group.html:11
+msgid ""
+"\n"
+"  Make sure you pick the correct group!<br />\n"
+"  If you pick the wrong one, you have to contact an administrator to have it "
+"changed.\n"
+"  "
+msgstr ""
+
+#: templates/korform_roster/member_group.html:17
+msgid ""
+"\n"
+"  New? Not sure which group you're in? It's probably in your acceptance "
+"letter.\n"
+"  "
+msgstr ""
+
+#: templates/korform_roster/member_rsvp.html:4
+#: templates/korform_roster/member_rsvp.html:8
+msgid "Events"
+msgstr ""
+
+#: templates/korform_roster/member_rsvp.html:4
+#: templates/korform_roster/member_rsvp.html:8
+msgid "for"
+msgstr ""
+
+#: templates/korform_roster/member_rsvp.html:11
+msgid ""
+"\n"
+"  Choose your answers carefully - they cannot be changed later.<br />\n"
+"  If something happens and you cannot show up to an event you've agreed to, "
+"contact an administrator.\n"
+"  "
+msgstr ""
+
+#: templates/korform_roster/member_rsvp.html:21
+msgid ""
+"\n"
+"    You have answered every invitation.<br />\n"
+"    If you want to change one, you will need to contact an administrator.\n"
+"    "
+msgstr ""
+
+#: templates/registration/activate.html:4
+#: templates/registration/activate.html:5
+#: templates/registration/activate.html:8
+msgid "Account activation failed."
+msgstr ""
+
+#: templates/registration/activation_complete.html:4
+#: templates/registration/activation_complete.html:5
+msgid "Account Activated"
+msgstr ""
+
+#: templates/registration/activation_complete.html:9
+msgid "Your account is now activated."
+msgstr ""
+
+#: templates/registration/activation_complete.html:11
+msgid "You can log in."
+msgstr ""
+
+#: templates/registration/activation_email.html:6
+msgid "registration"
+msgstr ""
+
+#: templates/registration/activation_email.html:11
+#, python-format
+msgid ""
+"\n"
+"    You (or someone pretending to be you) have asked to register an account "
+"at\n"
+"    %(site_name)s.  If this wasn't you, please ignore this email\n"
+"    and your address will be removed from our records.\n"
+"    "
+msgstr ""
+
+#: templates/registration/activation_email.html:18
+#, python-format
+msgid ""
+"\n"
+"    To activate this account, please click the following link within the "
+"next\n"
+"    %(expiration_days)s days:\n"
+"    "
+msgstr ""
+
+#: templates/registration/activation_email.html:30
+#, python-format
+msgid ""
+"\n"
+"    Sincerely,\n"
+"    %(site_name)s Management\n"
+"    "
+msgstr ""
+
+#: templates/registration/activation_email.txt:2
+#, python-format
+msgid ""
+"\n"
+"You (or someone pretending to be you) have asked to register an account at\n"
+"%(site_name)s.  If this wasn't you, please ignore this email\n"
+"and your address will be removed from our records.\n"
+msgstr ""
+
+#: templates/registration/activation_email.txt:7
+#, python-format
+msgid ""
+"\n"
+"To activate this account, please click the following link within the next\n"
+"%(expiration_days)s days:\n"
+msgstr ""
+
+#: templates/registration/activation_email.txt:14
+#, python-format
+msgid ""
+"\n"
+"Sincerely,\n"
+"%(site_name)s Management\n"
+msgstr ""
+
+#: templates/registration/activation_email_subject.txt:1
+msgid "Account activation on"
+msgstr ""
+
+#: templates/registration/login.html:11
+msgid "Forgot your password?"
+msgstr ""
+
+#: templates/registration/login.html:11
+msgid "Reset it"
+msgstr ""
+
+#: templates/registration/login.html:12
+#: templates/registration/password_reset_form.html:21
+msgid "Not a member?"
+msgstr ""
+
+#: templates/registration/login.html:12
+#: templates/registration/password_reset_form.html:21
+#: templates/registration/registration_form.html:5
+msgid "Register"
+msgstr ""
+
+#: templates/registration/logout.html:4 templates/registration/logout.html:5
+msgid "Logged out"
+msgstr ""
+
+#: templates/registration/logout.html:8
+msgid "Successfully logged out"
+msgstr ""
+
+#: templates/registration/password_change_done.html:4
+#: templates/registration/password_change_done.html:5
+msgid "Password changed"
+msgstr ""
+
+#: templates/registration/password_change_done.html:8
+msgid "Password successfully changed!"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:9
+msgid "Your password has been reset!"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:10
+msgid "You may now"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:10
+msgid "log in"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_confirm.html:5
+msgid "Confirm password reset"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:11
+msgid "Set password"
+msgstr ""
+
+#: templates/registration/password_reset_done.html:9
+msgid ""
+"\n"
+"    We have sent you an email with a link to reset your password.\n"
+"    Please check your email and click the link to continue.\n"
+"    "
+msgstr ""
+
+#: templates/registration/password_reset_email.html:3
+msgid "Greetings"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:5
+#, python-format
+msgid ""
+"\n"
+"You are receiving this email because you (or someone pretending to be you)\n"
+"requested that your password be reset on the %(domain)s site.  If you do "
+"not \n"
+"wish to reset your password, please ignore this message.\n"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:11
+msgid ""
+"\n"
+"To reset your password, please click the following link, or copy and paste "
+"it\n"
+"into your web browser:\n"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:21
+msgid "Best regards"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:22
+msgid "Management"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:4
+#: templates/registration/password_reset_form.html:5
+#: templates/registration/password_reset_form.html:17
+msgid "Reset password"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:9
+msgid ""
+"\n"
+"    Forgot your password?  Enter your email in the form below and we'll send "
+"you instructions for creating a new one.\n"
+"    "
+msgstr ""
+
+#: templates/registration/password_reset_form.html:20
+msgid "Remembered it?"
+msgstr ""
+
+#: templates/registration/registration_closed.html:4
+#: templates/registration/registration_closed.html:5
+msgid "Registration is closed"
+msgstr ""
+
+#: templates/registration/registration_closed.html:8
+msgid "Sorry, but registration is closed at this moment. Come back later."
+msgstr ""
+
+#: templates/registration/registration_complete.html:4
+#: templates/registration/registration_complete.html:5
+msgid "Activation email sent"
+msgstr ""
+
+#: templates/registration/registration_complete.html:8
+msgid "Please check your email to complete the registration process."
+msgstr ""
+
+#: templates/registration/registration_form.html:4
+msgid "Register for an account"
+msgstr ""
+
+#: templates/registration/registration_form.html:10
+msgid "Already have an account?"
+msgstr ""

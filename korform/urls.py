@@ -44,6 +44,7 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls), name='admin'),
+    url(r'^rosetta/', include('rosetta.urls')),
 ]
 
 if settings.DEBUG or settings.TESTING:

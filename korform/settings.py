@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
+from django.utils.translation import ugettext_lazy as _
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
@@ -63,6 +65,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'overextends',
     'debug_toolbar',
+    'rosetta',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -297,6 +300,16 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LANGUAGES = (
+    ('en', _(u"English")),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'override', 'locales'),
+)
+
+ROSETTA_MESSAGES_PER_PAGE = 250
 
 
 # Static files (CSS, JavaScript, Images)
