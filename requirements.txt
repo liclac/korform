@@ -11,13 +11,17 @@ django-overextends==0.4.0
 django-pipeline==1.5.4
 django-redis==4.2.0
 django-registration-redux==1.2
+django-rosetta==0.7.8
 futures==3.0.3
 jsonfield==1.0.3
 markdown2==2.3.0
+microsofttranslator==0.7
 msgpack-python==0.4.6
+polib==1.0.7
 psycopg2==2.6.1
 pytz==2015.6
 redis==2.10.3
+requests==2.8.1
 six==1.9.0
 sphinx-me==0.3
 sqlparse==0.1.16
