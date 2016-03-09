@@ -324,12 +324,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'bower_components'),
 )
 
-# Allow a local_settings.py file to override settings
-try:
-    from local_settings import *
-except ImportError:
-    pass
-
 # Debug settings
 if DEBUG:
     # Send emails to the 'emails' folder
@@ -345,3 +339,9 @@ if TESTING:
     PASSWORD_HASHERS = (
         'django.contrib.auth.hashers.MD5PasswordHasher',
     )
+
+# Allow a local_settings.py file to override settings
+try:
+    from local_settings import *
+except ImportError:
+    pass

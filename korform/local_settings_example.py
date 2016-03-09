@@ -42,6 +42,7 @@ DEFAULT_FROM_EMAIL = "noreply@example.com"
 #EMAIL_USE_TLS = False
 #EMAIL_HOST_USER = 'myusername'
 #EMAIL_HOST_PASSWORD = 'mypassword'
+#EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 
 
 
