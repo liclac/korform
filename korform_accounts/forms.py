@@ -18,7 +18,7 @@ class MyAuthenticationForm(AuthenticationForm):
             Field('username', autofocus=True),
             'password',
             FormActions(
-                Submit('register', u"Register", css_class='btn-default'),
+                Submit('login', u"Login", css_class='btn-default'),
             ),
         )
 
