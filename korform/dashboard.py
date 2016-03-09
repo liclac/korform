@@ -28,6 +28,7 @@ class CustomIndexDashboard(Dashboard):
             models=(
                 'django.contrib.sites.models.*',
                 'korform_sites.models.*',
+                'django.contrib.flatpages.models.*',
             )
         ))
         
