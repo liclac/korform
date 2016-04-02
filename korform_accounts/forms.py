@@ -26,7 +26,7 @@ class RegistrationForm(RegistrationFormUniqueEmail):
     first_name = forms.CharField(max_length=30, required=True)
     last_name = forms.CharField(max_length=30, required=True)
     invite_key = forms.CharField(max_length=20, required=False,
-        help_text=u"An existing user can invite you to share their data.",
+        help_text=u"An existing user can invite you to share their data. (Optional)",
         widget=forms.TextInput(attrs={'placeholder': u"XXXX-XXXX-XXXX-XXXX"})
     )
     
