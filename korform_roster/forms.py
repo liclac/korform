@@ -79,6 +79,14 @@ class ContactForm(CustomizableMixin, forms.ModelForm):
             ),
         ]
         self.helper.layout = Layout(*layout_fields)
+    
+    def save(self, commit=True):
+        super(ContactForm, self).save(commit=False)
+        for key in self.extra_keys:
+            self.instance.extra[key] = self.cleaned_data[key]
+        if commit:
+            self.instance.save()
+        return self.instance
 
 class RSVPForm(forms.ModelForm):
     class Meta:
