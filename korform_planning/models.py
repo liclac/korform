@@ -56,7 +56,7 @@ class Event(models.Model):
     end = models.DateTimeField(null=True, blank=True, help_text=u"To specify only the date, leave the time to 00:00.")
     subtitle = models.CharField(max_length=100, blank=True, help_text=u"Displayed along with the duration. Can be used to describe durations not expressable with a simple start/end.")
     info = models.TextField(blank=True, help_text=u"Displayed under the subtitle. Allows Markdown.")
-    no_answer = models.BooleanField(default=False, help_text=u"This event should merely be noted on members' calendars, but no RSVP is requested. [NOT YET FUNCTIONAL]")
+    no_answer = models.BooleanField(default=False, help_text=u"This event should merely be noted on members' calendars, but no RSVP is requested.")
     position = models.PositiveIntegerField(null=True)
     
     def get_subtitle(self):
