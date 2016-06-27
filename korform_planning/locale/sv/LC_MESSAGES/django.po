@@ -20,12 +20,12 @@ msgstr ""
 
 #: korform_planning/admin.py:22
 msgid "Site"
-msgstr ""
+msgstr ””
 
 #: korform_planning/models.py:148
 msgid "Name"
-msgstr ""
+msgstr ”Namn”
 
 #: korform_planning/models.py:149
 msgid "Birthday"
-msgstr ""
+msgstr ”Födelsedag”
