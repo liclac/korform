@@ -20,8 +20,8 @@ msgstr ""
 
 #: korform/dashboard.py:60
 msgid "Recent Actions"
-msgstr ""
+msgstr ”Senaste aktivitet”
 
 #: korform/settings.py:305
 msgid "English"
-msgstr ""
+msgstr ”Svenska”
