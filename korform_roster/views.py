@@ -85,7 +85,7 @@ class MemberRSVPView(ModelFormSetView):
     def get_events(self):
         member = self.get_member()
         term = self.request.site.config.current_term
-        return member.group.events.filter(term_id=term.id).exclude(rsvps__member_id=member.id)
+        return member.group.events.filter(term_id=term.id).exclude(rsvps__member_id=member.id).order_by('start')
     
     def get_factory_kwargs(self):
         kwargs = super(MemberRSVPView, self).get_factory_kwargs()
