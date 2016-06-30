@@ -71,8 +71,7 @@ class Event(models.Model):
         return u", ".join(parts)
     
     def __unicode__(self):
-        group_codes = self.groups.values_list('code', flat=True)
-        return u"{0} ({1})".format(self.name, u', '.join(group_codes))
+        return self.name
 
 class Form(models.Model):
     '''
