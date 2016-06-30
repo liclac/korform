@@ -131,7 +131,7 @@ msgstr[1] ""
 #: lib/python2.7/site-packages/django/db/models/base.py:1130
 #: lib/python2.7/site-packages/django/forms/models.py:718
 msgid "and"
-msgstr ""
+msgstr ”och”
 
 #: lib/python2.7/site-packages/django/db/models/base.py:1132
 #, python-format
@@ -149,7 +149,7 @@ msgstr ""
 
 #: lib/python2.7/site-packages/django/db/models/fields/__init__.py:109
 msgid "This field cannot be blank."
-msgstr ""
+msgstr ”Detta fält kan inte vara tomt.”
 
 #: lib/python2.7/site-packages/django/db/models/fields/__init__.py:110
 #, python-format
@@ -257,7 +257,7 @@ msgstr ""
 
 #: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1705
 msgid "Email address"
-msgstr ""
+msgstr ”E-postadress”
 
 #: lib/python2.7/site-packages/django/db/models/fields/__init__.py:1729
 msgid "File path"
@@ -569,15 +569,15 @@ msgstr ""
 #: lib/python2.7/site-packages/grappelli/templates/admin/index.html:50
 #: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:10
 msgid "Change"
-msgstr ""
+msgstr ”Ändra”
 
 #: lib/python2.7/site-packages/django/forms/widgets.py:347
 msgid "Clear"
-msgstr ""
+msgstr ”Töm”
 
 #: lib/python2.7/site-packages/django/forms/widgets.py:555
 msgid "Unknown"
-msgstr ""
+msgstr ”Okänd”
 
 #: lib/python2.7/site-packages/django/forms/widgets.py:556
 msgid "Yes"
