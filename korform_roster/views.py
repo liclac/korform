@@ -80,6 +80,12 @@ class MemberUpdateView(CustomFormMixin, UpdateView):
     context_object_name = 'member'
     form_class = MemberForm
     form_spec_path = 'request.site.config.current_term.form'
+    
+    def get_object(self, *args, **kwargs):
+        obj = super(MemberUpdateView, self).get_object(*args, **kwargs)
+        if obj.profile != self.request.user.profile:
+            raise Http404()
+        return obj
 
 class MemberRSVPView(ModelFormSetView):
     template_name = 'korform_roster/member_rsvp.html'
@@ -89,7 +95,10 @@ class MemberRSVPView(ModelFormSetView):
     fields = RSVPForm.Meta.fields
     
     def get_member(self):
-        return get_object_or_404(Member, pk=self.kwargs['pk'])
+        member = get_object_or_404(Member, pk=self.kwargs['pk'])
+        if member.profile != self.request.user.profile:
+            raise Http404()
+        return member
     
     def get_events(self):
         member = self.get_member()
