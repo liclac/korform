@@ -93,7 +93,7 @@ class RSVPForm(forms.ModelForm):
         model = RSVP
         fields = ('answer', 'comment')
         widgets = {
-            'comment': forms.Textarea(attrs={'rows': 2, 'placeholder': _(u"Required for \"No\" and \"Maybe\".")})
+            'comment': forms.Textarea(attrs={'rows': 2})
         }
     
     answer = forms.TypedChoiceField(widget=forms.RadioSelect, choices=RSVP.CHOICES, coerce=int, required=True)
