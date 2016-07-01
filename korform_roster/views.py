@@ -29,6 +29,14 @@ class CustomFormMixin(object):
 class MemberView(DetailView):
     model = Member
     context_object_name = 'member'
+    
+    def get_context_data(self, **kwargs):
+        context = super(MemberView, self).get_context_data(**kwargs)
+        
+        member = context['member']
+        if member.profile == self.request.user.profile:
+            context['has_missing'] = member.group.events.filter(term_id=self.request.site.config.current_term.id).exclude(rsvps__member_id=member.id).count()
+        return context
 
 class MemberPickGroupView(TemplateView):
     template_name = 'korform_roster/member_group.html'

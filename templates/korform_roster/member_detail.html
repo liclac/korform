@@ -4,7 +4,7 @@
 {% block title %}{{ member.get_full_name }}{% endblock %}
 
 {% block content %}
-{% if member.events_missing_rsvp %}
+{% if has_missing %}
 <div class="alert alert-danger"><strong>{% trans "Missing RSVPs!" %}</strong> {% trans "We don't know if you'll be there for some of your events." %} <a href="{% url 'member_rsvp' member.pk %}">{% trans "Click here to correct this." %}</a></div>
 {% endif %}
 {% if member.fields_missing_value %}
