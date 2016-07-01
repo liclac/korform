@@ -34,9 +34,12 @@ class MemberView(DetailView):
         context = super(MemberView, self).get_context_data(**kwargs)
         
         member = context['member']
+        context['rsvps'] = member.rsvps.filter(event__term_id=self.request.site.config.current_term.id)
+        
         if member.profile == self.request.user.profile:
             context['has_missing_events'] = member.group.events.filter(term_id=self.request.site.config.current_term.id).exclude(rsvps__member_id=member.id).count()
             context['has_missing_fields'] = len(member.fields_missing_value)
+        
         return context
 
 class MemberPickGroupView(TemplateView):

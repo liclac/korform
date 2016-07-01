@@ -135,3 +135,6 @@ class RSVP(models.Model):
     event = models.ForeignKey('korform_planning.Event', related_name='rsvps')
     answer = models.IntegerField(choices=CHOICES)
     comment = models.TextField(blank=True)
+    
+    def css_class(self):
+        return {1: 'success', 0: 'danger', 2: 'warning'}.get(self.answer, 'default')
