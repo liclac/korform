@@ -22,7 +22,7 @@ msgstr ""
 #: lib/python2.7/site-packages/crispy_forms/tests/test_form_helper.py:140
 #: lib/python2.7/site-packages/django/forms/fields.py:64
 msgid "This field is required."
-msgstr ”Detta fält måste fyllas i.”
+msgstr "Detta fält måste fyllas i."
 
 #: lib/python2.7/site-packages/crispy_forms/tests/test_layout.py:368
 msgid "i18n text"
@@ -35,7 +35,7 @@ msgstr ""
 #: lib/python2.7/site-packages/crispy_forms/tests/test_layout_objects.py:129
 #: lib/python2.7/site-packages/django/core/validators.py:20
 msgid "Enter a valid value."
-msgstr ””
+msgstr ""
 
 #: lib/python2.7/site-packages/django/contrib/sitemaps/apps.py:7
 msgid "Site Maps"
@@ -581,15 +581,15 @@ msgstr ”Okänd”
 
 #: lib/python2.7/site-packages/django/forms/widgets.py:556
 msgid "Yes"
-msgstr ”Ja”
+msgstr "Ja"
 
 #: lib/python2.7/site-packages/django/forms/widgets.py:557
 msgid "No"
-msgstr ”Nej”
+msgstr "Nej"
 
 #: lib/python2.7/site-packages/django/template/defaultfilters.py:865
 msgid "yes,no,maybe"
-msgstr ”ja, nej, kanske”
+msgstr "ja, nej, kanske"
 
 #: lib/python2.7/site-packages/django/template/defaultfilters.py:894
 #: lib/python2.7/site-packages/django/template/defaultfilters.py:906
@@ -626,306 +626,306 @@ msgstr ""
 
 #: lib/python2.7/site-packages/django/utils/dateformat.py:61
 msgid "p.m."
-msgstr ”em”
+msgstr "em"
 
 #: lib/python2.7/site-packages/django/utils/dateformat.py:62
 msgid "a.m."
-msgstr ”fm”
+msgstr "fm"
 
 #: lib/python2.7/site-packages/django/utils/dateformat.py:67
 msgid "PM"
-msgstr ”EM”
+msgstr "EM"
 
 #: lib/python2.7/site-packages/django/utils/dateformat.py:68
 msgid "AM"
-msgstr ”FM”
+msgstr "FM"
 
 #: lib/python2.7/site-packages/django/utils/dateformat.py:151
 msgid "midnight"
-msgstr ”midnatt”
+msgstr "midnatt"
 
 #: lib/python2.7/site-packages/django/utils/dateformat.py:153
 msgid "noon"
-msgstr ””
+msgstr ""
 
 #: lib/python2.7/site-packages/django/utils/dates.py:6
 #: lib/python2.7/site-packages/extra_views/dates.py:15
 msgid "Monday"
-msgstr ”måndag”
+msgstr "måndag"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:6
 #: lib/python2.7/site-packages/extra_views/dates.py:16
 msgid "Tuesday"
-msgstr ”tisdag”
+msgstr "tisdag"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:6
 #: lib/python2.7/site-packages/extra_views/dates.py:17
 msgid "Wednesday"
-msgstr ”onsdag”
+msgstr "onsdag"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:6
 #: lib/python2.7/site-packages/extra_views/dates.py:18
 msgid "Thursday"
-msgstr ”torsdag”
+msgstr "torsdag"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:6
 #: lib/python2.7/site-packages/extra_views/dates.py:19
 msgid "Friday"
-msgstr ”fredag”
+msgstr "fredag"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:7
 #: lib/python2.7/site-packages/extra_views/dates.py:20
 msgid "Saturday"
-msgstr ”lördag”
+msgstr "lördag"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:7
 #: lib/python2.7/site-packages/extra_views/dates.py:21
 msgid "Sunday"
-msgstr ”söndag”
+msgstr "söndag"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Mon"
-msgstr ”må”
+msgstr "må"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Tue"
-msgstr ”ti”
+msgstr "ti"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Wed"
-msgstr ”on”
+msgstr "on"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Thu"
-msgstr ”to”
+msgstr "to"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:10
 msgid "Fri"
-msgstr ”fr”
+msgstr "fr"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:11
 msgid "Sat"
-msgstr ”lö”
+msgstr "lö"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:11
 msgid "Sun"
-msgstr ”sö”
+msgstr "sö"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "January"
-msgstr ”januari”
+msgstr "januari"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "February"
-msgstr ”februari”
+msgstr "februari"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "March"
-msgstr ”mars”
+msgstr "mars"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "April"
-msgstr ”april”
+msgstr "april"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "May"
-msgstr ”maj”
+msgstr "maj"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:18
 msgid "June"
-msgstr ”juni”
+msgstr "juni"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "July"
-msgstr ”juli”
+msgstr "juli"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "August"
-msgstr ”augusti”
+msgstr "augusti"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "September"
-msgstr ”september”
+msgstr "september"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "October"
-msgstr ”oktober”
+msgstr "oktober"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:19
 msgid "November"
-msgstr ”november”
+msgstr "november"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:20
 msgid "December"
-msgstr ”december”
+msgstr "december"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:23
 msgid "jan"
-msgstr ”jan”
+msgstr "jan"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:23
 msgid "feb"
-msgstr ”feb”
+msgstr "feb"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:23
 msgid "mar"
-msgstr ”mar”
+msgstr "mar"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:23
 msgid "apr"
-msgstr ”apr”
+msgstr "apr"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:23
 msgid "may"
-msgstr ”maj”
+msgstr "maj"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:23
 msgid "jun"
-msgstr ”jun”
+msgstr "jun"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:24
 msgid "jul"
-msgstr ”jul”
+msgstr "jul"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:24
 msgid "aug"
-msgstr ”aug”
+msgstr "aug"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:24
 msgid "sep"
-msgstr ”sep”
+msgstr "sep"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:24
 msgid "oct"
-msgstr ”okt”
+msgstr "okt"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:24
 msgid "nov"
-msgstr ”nov”
+msgstr "nov"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:24
 msgid "dec"
-msgstr ”dec”
+msgstr "dec"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:31
 msgctxt "abbrev. month"
 msgid "Jan."
-msgstr ”jan.”
+msgstr "jan."
 
 #: lib/python2.7/site-packages/django/utils/dates.py:32
 msgctxt "abbrev. month"
 msgid "Feb."
-msgstr ”feb.”
+msgstr "feb."
 
 #: lib/python2.7/site-packages/django/utils/dates.py:33
 msgctxt "abbrev. month"
 msgid "March"
-msgstr ”mars”
+msgstr "mars"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:34
 msgctxt "abbrev. month"
 msgid "April"
-msgstr ”apr.”
+msgstr "apr."
 
 #: lib/python2.7/site-packages/django/utils/dates.py:35
 msgctxt "abbrev. month"
 msgid "May"
-msgstr ”maj”
+msgstr "maj"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:36
 msgctxt "abbrev. month"
 msgid "June"
-msgstr ”juni”
+msgstr "juni"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:37
 msgctxt "abbrev. month"
 msgid "July"
-msgstr ”juni”
+msgstr "juni"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:38
 msgctxt "abbrev. month"
 msgid "Aug."
-msgstr ”aug.”
+msgstr "aug."
 
 #: lib/python2.7/site-packages/django/utils/dates.py:39
 msgctxt "abbrev. month"
 msgid "Sept."
-msgstr ”sept.”
+msgstr "sept."
 
 #: lib/python2.7/site-packages/django/utils/dates.py:40
 msgctxt "abbrev. month"
 msgid "Oct."
-msgstr ”okt.”
+msgstr "okt."
 
 #: lib/python2.7/site-packages/django/utils/dates.py:41
 msgctxt "abbrev. month"
 msgid "Nov."
-msgstr ”nov.”
+msgstr "nov."
 
 #: lib/python2.7/site-packages/django/utils/dates.py:42
 msgctxt "abbrev. month"
 msgid "Dec."
-msgstr ”dec.”
+msgstr "dec."
 
 #: lib/python2.7/site-packages/django/utils/dates.py:45
 msgctxt "alt. month"
 msgid "January"
-msgstr ”januari”
+msgstr "januari"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:46
 msgctxt "alt. month"
 msgid "February"
-msgstr ”februari”
+msgstr "februari"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:47
 msgctxt "alt. month"
 msgid "March"
-msgstr ”mars”
+msgstr "mars"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:48
 msgctxt "alt. month"
 msgid "April"
-msgstr ”april”
+msgstr "april"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:49
 msgctxt "alt. month"
 msgid "May"
-msgstr ”maj”
+msgstr "maj"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:50
 msgctxt "alt. month"
 msgid "June"
-msgstr ”juni”
+msgstr "juni"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:51
 msgctxt "alt. month"
 msgid "July"
-msgstr ”juli”
+msgstr "juli"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:52
 msgctxt "alt. month"
 msgid "August"
-msgstr ”augusti”
+msgstr "augusti"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:53
 msgctxt "alt. month"
 msgid "September"
-msgstr ”september”
+msgstr "september"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:54
 msgctxt "alt. month"
 msgid "October"
-msgstr ”oktober”
+msgstr "oktober"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:55
 msgctxt "alt. month"
 msgid "November"
-msgstr ”november”
+msgstr "november"
 
 #: lib/python2.7/site-packages/django/utils/dates.py:56
 msgctxt "alt. month"
 msgid "December"
-msgstr ”december”
+msgstr "december"
 
 #: lib/python2.7/site-packages/django/utils/ipv6.py:10
 msgid "This is not a valid IPv6 address."
@@ -939,7 +939,7 @@ msgstr ""
 
 #: lib/python2.7/site-packages/django/utils/text.py:248
 msgid "or"
-msgstr ”eller”
+msgstr "eller"
 
 #. Translators: This string is used as a separator between list elements
 #: lib/python2.7/site-packages/django/utils/text.py:267
@@ -951,51 +951,51 @@ msgstr ""
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
-msgstr[0] ”%d år”
-msgstr[1] ”%d år”
+msgstr[0] "%d år"
+msgstr[1] "%d år"
 
 #: lib/python2.7/site-packages/django/utils/timesince.py:11
 #, python-format
 msgid "%d month"
 msgid_plural "%d months"
-msgstr[0] ”%d månad”
-msgstr[1] ”%d månader”
+msgstr[0] "%d månad"
+msgstr[1] "%d månader"
 
 #: lib/python2.7/site-packages/django/utils/timesince.py:12
 #, python-format
 msgid "%d week"
 msgid_plural "%d weeks"
-msgstr[0] ”%d vecka”
-msgstr[1] ”%d veckor”
+msgstr[0] "%d vecka"
+msgstr[1] "%d veckor"
 
 #: lib/python2.7/site-packages/django/utils/timesince.py:13
 #, python-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] ”%d dag”
-msgstr[1] ”%d dagar”
+msgstr[0] "%d dag"
+msgstr[1] "%d dagar"
 
 #: lib/python2.7/site-packages/django/utils/timesince.py:14
 #, python-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ”%d timma”
-msgstr[1] ”%d timmar”
+msgstr[0] "%d timma"
+msgstr[1] "%d timmar"
 
 #: lib/python2.7/site-packages/django/utils/timesince.py:15
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ”%d minut”
-msgstr[1] ”%d minuter”
+msgstr[0] "%d minut"
+msgstr[1] "%d minuter"
 
 #: lib/python2.7/site-packages/django/utils/timesince.py:47
 msgid "0 minutes"
-msgstr ”0 minuter”
+msgstr "0 minuter"
 
 #: lib/python2.7/site-packages/django/views/csrf.py:107
 msgid "Forbidden"
-msgstr ”Förbjuden”
+msgstr "Förbjuden"
 
 #: lib/python2.7/site-packages/django/views/csrf.py:108
 msgid "CSRF verification failed. Request aborted."
@@ -1145,13 +1145,13 @@ msgstr ""
 #: templates/registration/password_change_form.html:5
 #: templates/registration/password_change_form.html:11
 msgid "Change password"
-msgstr ”Ändra lösenord”
+msgstr "Ändra lösenord"
 
 #: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:146
 #: lib/python2.7/site-packages/grappelli/templates/admin/base.html:93
 #: templates/_navbar.html:65
 msgid "Log out"
-msgstr ”Logga ut”
+msgstr "Logga ut"
 
 #: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:152
 #: lib/python2.7/site-packages/grappelli/dashboard/modules.py:213
@@ -1166,7 +1166,7 @@ msgstr ""
 #: lib/python2.7/site-packages/grappelli/dashboard/modules.py:290
 #: lib/python2.7/site-packages/grappelli/templates/admin/index.html:76
 msgid "Recent Actions"
-msgstr ”Senaste aktivitet”
+msgstr "Senaste aktivitet"
 
 #: lib/python2.7/site-packages/grappelli/dashboard/dashboards.py:167
 msgid "Latest Django News"
@@ -1238,28 +1238,28 @@ msgstr ""
 #: lib/python2.7/site-packages/grappelli/templates/admin/index.html:45
 #: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:18
 msgid "Add"
-msgstr ”Lägg till”
+msgstr "Lägg till"
 
 #: lib/python2.7/site-packages/grappelli/dashboard/templates/grappelli/dashboard/modules/recent_actions.html:18
 msgid "None Available"
-msgstr ”Ingen tillgänglig”
+msgstr "Ingen tillgänglig"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/404.html:7
 #: lib/python2.7/site-packages/grappelli/templates/admin/404.html:11
 msgid "Page not found"
-msgstr ”Sidan kan inte hittas”
+msgstr "Sidan kan inte hittas"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/404.html:12
 msgid "We're sorry, but the requested page could not be found."
-msgstr ”Ber om ursäkt! Sidan kunde inte hittas.”
+msgstr "Ber om ursäkt! Sidan kunde inte hittas."
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/500.html:10
 msgid "Server error"
-msgstr ””
+msgstr ""
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/500.html:15
 msgid "Server error (500)"
-msgstr ””
+msgstr ""
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/500.html:19
 msgid "Server Error <em>(500)</em>"
@@ -1269,7 +1269,7 @@ msgstr ""
 msgid ""
 "There's been an error. It's been reported to the site administrators via e-"
 "mail and should be fixed shortly. Thanks for your patience."
-msgstr ”Någonting har blivit fel. Felet har rapporterats till sidans administratör och kommer att lösas med det snaraste. Tack för ditt tålamod.”
+msgstr "Någonting har blivit fel. Felet har rapporterats till sidans administratör och kommer att lösas med det snaraste. Tack för ditt tålamod."
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/actions.html:10
 msgid "Click here to select the objects across all pages"
@@ -1299,7 +1299,7 @@ msgstr ""
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:7
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:10
 msgid "Password change"
-msgstr ”Byte av lösenord”
+msgstr "Byte av lösenord"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:24
 #, python-format
@@ -1313,7 +1313,7 @@ msgstr ""
 #: lib/python2.7/site-packages/grappelli/templates/admin/login.html:32
 #: lib/python2.7/site-packages/grappelli/templates/smuggler/load_data_form.html:44
 msgid "Please correct the error below."
-msgstr ”Vänligen rätta felet nedan.”
+msgstr "Vänligen rätta felet nedan."
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:27
 #: lib/python2.7/site-packages/grappelli/templates/admin/change_form.html:184
@@ -1321,22 +1321,22 @@ msgstr ”Vänligen rätta felet nedan.”
 #: lib/python2.7/site-packages/grappelli/templates/admin/change_list_filter_sidebar.html:230
 #: lib/python2.7/site-packages/grappelli/templates/admin/login.html:32
 msgid "Please correct the errors below."
-msgstr ”Vänligen rätta felen nedan.”
+msgstr "Vänligen rätta felen nedan."
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:34
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:30
 msgid "New password"
-msgstr ”Nytt lösenord”
+msgstr "Nytt lösenord"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:46
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:37
 msgid "Password (again)"
-msgstr ”Lösenord (en gång till)”
+msgstr "Lösenord (en gång till)"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/auth/user/change_password.html:50
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:29
 msgid "Enter the same password as above, for verification."
-msgstr ”För att verifiera: fyll i samma lösenord som ovan.”
+msgstr "För att verifiera: fyll i samma lösenord som ovan."
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/base.html:100
 msgid "View site"
@@ -1383,7 +1383,7 @@ msgstr ""
 #: lib/python2.7/site-packages/grappelli/templates/admin/constance/change_list.html:119
 #: lib/python2.7/site-packages/grappelli/templates/admin/submit_line.html:10
 msgid "Save"
-msgstr ”Spara”
+msgstr "Spara"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/change_list_results.html:18
 msgid "Toggle sorting"
@@ -1402,7 +1402,7 @@ msgstr ""
 #: templates/korform_roster/contact_detail.html:13
 #: templates/korform_roster/member_detail.html:22
 msgid "Name"
-msgstr ”Namn”
+msgstr "Namn"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/constance/change_list.html:75
 msgid "Default"
@@ -1461,12 +1461,12 @@ msgstr ""
 #: lib/python2.7/site-packages/grappelli/templates/admin/delete_confirmation.html:55
 #: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:58
 msgid "Cancel"
-msgstr ”Ångra”
+msgstr "Ångra"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/delete_confirmation.html:56
 #: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:59
 msgid "Yes, I'm sure"
-msgstr ”Ja, jag är säker”
+msgstr "Ja, jag är säker"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/delete_selected_confirmation.html:16
 msgid "Delete multiple objects"
@@ -1562,7 +1562,7 @@ msgstr ""
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/login.html:62
 msgid "Forgotten your password or username?"
-msgstr ”Glömt ditt lösenord eller användarnamn?”
+msgstr "Glömt ditt lösenord eller användarnamn?"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/login.html:69
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_complete.html:17
@@ -1571,7 +1571,7 @@ msgstr ”Glömt ditt lösenord eller användarnamn?”
 #: templates/registration/password_reset_form.html:20
 #: templates/registration/registration_form.html:10
 msgid "Log in"
-msgstr ”Logga in”
+msgstr "Logga in"
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/object_history.html:26
 #: lib/python2.7/site-packages/grappelli/templates/reversion/object_history.html:13
@@ -1615,7 +1615,7 @@ msgstr ""
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/pagination.html:27
 msgid "Show all"
-msgstr ””
+msgstr ""
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/related_widget_wrapper.html:24
 #: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:16
@@ -1625,7 +1625,7 @@ msgstr ""
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/submit_line.html:13
 msgid "Save as new"
-msgstr ””
+msgstr ""
 
 #: lib/python2.7/site-packages/grappelli/templates/admin/submit_line.html:16
 msgid "Save and add another"
@@ -1706,51 +1706,51 @@ msgstr ""
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/logged_out.html:16
 msgid "Log in again"
-msgstr ”Logga in igen”
+msgstr "Logga in igen"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_change_done.html:11
 msgid "Password change successful"
-msgstr ”Lösenordsbytet lyckades”
+msgstr "Lösenordsbytet lyckades"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_change_done.html:16
 msgid "Your password was changed."
-msgstr ”Ditt lösenord har ändrats.”
+msgstr "Ditt lösenord har ändrats."
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:18
 msgid ""
 "Please enter your old password, for security's sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
-msgstr ”Vänligen fyll i ditt gamla lösenord. Fyll sedan i ditt nya lösenord två gånger, så att vi kan bekräfta att du har skrivit in det rätt.”
+msgstr "Vänligen fyll i ditt gamla lösenord. Fyll sedan i ditt nya lösenord två gånger, så att vi kan bekräfta att du har skrivit in det rätt."
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:23
 msgid "Old password"
-msgstr ”Gammalt lösenord”
+msgstr "Gammalt lösenord"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_change_form.html:46
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:35
 msgid "Change my password"
-msgstr ”Byt mitt lösenord”
+msgstr "Byt mitt lösenord"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_complete.html:5
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_complete.html:12
 #: templates/registration/password_reset_complete.html:4
 #: templates/registration/password_reset_complete.html:5
 msgid "Password reset complete"
-msgstr ”Återställning av lösenord genomförd”
+msgstr "Återställning av lösenord genomförd"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_complete.html:16
 msgid "Your password has been set.  You may go ahead and log in now."
-msgstr ”Ditt lösenord är klart. Nu kan du logga in.”
+msgstr "Ditt lösenord är klart. Nu kan du logga in."
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:5
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:14
 msgid "Enter new password"
-msgstr ”Fyll i nytt lösenord”
+msgstr "Fyll i nytt lösenord"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:5
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:43
 msgid "Password reset unsuccessful"
-msgstr ”Återställning av lösenord misslyckades”
+msgstr "Återställning av lösenord misslyckades"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:18
 msgid ""
@@ -1760,81 +1760,81 @@ msgstr "Fyll i ditt nya lösenord två gånger, så att vi kan bekräfta att du 
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:21
 msgid "New password:"
-msgstr ”Nytt lösenord:”
+msgstr "Nytt lösenord:"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:26
 msgid "Confirm password:"
-msgstr ”Bekräfta lösenord:”
+msgstr "Bekräfta lösenord:"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_confirm.html:47
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
-msgstr ”Länken för återställande av lösenord var ogiltig, möjligen för att den redan har använts. Vänligen gör en ny begäran om återställande av lösenord.”
+msgstr "Länken för återställande av lösenord var ogiltig, möjligen för att den redan har använts. Vänligen gör en ny begäran om återställande av lösenord."
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_done.html:5
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_done.html:12
 msgid "Password reset successful"
-msgstr ”Återställning av lösenord lyckades.”
+msgstr "Återställning av lösenord lyckades."
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_done.html:16
 msgid ""
 "We've emailed you instructions for setting your password. You should be "
 "receiving them shortly."
-msgstr ”Vi har mejlat dig instruktioner för hur du skapar ett lösenord. Du har dem inom kort.”
+msgstr "Vi har mejlat dig instruktioner för hur du skapar ett lösenord. Du har dem inom kort."
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_done.html:17
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with, and check your spam folder."
-msgstr ”Om du inte har fått något mejl, vänligen säkerställ att du fyllde i samma e-postadress som du använde vid registrering, och titta efter i din skräppostmapp.”
+msgstr "Om du inte har fått något mejl, vänligen säkerställ att du fyllde i samma e-postadress som du använde vid registrering, och titta efter i din skräppostmapp."
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:2
 #, python-format
 msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at %(site_name)s."
-msgstr ”Du får det här mejlet för att du har skickat en begäran om att återställa lösenordet till ditt "
-”användarkonto på %(site_name)s.”
+msgstr "Du får det här mejlet för att du har skickat en begäran om att återställa lösenordet till ditt "
+"användarkonto på %(site_name)s."
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:4
 msgid "Please go to the following page and choose a new password:"
-msgstr ”Vänligen gå till denna sida och välj ett nytt lösenord:”
+msgstr "Vänligen gå till denna sida och välj ett nytt lösenord:"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:8
 #: templates/registration/password_reset_email.html:18
 msgid "Your username, in case you've forgotten:"
-msgstr ”Ditt användarnamn, ifall du skulle ha glömt det:”
+msgstr "Ditt användarnamn, ifall du skulle ha glömt det:"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:10
 msgid "Thanks for using our site!"
-msgstr ”Tack för att du använder vår sida!”
+msgstr "Tack för att du använder vår sida!"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_email.html:12
 #, python-format
 msgid "The %(site_name)s team"
-msgstr ”Arbetslaget på %(site_name)s”
+msgstr "Arbetslaget på %(site_name)s"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:5
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:13
 #: templates/registration/password_reset_done.html:4
 #: templates/registration/password_reset_done.html:5
 msgid "Password reset"
-msgstr ”Återställ lösenord”
+msgstr "Återställ lösenord"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:17
 msgid ""
 "Forgotten your password? Enter your email address below, and we'll email "
 "instructions for setting a new one."
-msgstr ”Glömt ditt lösenord? Fyll i din e-postadress nedan så mejlar vi instruktioner till dig för hur du skapar ett nytt.”
+msgstr "Glömt ditt lösenord? Fyll i din e-postadress nedan så mejlar vi instruktioner till dig för hur du skapar ett nytt."
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:20
 msgid "Email address:"
-msgstr ”E-postadress”
+msgstr "E-postadress"
 
 #: lib/python2.7/site-packages/grappelli/templates/registration/password_reset_form.html:28
 msgid "Reset my password"
-msgstr ”Återställ mitt lösenord”
+msgstr "Återställ mitt lösenord"
 
 #: lib/python2.7/site-packages/grappelli/templates/related_widget_wrapper.html:8
 #, python-format
@@ -1861,7 +1861,7 @@ msgstr ""
 
 #: lib/python2.7/site-packages/grappelli/templates/reversion/object_history.html:15
 msgid "Comment"
-msgstr ”Kommentar”
+msgstr "Kommentar"
 
 #: lib/python2.7/site-packages/grappelli/templates/reversion/recover_form.html:18
 msgid "Press the save button below to recover this version of the object."
@@ -1953,15 +1953,15 @@ msgstr ""
 
 #: templates/_navbar.html:21
 msgid "Sheets"
-msgstr ”Listor”
+msgstr "Listor"
 
 #: templates/_navbar.html:34 templates/_navbar.html.py:46
 msgid "None yet!"
-msgstr ”Ingen här ännu!”
+msgstr "Ingen här ännu!"
 
 #: templates/_navbar.html:37 templates/_navbar.html.py:49
 msgid "Add..."
-msgstr ”Lägg till…”
+msgstr "Lägg till…"
 
 #: templates/_navbar.html:63
 msgid "Admin"
@@ -1969,7 +1969,7 @@ msgstr ""
 
 #: templates/_navbar.html:64 templates/korform_accounts/settings.html:4
 msgid "Settings"
-msgstr ”Inställningar”
+msgstr "Inställningar"
 
 #: templates/korform_accounts/invitekey_detail.html:16
 msgid "This key will be valid for another"
@@ -1978,16 +1978,16 @@ msgstr ""
 #: templates/korform_accounts/invitekey_detail.html:16
 #: templates/korform_accounts/settings.html:58
 msgid "days"
-msgstr ”dagar”
+msgstr "dagar"
 
 #: templates/korform_accounts/invitekey_detail.html:16
 #: templates/korform_accounts/settings.html:58
 msgid "hours"
-msgstr ”timmar”
+msgstr "timmar"
 
 #: templates/korform_accounts/settings.html:11
 msgid "Account information"
-msgstr ”Kontoinformation”
+msgstr "Kontoinformation"
 
 #: templates/korform_accounts/settings.html:17
 msgid ""
@@ -1999,17 +1999,17 @@ msgid ""
 msgstr ""
 "\n"
 "          Observera: Detta påverkar endast vad som visas i kontomenyn.<br /"
-">\n
+">\n"
 "          Det är helt separat från din kontaktinformation!\n"
 "          "
 
 #: templates/korform_accounts/settings.html:29
 msgid "Click here to change your password."
-msgstr ”Klicka här för att ändra ditt lösenord.”
+msgstr "Klicka här för att ändra ditt lösenord."
 
 #: templates/korform_accounts/settings.html:36
 msgid "Shared profiles"
-msgstr ”Delade profiler”
+msgstr "Delade profiler"
 
 #: templates/korform_accounts/settings.html:40
 msgid ""
@@ -2020,7 +2020,7 @@ msgid ""
 msgstr ""
 "\n"
 "          Flera användare kan ha gemensam tillgång till samma information genom att "
-”fylla i en inbjudningsnyckel när de loggar in. Varje nyckel kan endast användas en gång!\n”
+"fylla i en inbjudningsnyckel när de loggar in. Varje nyckel kan endast användas en gång!\n"
 "          "
 
 #: templates/korform_accounts/settings.html:45
@@ -2032,74 +2032,74 @@ msgid ""
 msgstr ""
 "\n"
 "          Om ett redan existerande konto ska dela din information, vänligen "
-”kontakta en administratör så kan användaren kopplas till din profil.\n”
-"    
+"kontakta en administratör så kan användaren kopplas till din profil.\n"
+"          "
 
 #: templates/korform_accounts/settings.html:50
 msgid "Create an invite key"
-msgstr ”Skapa en inbjudningsnyckel”
+msgstr "Skapa en inbjudningsnyckel"
 
 #: templates/korform_accounts/settings.html:58
 msgid "Expires in"
-msgstr ””
+msgstr ""
 
 #: templates/korform_accounts/settings.html:59
 msgid "Expire now"
-msgstr ””
+msgstr ""
 
 #: templates/korform_accounts/settings.html:68
 msgid "Users sharing your profile"
-msgstr ”Användare som delar din profil”
+msgstr "Användare som delar din profil"
 
 #: templates/korform_accounts/settings.html:74
 msgid "You are currently not sharing your profile with anyone."
-msgstr ”Du delar för närvarande inte din profil med någon annan.”
+msgstr "Du delar för närvarande inte din profil med någon annan."
 
 #: templates/korform_roster/contact_form.html:4
 #: templates/korform_roster/contact_form.html:8
 #: templates/korform_roster/member_form.html:4
 #: templates/korform_roster/member_form.html:8
 msgid "Edit"
-msgstr ”Ändra”
+msgstr "Ändra"
 
 #: templates/korform_roster/contact_form.html:4
 #: templates/korform_roster/contact_form.html:8
 msgid "New Contact"
-msgstr ”Ny kontakt”
+msgstr "Ny kontakt"
 
 #: templates/korform_roster/member_detail.html:8
 msgid "Missing RSVPs!"
-msgstr ”Svar fattas!”
+msgstr "Svar fattas!"
 
 #: templates/korform_roster/member_detail.html:8
 msgid "We don't know if you'll be there for some of your events."
-msgstr ”Några av dina tillfällen är obesvarade.”
+msgstr "Några av dina tillfällen är obesvarade."
 
 #: templates/korform_roster/member_detail.html:8
 msgid "Click here to correct this."
-msgstr ”Klicka här för att rätta till detta.”
+msgstr "Klicka här för att rätta till detta."
 
 #: templates/korform_roster/member_detail.html:11
 msgid "New fields added!"
-msgstr ”Nya fält tillagda!”
+msgstr "Nya fält tillagda!"
 
 #: templates/korform_roster/member_detail.html:11
 msgid "Please have a look at them, edit and save to confirm that you have."
-msgstr ”Ta en titt, redigera och spara för att bekräfta att du har sett dem.”
+msgstr "Ta en titt, redigera och spara för att bekräfta att du har sett dem."
 
 #: templates/korform_roster/member_detail.html:11
 msgid "Click here to edit your info."
-msgstr ”Klicka här för att redigera din information.”
+msgstr "Klicka här för att redigera din information."
 
 #: templates/korform_roster/member_form.html:4
 #: templates/korform_roster/member_form.html:8
 msgid "New Member"
-msgstr ”Ny medlem”
+msgstr "Ny medlem"
 
 #: templates/korform_roster/member_group.html:4
 #: templates/korform_roster/member_group.html:5
 msgid "Select your group"
-msgstr ”Välj din grupp”
+msgstr "Välj din grupp"
 
 #: templates/korform_roster/member_group.html:11
 msgid ""
@@ -2112,7 +2112,7 @@ msgstr ""
 "\n"
 "  Var noga med att välja rätt grupp!<br />\n"
 "  Om du väljer fel grupp, måste du kontakta en administratör för att "
-”ändra.\n”
+"ändra.\n"
 "  "
 
 #: templates/korform_roster/member_group.html:17
@@ -2124,18 +2124,18 @@ msgid ""
 msgstr ""
 "\n"
 "  Ny? Osäker på vilken grupp du tillhör? Det står förmodligen i ditt "
-”antagningsbesked.\n”
+"antagningsbesked.\n"
 "  "
 
 #: templates/korform_roster/member_rsvp.html:4
 #: templates/korform_roster/member_rsvp.html:8
 msgid "Events"
-msgstr ”Tillfällen”
+msgstr "Tillfällen"
 
 #: templates/korform_roster/member_rsvp.html:4
 #: templates/korform_roster/member_rsvp.html:8
 msgid "for"
-msgstr ”för”
+msgstr "för"
 
 #: templates/korform_roster/member_rsvp.html:11
 msgid ""
@@ -2148,7 +2148,7 @@ msgstr ""
 "\n"
 "  Var noggrann när du svarar. Du kan inte själv ändra dina svar när du har skickat in.<br />\n"
 "  Om du behöver ändra i dina svar efter att du har skickat in, "
-”måste du kontakta en administratör.\n"
+"måste du kontakta en administratör.\n"
 "  "
 
 #: templates/korform_roster/member_rsvp.html:21
@@ -2167,20 +2167,20 @@ msgstr ""
 #: templates/registration/activate.html:5
 #: templates/registration/activate.html:8
 msgid "Account activation failed."
-msgstr ”Kontoaktivering misslyckades.”
+msgstr "Kontoaktivering misslyckades."
 
 #: templates/registration/activation_complete.html:4
 #: templates/registration/activation_complete.html:5
 msgid "Account Activated"
-msgstr ”Kontot aktiverat”
+msgstr "Kontot aktiverat"
 
 #: templates/registration/activation_complete.html:9
 msgid "Your account is now activated."
-msgstr ”Ditt konto är nu aktiverat.”
+msgstr "Ditt konto är nu aktiverat."
 
 #: templates/registration/activation_complete.html:11
 msgid "You can log in."
-msgstr ”Du kan logga in.”
+msgstr "Du kan logga in."
 
 #: templates/registration/activation_email.html:6
 msgid "registration"
@@ -2198,9 +2198,9 @@ msgid ""
 msgstr ""
 "\n"
 "    Du (eller någon som utger sig för att vara du) har ansökt om att registrera ett konto "
-”på\n”
-"    %(site_name)s.  Om det inte var du, vänligen bortse från detta meddelande\n”
-"    så kommer din adress att tas bort från våra register.\n”
+"på\n"
+"    %(site_name)s.  Om det inte var du, vänligen bortse från detta meddelande\n"
+"    så kommer din adress att tas bort från våra register.\n"
 "    "
 
 #: templates/registration/activation_email.html:18
@@ -2214,8 +2214,8 @@ msgid ""
 msgstr ""
 "\n"
 "    För att aktivera detta konto, vänligen klicka på nedan länk "
-”inom\n”
-"    %(expiration_days)s dagar:\n”
+"inom\n"
+"    %(expiration_days)s dagar:\n"
 "    "
 
 #: templates/registration/activation_email.html:30
@@ -2227,8 +2227,8 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"    Hälsningar!\n”
-"    %(site_name)s webbadministration\n”
+"    Hälsningar!\n"
+"    %(site_name)s webbadministration\n"
 "    "
 
 #: templates/registration/activation_email.txt:2
@@ -2240,19 +2240,19 @@ msgid ""
 "and your address will be removed from our records.\n"
 msgstr ""
 "\n"
-”Du (eller någon som utger sig för att vara du)har ansökt om att registrera ett konto  på\n”
-"%(site_name)s. Om det inte var du, vänligen bortse från detta meddelande\n”
-”så kommer din adress att tas bort från våra register.\n”
+"Du (eller någon som utger sig för att vara du)har ansökt om att registrera ett konto  på\n"
+"%(site_name)s. Om det inte var du, vänligen bortse från detta meddelande\n"
+"så kommer din adress att tas bort från våra register.\n"
 
 #: templates/registration/activation_email.txt:7
 #, python-format
 msgid ""
 "\n"
 "To activate this account, please click the following link within the next\n"
-"%(expiration_days)s dagar:\n”
+"%(expiration_days)s dagar:\n"
 msgstr ""
 "\n"
-”För att aktivera detta konto, vänligen klicka på nedan länk inom\n”
+"För att aktivera detta konto, vänligen klicka på nedan länk inom\n"
 "%(expiration_days)s days:\n"
 
 #: templates/registration/activation_email.txt:14
@@ -2262,70 +2262,70 @@ msgid ""
 "Sincerely,\n"
 "%(site_name)s Management\n"
 msgstr ""
-\n"
-”Hälsningar!\n”
-"%(site_name)s webbadministration\n”
+"\n"
+"Hälsningar!\n"
+"%(site_name)s webbadministration\n"
 
 #: templates/registration/activation_email_subject.txt:1
 msgid "Account activation on"
-msgstr ”Kontoaktivering på”
+msgstr "Kontoaktivering på"
 
 #: templates/registration/login.html:11
 msgid "Forgot your password?"
-msgstr ”Glömt ditt lösenord?”
+msgstr "Glömt ditt lösenord?"
 
 #: templates/registration/login.html:11
 msgid "Reset it"
-msgstr ”Återställ det”
+msgstr "Återställ det"
 
 #: templates/registration/login.html:12
 #: templates/registration/password_reset_form.html:21
 msgid "Not a member?"
-msgstr ”Inte medlem?”
+msgstr "Inte medlem?"
 
 #: templates/registration/login.html:12
 #: templates/registration/password_reset_form.html:21
 #: templates/registration/registration_form.html:5
 msgid "Register"
-msgstr ”Registrera dig”
+msgstr "Registrera dig"
 
 #: templates/registration/logout.html:4 templates/registration/logout.html:5
 msgid "Logged out"
-msgstr ”Logga ut”
+msgstr "Logga ut"
 
 #: templates/registration/logout.html:8
 msgid "Successfully logged out"
-msgstr ”Utloggning genomförd”
+msgstr "Utloggning genomförd"
 
 #: templates/registration/password_change_done.html:4
 #: templates/registration/password_change_done.html:5
 msgid "Password changed"
-msgstr ”Lösenordet har bytts”
+msgstr "Lösenordet har bytts"
 
 #: templates/registration/password_change_done.html:8
 msgid "Password successfully changed!"
-msgstr ”Lösenordsbytet lyckades!”
+msgstr "Lösenordsbytet lyckades!"
 
 #: templates/registration/password_reset_complete.html:9
 msgid "Your password has been reset!"
-msgstr ”Ditt lösenord har återställts!”
+msgstr "Ditt lösenord har återställts!"
 
 #: templates/registration/password_reset_complete.html:10
 msgid "You may now"
-msgstr ”Nu kan du”
+msgstr "Nu kan du"
 
 #: templates/registration/password_reset_complete.html:10
 msgid "log in"
-msgstr ”logga in”
+msgstr "logga in"
 
 #: templates/registration/password_reset_confirm.html:4
 #: templates/registration/password_reset_confirm.html:5
 msgid "Confirm password reset"
-msgstr ”Bekräfta återställning av lösenord”
+msgstr "Bekräfta återställning av lösenord"
 
 #: templates/registration/password_reset_confirm.html:11
 msgid "Set password"
-msgstr ”Välj lösenord”
+msgstr "Välj lösenord"
 
 #: templates/registration/password_reset_done.html:9
 msgid ""
@@ -2335,13 +2335,13 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"    Vi har skickat dig ett mejl med en länk för att återställa ditt lösenord.\n”
-"    Vänligen kontrollera din epost och klicka på länken för att fortsätta.\n”
+"    Vi har skickat dig ett mejl med en länk för att återställa ditt lösenord.\n"
+"    Vänligen kontrollera din epost och klicka på länken för att fortsätta.\n"
 "    "
 
 #: templates/registration/password_reset_email.html:3
 msgid "Greetings"
-msgstr ”Hälsningar!”
+msgstr "Hälsningar!"
 
 #: templates/registration/password_reset_email.html:5
 #, python-format
@@ -2353,10 +2353,10 @@ msgid ""
 "wish to reset your password, please ignore this message.\n"
 msgstr ""
 "\n"
-”Du får det här mejlet fr att du (eller någon som utger sig för att vara du)\n”
-”har bett om att ditt lösenord på %(domain)s hemsida ska återställas. Om du inte "
+"Du får det här mejlet fr att du (eller någon som utger sig för att vara du)\n"
+"har bett om att ditt lösenord på %(domain)s hemsida ska återställas. Om du inte "
 "\n"
-”vill återställa ditt lösenord, vänligen bortse från detta meddelande.\n”
+"vill återställa ditt lösenord, vänligen bortse från detta meddelande.\n"
 
 #: templates/registration/password_reset_email.html:11
 msgid ""
@@ -2366,23 +2366,23 @@ msgid ""
 "into your web browser:\n"
 msgstr ""
 "\n"
-”För att återställa ditt lösenord, klicka på nedan länk, eller klipp och klistra "
-”in den\n”
-”i din webbläsare:\n”
+"För att återställa ditt lösenord, klicka på nedan länk, eller klipp och klistra "
+"in den\n"
+"i din webbläsare:\n"
 
 #: templates/registration/password_reset_email.html:21
 msgid "Best regards"
-msgstr ”Vänliga hälsningar”
+msgstr "Vänliga hälsningar"
 
 #: templates/registration/password_reset_email.html:22
 msgid "Management"
-msgstr ”Webbadministrationen”
+msgstr "Webbadministrationen"
 
 #: templates/registration/password_reset_form.html:4
 #: templates/registration/password_reset_form.html:5
 #: templates/registration/password_reset_form.html:17
 msgid "Reset password"
-msgstr ”Återställ lösenord”
+msgstr "Återställ lösenord"
 
 #: templates/registration/password_reset_form.html:9
 msgid ""
@@ -2393,35 +2393,35 @@ msgid ""
 msgstr ""
 "\n"
 "    Glömt ditt lösenord?  Fyll i din epostadress i formuläret nedan så mejlar vi "
-"instruktioner till dig om hur du skapar ett nytt.\n”
+"instruktioner till dig om hur du skapar ett nytt.\n"
 "    "
 
 #: templates/registration/password_reset_form.html:20
 msgid "Remembered it?"
-msgstr ”Kom du ihåg det?”
+msgstr "Kom du ihåg det?"
 
 #: templates/registration/registration_closed.html:4
 #: templates/registration/registration_closed.html:5
 msgid "Registration is closed"
-msgstr ”Registreringen är stängd”
+msgstr "Registreringen är stängd"
 
 #: templates/registration/registration_closed.html:8
 msgid "Sorry, but registration is closed at this moment. Come back later."
-msgstr ”Beklagar, men registreringen är stängd just nu. Återkom senare.”
+msgstr "Beklagar, men registreringen är stängd just nu. Återkom senare."
 
 #: templates/registration/registration_complete.html:4
 #: templates/registration/registration_complete.html:5
 msgid "Activation email sent"
-msgstr ”Aktiveringsmejl skickat”
+msgstr "Aktiveringsmejl skickat"
 
 #: templates/registration/registration_complete.html:8
 msgid "Please check your email to complete the registration process."
-msgstr ”Vänligen kontrollera din epost för att fullfölja registreringsprocessen”
+msgstr "Vänligen kontrollera din epost för att fullfölja registreringsprocessen"
 
 #: templates/registration/registration_form.html:4
 msgid "Register for an account"
-msgstr ”Registrera ett konto”
+msgstr "Registrera ett konto"
 
 #: templates/registration/registration_form.html:10
 msgid "Already have an account?"
-msgstr ”Har du redan ett konto?”
+msgstr "Har du redan ett konto?"

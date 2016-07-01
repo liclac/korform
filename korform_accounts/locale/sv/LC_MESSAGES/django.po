@@ -20,12 +20,12 @@ msgstr ""
 
 #: korform_accounts/forms.py:62
 msgid "Invalid invite key."
-msgstr ”Ogiltig inbjudningsnyckel”
+msgstr "Ogiltig inbjudningsnyckel"
 
 #: korform_accounts/forms.py:101
 msgid "Save"
-msgstr ”Spara”
+msgstr "Spara"
 
 #: korform_accounts/middleware.py:21
 msgid "Please complete your profile before proceeding!"
-msgstr ”Fyll i alla fält innan du går vidare!”
+msgstr "Fyll i alla fält innan du går vidare!"

@@ -79,6 +79,14 @@ class ContactForm(CustomizableMixin, forms.ModelForm):
             ),
         ]
         self.helper.layout = Layout(*layout_fields)
+    
+    def save(self, commit=True):
+        super(ContactForm, self).save(commit=False)
+        for key in self.extra_keys:
+            self.instance.extra[key] = self.cleaned_data[key]
+        if commit:
+            self.instance.save()
+        return self.instance
 
 class RSVPForm(forms.ModelForm):
     class Meta:
@@ -89,6 +97,11 @@ class RSVPForm(forms.ModelForm):
         }
     
     answer = forms.TypedChoiceField(widget=forms.RadioSelect, choices=RSVP.CHOICES, coerce=int, required=True)
+    
+    def make_no_answer(self):
+        self.fields['answer'].choices = [(1, "")]
+        self.fields['answer'].widget = forms.HiddenInput(attrs={'value': 1})
+        self.fields['comment'].widget = forms.HiddenInput()
 
 class RSVPFormSet(forms.BaseModelFormSet):
     def __init__(self, member, events, *args, **kwargs):
@@ -102,6 +115,10 @@ class RSVPFormSet(forms.BaseModelFormSet):
         form = super(RSVPFormSet, self)._construct_form(i, **kwargs)
         form.instance.member = self.member
         form.instance.event = self.events[i]
+        
+        if form.instance.event.no_answer:
+            form.make_no_answer()
+        
         return form
 
 class RSVPFormSetHelper(FormHelper):
