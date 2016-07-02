@@ -34,7 +34,7 @@ class User(AbstractUser):
     Note that submitted data is not tied to a user, but to a [profile](/admin/korform_accounts/profile/).
     '''
     
-    profile = models.ForeignKey(Profile, related_name='users', on_delete=models.PROTECT, null=True, help_text=u"Multiple users may be associated with a single profile. These users will have access to the same data, but with different logins.")
+    profile = models.ForeignKey(Profile, related_name='users', on_delete=models.SET_NULL, null=True, help_text=u"Multiple users may be associated with a single profile. These users will have access to the same data, but with different logins.")
     
     @cached_property
     def shared_users(self):
