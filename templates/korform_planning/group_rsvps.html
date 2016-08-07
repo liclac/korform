@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n markdown_deux_tags %}
+
+{% block title %}{{ group.name }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>{{ group.name }} <small>{{ group.code }}</small></h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th width="1">&nbsp;</th>
+      {% if rows %}{% for rsvp in rows.0.1 %}
+      <th>{{ rsvp.event.name }}</th>
+      {% endfor %}{% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+      <th style="white-space: nowrap;">{{ row.0.get_full_name }}</th>
+      {% for rsvp in row.1 %}
+      <td class="{{ rsvp.css_class }}">
+        {% if rsvp.comment %}<abbr title="{{ rsvp.comment }}">{% endif %}
+        {{ rsvp.answer_text }}
+        {% if rsvp.comment %}</abbr>{% endif %}
+      </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

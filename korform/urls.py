@@ -18,15 +18,17 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from .views import index
 from korform_accounts.views import *
 from korform_accounts.forms import *
-from korform_planning.views import GroupView
+from korform_planning.views import GroupView, GroupRSVPsView
 from korform_roster.views import MemberView, MemberPickGroupView, MemberCreateView, MemberUpdateView, MemberRSVPView, ContactView, ContactUpdateView, ContactCreateView
 
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^groups/(?P<slug>[-\w]+)/$', login_required(GroupView.as_view()), name='group'),
+    url(r'^groups/(?P<slug>[-\w]+)/rsvps/$', staff_member_required(GroupRSVPsView.as_view()), name='group_rsvps'),
     url(r'^members/add/$', login_required(MemberPickGroupView.as_view()), name='member_add'),
     url(r'^members/add/(?P<group>[-\w]+)/$', login_required(MemberCreateView.as_view()), name='member_add2'),
     url(r'^members/(?P<pk>[0-9]+)/$', login_required(MemberView.as_view()), name='member'),

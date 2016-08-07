@@ -1,11 +1,14 @@
 {% extends "base.html" %}
-{% load markdown_deux_tags %}
+{% load i18n markdown_deux_tags %}
 
 {% block title %}{{ group.name }}{% endblock %}
 
 {% block content %}
 <div class="page-header">
-  <h1>{{ group.name }} <small>{{ group.code }}</small></h1>
+  <h1>
+    {{ group.name }} <small>{{ group.code }}</small>
+    {% if request.user.is_staff %}<a href="{% url 'group_rsvps' group.slug %}" class="btn btn-default pull-right">{% trans "RSVPs" %}</a>{% endif %}
+  </h1>
 </div>
 
 {% if group.description %}

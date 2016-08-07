@@ -43,3 +43,21 @@ class GroupView(DetailView):
             elif term.form_id:
                 return Sheet.columns_from_form(term.form)
         return Sheet.get_default_columns()
+
+class GroupRSVPsView(DetailView):
+    model = Group
+    context_object_name = 'group'
+    template_name = 'korform_planning/group_rsvps.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super(GroupRSVPsView, self).get_context_data(**kwargs)
+        
+        term = self.request.site.config.current_term
+        rows = [
+            (mem, [
+                rsvp for rsvp in mem.rsvps.order_by('event__position').all() if rsvp.event.term_id == term.id
+            ]) for mem in self.object.members.prefetch_related('rsvps', 'rsvps__event')
+        ]
+        context['rows'] = rows
+        
+        return context

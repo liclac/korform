@@ -138,3 +138,6 @@ class RSVP(models.Model):
     
     def css_class(self):
         return {1: 'success', 0: 'danger', 2: 'warning'}.get(self.answer, 'default')
+    
+    def answer_text(self):
+        return {1: _(u"Yes"), 0: _(u"No"), 2: _(u"Maybe")}.get(self.answer, '???')
