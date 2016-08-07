@@ -14,6 +14,7 @@
   <h1>
     {{ member.get_full_name }}
     <small><a href="{{ member.group.get_absolute_url }}">{{ member.group.code }}</a></small>
+    <a href="{% url 'member_edit' member.pk %}" class="btn btn-default pull-right">Edit</a>
   </h1>
 </div>
 <div class="row">
