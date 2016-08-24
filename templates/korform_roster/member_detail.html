@@ -28,6 +28,8 @@
           <dd>{{ extra.value }}</dd>
         {% endif %}
       {% endfor %}
+      <dt>{{ request.site.config.term_contacts|capfirst }}</dt>
+      <dd>{% for contact in member.profile.contacts.all %}<a href="{{ contact.get_absolute_url }}">{{ contact.first_name }} {{ contact.last_name }}</a> {% endfor %}</dd>
     </dl>
   </div>
 </div>
